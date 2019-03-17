@@ -1,0 +1,15 @@
+package s2imf35;
+
+import java.io.IOException;
+
+public class Main {
+	/**
+     * Main call to the program.
+     *
+     * @param args The arguments given to the program, which are described in further detail in the report.
+     * @throws IOException Thrown when an input file cannot be found or read.
+     */
+    public static void main(String[] args) throws IOException {
+		//
+	}
+}
