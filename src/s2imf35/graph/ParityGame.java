@@ -12,31 +12,33 @@ public class ParityGame {
     // The vertices belonging to the diamond player.
     private final Set<Integer> V_d;
 
-    // The vertices belonging to the box player.
-    private final Set<Integer> V_b;
-
     // The maximum priority d.
-    private int d = Integer.MIN_VALUE;
+    public final int d;
 
-    // Track which vertices belong to a certain priority.
-    private final HashMap<Integer, Set<Integer>> priorityMap = new HashMap<>();
+    // The number of vertices.
+    public final int n;
 
-    // The maximum value T.
-    private final ArrayList<Integer> T = new ArrayList<>();
+    // The maximum value in M.
+    public final int[] M;
+
+    // Get the original order of the vertices.
+    public final int[] originalOrder;
 
     public ParityGame(String input) throws NumberFormatException {
         // Parse the input and split in the semicolon symbol, which terminates entries.
         String[] lines = Arrays.stream(input.split(";")).map(String::trim).toArray(String[]::new);
 
         // Find the maximum identifier and determine the total size of the specification array.
-        int n = Integer.parseInt(lines[0].split("\\s+")[1]) + 1;
+        n = Integer.parseInt(lines[0].split("\\s+")[1]) + 1;
         specifications = new NodeSpecification[n];
 
         // Initialize the vertex lists.
         V_d = new HashSet<>();
-        V_b = new HashSet<>();
+        int d = Integer.MIN_VALUE;
+        originalOrder = new int[n];
 
         // Load the specification.
+        HashMap<Integer, Set<Integer>> priorityMap = new HashMap<>();
         for (int i = 1; i < lines.length; i++) {
             String line = lines[i];
             // Skip the empty line at the end.
@@ -46,21 +48,26 @@ public class ParityGame {
             specifications[spec.identifier] = spec;
 
             // Check which player the vertex belongs to.
-            (spec.owner == Diamond ?  V_d : V_b).add(spec.identifier);
+            if(spec.owner == Diamond) {
+                V_d.add(spec.identifier);
+            }
 
             // Update the max priority and priority lists.
             if(d < spec.priority) {
                 d = spec.priority + 1;
             }
             priorityMap.computeIfAbsent(spec.priority, e -> new HashSet<>()).add(spec.identifier);
+
+            // Make sure that we track the original order of the vertices.
+            originalOrder[i - 1] = spec.identifier;
         }
+        this.d = d;
 
         // Create the maximum value T.
+        M = new int[d];
         for(int i = 0; i < d; i++) {
-            if(i % 2 == 0) {
-                T.add(0);
-            } else {
-                T.add(priorityMap.getOrDefault(i, new HashSet<>()).size());
+            if(i % 2 != 0) {
+                M[i] = priorityMap.getOrDefault(i, new HashSet<>()).size();
             }
         }
     }
@@ -75,5 +82,9 @@ public class ParityGame {
 
     public int getPriority(int v) {
         return specifications[v].priority;
+    }
+
+    public int getD() {
+        return d;
     }
 }

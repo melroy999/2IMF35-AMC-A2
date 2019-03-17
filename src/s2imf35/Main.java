@@ -3,6 +3,7 @@ package s2imf35;
 import s2imf35.graph.ParityGame;
 
 import java.io.IOException;
+import java.util.Set;
 
 public class Main {
 	/**
@@ -12,6 +13,7 @@ public class Main {
      * @throws IOException Thrown when an input file cannot be found or read.
      */
     public static void main(String[] args) throws IOException {
-		ParityGame game = Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_inevitably_eat.gm");
-	}
+		ParityGame game = Parser.parseParityGame("inputs/unitTests/slides.gm");
+        Set<Integer> result = Solver.solve(game);
+    }
 }

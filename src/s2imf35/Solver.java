@@ -1,19 +1,46 @@
 package s2imf35;
 
-import s2imf35.data.AbstractProgressMeasure;
 import s2imf35.data.ProgressMeasure;
 import s2imf35.graph.ParityGame;
+import s2imf35.strategies.AbstractLiftingStrategy;
+import s2imf35.strategies.InputOrderLiftingStrategy;
+import s2imf35.util.ComparisonHelper;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static s2imf35.graph.NodeSpecification.Owner.Diamond;
 
 public class Solver {
-    public void solve(ParityGame G) {
+    public static Set<Integer> solve(ParityGame G) {
         // Initialize rho data structure.
-        AbstractProgressMeasure rho = new ProgressMeasure();
+        ProgressMeasure rho = new ProgressMeasure(G);
+
+        // Get the desired iterator type.
+        AbstractLiftingStrategy strategy = new InputOrderLiftingStrategy(G);
+
+        // A table that holds all vertices that remain unchanged.
+        Set<Integer> unchanged = new HashSet<>(G.n);
+
+        // We loop until unchanged contains all vertices.
+        while(unchanged.size() == G.n) {
+            int v = strategy.next();
+            int[] liftValue = lift(v, rho, G);
+
+            // We only register a change when rho < lift_v(rho).
+            // TODO: This does seem to be counter-intuitive when combined with the max in lift.
+            // TODO Why even take max with rho.get(v), given that it will never improve the situation?
+            if(ComparisonHelper.isGreater(liftValue, rho.get(v), G.d - 1)) {
+                rho.put(v, liftValue);
+                unchanged.clear();
+            }
+        }
+
+        // We have found a solution. Find which states belong to the winning set of player diamond.
+        return rho.diamondWinningSet();
 
     }
 
@@ -23,28 +50,75 @@ public class Solver {
      * @param v The vertex to lift.
      * @param rho The parity progress measure.
      * @param G The parity game graph.
+     * @return The new value for rho(v).
      */
-    private void lift(int v, AbstractProgressMeasure rho, ParityGame G) {
+    private static int[] lift(int v, ProgressMeasure rho, ParityGame G) {
         // Get all transitions starting in v.
         int[] W = G.getSuccessors(v);
 
-        // Calculate all the progression measures for the edges from v to W.
-        List<List<Integer>> P = Arrays.stream(W).mapToObj(w -> prog(v, w, rho, G)).collect(Collectors.toList());
+        // Calculate all the progress measures for the edges from v to W.
+        List<int[]> progressMeasures = Arrays.stream(W).mapToObj(w -> progress(rho.get(w), G.getPriority(v), G))
+                .collect(Collectors.toList());
 
+        int[] result;
         if(G.getOwner(v) == Diamond) {
-
+            // Find the minimal progress value.
+            result = progressMeasures.get(0);
+            for(int i = 1; i < progressMeasures.size(); i++) {
+                if(ComparisonHelper.isGreaterOrEqual(result, rho.get(i), G.d - 1)) {
+                    result = rho.get(i);
+                }
+            }
         } else {
+            // Find the maximal progress value.
+            result = progressMeasures.get(0);
+            for(int i = 1; i < progressMeasures.size(); i++) {
+                if(ComparisonHelper.isGreaterOrEqual(rho.get(i), result, G.d - 1)) {
+                    result = rho.get(i);
+                }
+            }
+        }
 
+        // Find the maximum between rho(v) and result.
+        if(ComparisonHelper.isGreaterOrEqual(result, rho.get(v),G.d - 1)) {
+            return result;
+        } else {
+            return rho.get(v);
         }
     }
 
-    private List<Integer> prog(int v, int w, AbstractProgressMeasure rho, ParityGame G) {
-        if(G.getPriority(v) % 2 == 0) {
-            // The priority is even.
+    /**
+     * Get the least m in M^T that adheres to the requirements given in definition (Prog) (Slide 18/46, lecture 8).
+     *
+     * @param a The array corresponding to g(w).
+     * @param p The priority p(v) of vertex v.
+     * @param G The parity game, containing the maximum M.
+     * @return An array that is is the least option in M^T, or null (denoting T) when no such array is available.
+     */
+    private static int[] progress(int[] a, int p, ParityGame G) {
+        if(p % 2 == 0) {
+            // p is even, so we should find the least m for which m >=_(p(v)) g(w) holds.
+            // Thus, set all n_i values for i > p to 0.
+            int[] b = new int[a.length];
+            System.arraycopy(a, 0, b, 0, p + 1);
+            return b;
         } else {
-            // The priority is odd.
-        }
+            // p is odd. Find the least m for which m >_(p(v)) g(w) holds if it exists.
+            // If no such m exists, return T (denoted by null).
+            boolean success = false;
 
-        return null;
+            int[] b = new int[a.length];
+            for(int i = 0; i <= p; i++) {
+                if(G.M[i] > a[i] && !success && i % 2 != 0) {
+                    success = true;
+                    b[i] = a[i] + 1;
+                } else {
+                    b[i] = a[i];
+                }
+            }
+
+            // Return null when we did not manage to increase b (and thus, m = g(w) = T).
+            return success ? b : null;
+        }
     }
 }

@@ -1,4 +1,6 @@
 package s2imf35.strategies;
 
-public class AbstractLiftingStrategy {
+import java.util.Iterator;
+
+public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
 }
