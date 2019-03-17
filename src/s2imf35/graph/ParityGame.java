@@ -53,7 +53,7 @@ public class ParityGame {
             }
 
             // Update the max priority and priority lists.
-            if(d < spec.priority) {
+            if(d < spec.priority - 1) {
                 d = spec.priority + 1;
             }
             priorityMap.computeIfAbsent(spec.priority, e -> new HashSet<>()).add(spec.identifier);

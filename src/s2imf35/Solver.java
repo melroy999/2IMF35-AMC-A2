@@ -21,8 +21,8 @@ public class Solver {
         ProgressMeasure rho = new ProgressMeasure(G);
 
         // Get the desired iterator type.
-//        AbstractLiftingStrategy strategy = new InputOrderLiftingStrategy(G);
-        AbstractLiftingStrategy strategy = new FixedLiftingStrategy();
+        AbstractLiftingStrategy strategy = new InputOrderLiftingStrategy(G);
+//        AbstractLiftingStrategy strategy = new FixedLiftingStrategy();
 
         // A table that holds all vertices that remain unchanged.
         Set<Integer> unchanged = new HashSet<>(G.n);
@@ -43,6 +43,7 @@ public class Solver {
             }
 
             String name = G.getName(v);
+            name = name == null ? "v" + v : name;
             System.out.println("Lift(rho, " + name + ") = rho[" + name + " := " + Arrays.toString(liftValue) + "]");
         }
 

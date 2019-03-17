@@ -13,7 +13,8 @@ public class Main {
      * @throws IOException Thrown when an input file cannot be found or read.
      */
     public static void main(String[] args) throws IOException {
-		ParityGame game = Parser.parseParityGame("inputs/unitTests/slides.gm");
+//		ParityGame game = Parser.parseParityGame("inputs/unitTests/slides.gm");
+        ParityGame game = Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_inevitably_eat.gm");
         Set<Integer> result = Solver.solve(game);
         for(int v : result) {
             System.out.println(v);
