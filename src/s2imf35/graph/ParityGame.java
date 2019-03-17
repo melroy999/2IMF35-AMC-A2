@@ -53,19 +53,19 @@ public class ParityGame {
             }
 
             // Update the max priority and priority lists.
-            if(d < spec.priority - 1) {
-                d = spec.priority + 1;
+            if(d < spec.priority) {
+                d = spec.priority;
             }
             priorityMap.computeIfAbsent(spec.priority, e -> new HashSet<>()).add(spec.identifier);
 
             // Make sure that we track the original order of the vertices.
             originalOrder[i - 1] = spec.identifier;
         }
-        this.d = d;
+        this.d = d + 1;
 
         // Create the maximum value T.
-        M = new int[d];
-        for(int i = 0; i < d; i++) {
+        M = new int[this.d];
+        for(int i = 0; i < this.d; i++) {
             if(i % 2 != 0) {
                 M[i] = priorityMap.getOrDefault(i, new HashSet<>()).size();
             }

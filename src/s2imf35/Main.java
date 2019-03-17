@@ -3,6 +3,7 @@ package s2imf35;
 import s2imf35.graph.ParityGame;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Set;
 
 public class Main {
@@ -14,10 +15,28 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
 //		ParityGame game = Parser.parseParityGame("inputs/unitTests/slides.gm");
-        ParityGame game = Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_inevitably_eat.gm");
-        Set<Integer> result = Solver.solve(game);
-        for(int v : result) {
-            System.out.println(v);
+        ParityGame[] games = {
+            Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_inevitably_eat.gm"),
+            Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_plato_starves.gm"),
+            Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_possibly_eat.gm"),
+            Parser.parseParityGame("inputs/experiment1/dining_2.plato_infinitely_often_can_eat.gm"),
+        };
+
+        for(ParityGame game : games) {
+            Set<Integer> result = Solver.solve(game);
+            print(result);
         }
+    }
+
+    private static void print(Set<Integer> data) {
+        // Select only the first 20 states in the solution.
+        Object[] first50States = data.stream().limit(20).toArray();
+        String list = Arrays.toString(first50States);
+
+        if(data.size() != first50States.length) {
+            list = list.substring(0, list.length() - 1) + ", ...]";
+        }
+
+        System.out.println(list);
     }
 }
