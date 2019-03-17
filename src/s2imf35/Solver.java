@@ -3,6 +3,7 @@ package s2imf35;
 import s2imf35.data.ProgressMeasure;
 import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
+import s2imf35.strategies.FixedLiftingStrategy;
 import s2imf35.strategies.InputOrderLiftingStrategy;
 import s2imf35.util.ComparisonHelper;
 
@@ -20,7 +21,8 @@ public class Solver {
         ProgressMeasure rho = new ProgressMeasure(G);
 
         // Get the desired iterator type.
-        AbstractLiftingStrategy strategy = new InputOrderLiftingStrategy(G);
+//        AbstractLiftingStrategy strategy = new InputOrderLiftingStrategy(G);
+        AbstractLiftingStrategy strategy = new FixedLiftingStrategy();
 
         // A table that holds all vertices that remain unchanged.
         Set<Integer> unchanged = new HashSet<>(G.n);
@@ -39,6 +41,9 @@ public class Solver {
             } else {
                 unchanged.add(v);
             }
+
+            String name = G.getName(v);
+            System.out.println("Lift(rho, " + name + ") = rho[" + name + " := " + Arrays.toString(liftValue) + "]");
         }
 
         // We have found a solution. Find which states belong to the winning set of player diamond.
@@ -68,7 +73,7 @@ public class Solver {
             result = progressMeasures.get(0);
             for(int i = 1; i < progressMeasures.size(); i++) {
                 if(ComparisonHelper.isGreaterOrEqual(result, rho.get(i), G.d - 1)) {
-                    result = rho.get(i);
+                    result = progressMeasures.get(i);
                 }
             }
         } else {
@@ -76,7 +81,7 @@ public class Solver {
             result = progressMeasures.get(0);
             for(int i = 1; i < progressMeasures.size(); i++) {
                 if(ComparisonHelper.isGreaterOrEqual(rho.get(i), result, G.d - 1)) {
-                    result = rho.get(i);
+                    result = progressMeasures.get(i);
                 }
             }
         }
@@ -114,7 +119,7 @@ public class Solver {
             boolean success = false;
 
             int[] b = new int[a.length];
-            for(int i = 0; i <= p; i++) {
+            for(int i = p; i > 0; i--) {
                 if(G.M[i] > a[i] && !success && i % 2 != 0) {
                     success = true;
                     b[i] = a[i] + 1;

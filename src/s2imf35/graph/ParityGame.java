@@ -87,4 +87,8 @@ public class ParityGame {
     public int getD() {
         return d;
     }
+
+    public String getName(int v) {
+        return specifications[v].name;
+    }
 }
