@@ -30,6 +30,13 @@ public class Solver {
         // We loop until unchanged contains all vertices.
         while(unchanged.size() != G.n) {
             int v = strategy.next();
+
+            // No need to lift vertices with the special symbol.
+            if(rho.get(v) == null) {
+                unchanged.add(v);
+                continue;
+            }
+
             int[] liftValue = lift(v, rho, G);
 
             // We only register a change when rho < lift_v(rho).
@@ -124,6 +131,11 @@ public class Solver {
                 if(G.M[i] > a[i] && !success && i % 2 != 0) {
                     success = true;
                     b[i] = a[i] + 1;
+
+                    // Reset all higher odd numbers to 0.
+                    for(int j = i + 2; j <= p; j += 2) {
+                        b[j] = 0;
+                    }
                 } else {
                     b[i] = a[i];
                 }

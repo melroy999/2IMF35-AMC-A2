@@ -4,7 +4,7 @@ import s2imf35.graph.ParityGame;
 
 public class FixedLiftingStrategy extends AbstractLiftingStrategy {
     // The order we have determined.
-    private final int[] indices = {0, 0, 0, 1, 3, 2, 4, 4, 4, 4, 4, 4, 5, 6, 6, 3, 2, 1};
+    private final int[] indices = {0, 0, 0, 1, 3, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 3, 2, 1};
 
     // The current index.
     private int i = 0;

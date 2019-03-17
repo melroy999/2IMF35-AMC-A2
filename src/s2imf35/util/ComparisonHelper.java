@@ -15,14 +15,11 @@ public class ComparisonHelper {
         if(a == null) return true;
         if(b == null) return false;
 
-        int greaterCount = 0;
-
         for(int i = 0; i <= r; i++) {
             if(b[i] > a[i]) return false;
-            if(b[i] < a[i]) greaterCount++;
+            if(b[i] < a[i]) return true;
         }
-
-        return greaterCount > 0;
+        return false;
     }
 
     /**
@@ -39,6 +36,7 @@ public class ComparisonHelper {
 
         for(int i = 0; i <= r; i++) {
             if(b[i] > a[i]) return false;
+            if(b[i] < a[i]) return true;
         }
         return true;
     }

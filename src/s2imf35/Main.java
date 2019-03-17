@@ -15,6 +15,8 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
 //		ParityGame game = Parser.parseParityGame("inputs/unitTests/slides.gm");
+//        Set<Integer> result = Solver.solve(game);
+//        print(result);
         ParityGame[] games = {
             Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_inevitably_eat.gm"),
             Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_plato_starves.gm"),
