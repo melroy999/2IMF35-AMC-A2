@@ -26,16 +26,18 @@ public class Solver {
         Set<Integer> unchanged = new HashSet<>(G.n);
 
         // We loop until unchanged contains all vertices.
-        while(unchanged.size() == G.n) {
+        while(unchanged.size() != G.n) {
             int v = strategy.next();
             int[] liftValue = lift(v, rho, G);
 
             // We only register a change when rho < lift_v(rho).
             // TODO: This does seem to be counter-intuitive when combined with the max in lift.
             // TODO Why even take max with rho.get(v), given that it will never improve the situation?
-            if(ComparisonHelper.isGreater(liftValue, rho.get(v), G.d - 1)) {
+            if(!ComparisonHelper.isEqual(liftValue, rho.get(v), G.d - 1)) {
                 rho.put(v, liftValue);
                 unchanged.clear();
+            } else {
+                unchanged.add(v);
             }
         }
 
@@ -80,7 +82,7 @@ public class Solver {
         }
 
         // Find the maximum between rho(v) and result.
-        if(ComparisonHelper.isGreaterOrEqual(result, rho.get(v),G.d - 1)) {
+        if(ComparisonHelper.isGreater(result, rho.get(v),G.d - 1)) {
             return result;
         } else {
             return rho.get(v);
@@ -96,6 +98,10 @@ public class Solver {
      * @return An array that is is the least option in M^T, or null (denoting T) when no such array is available.
      */
     private static int[] progress(int[] a, int p, ParityGame G) {
+        if(a == null) {
+            return null;
+        }
+
         if(p % 2 == 0) {
             // p is even, so we should find the least m for which m >=_(p(v)) g(w) holds.
             // Thus, set all n_i values for i > p to 0.
