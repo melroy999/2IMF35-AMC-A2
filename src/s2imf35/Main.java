@@ -33,6 +33,7 @@ public class Main {
         for(ParityGame game : games) {
             result = Solver.solve(game, false, new InputOrderLiftingStrategy(game));
             print(result);
+            Validator.validate(game, 1, result);
         }
     }
 
