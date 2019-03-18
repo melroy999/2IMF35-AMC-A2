@@ -28,6 +28,6 @@ public class Solution {
             list = list.substring(0, list.length() - 1) + ", ...]";
         }
 
-        return list; // + " in " + counter.duration + " milliseconds.";
+        return list + "\nCalculated in " + counter.duration + " milliseconds with (" + counter.toString() + ").";
     }
 }

@@ -70,6 +70,7 @@ public abstract class AbstractExperiment {
             if(validator != null) {
                 validator.accept(G, solution.V);
             }
+
             System.out.println();
         }
     }

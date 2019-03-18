@@ -44,4 +44,21 @@ public class ProgressMeasure {
         }
         System.out.println();
     }
+
+    public void printStatistics() {
+        int TCount = 0;
+        int zeroCount = 0;
+
+        for (int[] entry : data) {
+            if (entry == null) {
+                TCount++;
+            } else if (Arrays.stream(entry).allMatch(i -> i == 0)) {
+                zeroCount++;
+            }
+        }
+
+        System.out.println("Number of entries: " + data.length);
+        System.out.println("Number of T entries: " + TCount);
+        System.out.println("Number of (0, 0, ...) entries: " + zeroCount);
+    }
 }

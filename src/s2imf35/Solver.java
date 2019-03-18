@@ -5,10 +5,9 @@ import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
 import s2imf35.util.ComparisonHelper;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static s2imf35.graph.NodeSpecification.Owner.Diamond;
@@ -20,8 +19,9 @@ public class Solver {
         // Initialize rho data structure.
         ProgressMeasure rho = new ProgressMeasure(G);
 
-        // A table that holds all vertices that remain unchanged.
-        Set<Integer> unchanged = new HashSet<>(G.n);
+        // Create a new performance measure.
+        PerformanceCounter counter = new PerformanceCounter();
+        Instant start = Instant.now();
 
         // The current step.
         int i = 0;
@@ -30,13 +30,17 @@ public class Solver {
             System.out.println("M = " + Arrays.toString(G.M));
         }
 
+        // The last vertex id that resulted in a change.
+        int noChangeIterations = 0;
+
         // We loop until unchanged contains all vertices.
-        while(unchanged.size() != G.n) {
+        do {
             int v = strategy.next();
+            counter.i++;
 
             // No need to lift vertices with the special symbol.
             if(rho.get(v) == null) {
-                unchanged.add(v);
+                counter.tSkips++;
                 continue;
             }
 
@@ -45,6 +49,7 @@ public class Solver {
             }
 
             int[] liftValue = lift(v, verbose, rho, G);
+            counter.lifted++;
 
             if(verbose) {
                 String name = G.getName(v);
@@ -55,9 +60,10 @@ public class Solver {
             // We only register a change when rho < lift_v(rho). I.e., the value must have become larger.
             if(ComparisonHelper.isGreater(liftValue, rho.get(v), G.d - 1)) {
                 rho.put(v, liftValue);
-                unchanged.clear();
+                noChangeIterations = 0;
+                counter.changed++;
             } else {
-                unchanged.add(v);
+                noChangeIterations++;
             }
 
             if(verbose) {
@@ -65,14 +71,21 @@ public class Solver {
                 name = name == null ? "v" + v : name;
                 System.out.println(" = rho[" + name + " := " + (liftValue == null ? "T" : Arrays.toString(liftValue)) + "]");
             }
-        }
+        } while(noChangeIterations <= G.n);
 
         if(verbose) {
             rho.print(G);
         }
 
+        // Measure the elapsed time.
+        Instant finish = Instant.now();
+        counter.duration = Duration.between(start, finish).toMillis();
+
+        System.out.println("d = " + G.d);
+        rho.printStatistics();
+
         // We have found a solution. Find which states belong to the winning set of player diamond.
-        return new Solution(rho.diamondWinningSet(), null);
+        return new Solution(rho.diamondWinningSet(), counter);
 
     }
 
@@ -89,8 +102,10 @@ public class Solver {
         int[] W = G.getSuccessors(v);
 
         // Calculate all the progress measures for the edges from v to W.
-        List<int[]> progressMeasures = Arrays.stream(W).mapToObj(w -> progress(rho.get(w), G.getPriority(v), G))
-                .collect(Collectors.toList());
+        List<int[]> progressMeasures = new ArrayList<>(W.length);
+        for(int w : W) {
+            progressMeasures.add(progress(rho.get(w), G.getPriority(v), G));
+        }
 
         int[] result;
         if(G.getOwner(v) == Diamond) {
