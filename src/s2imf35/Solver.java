@@ -3,8 +3,6 @@ package s2imf35;
 import s2imf35.data.ProgressMeasure;
 import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
-import s2imf35.strategies.FixedLiftingStrategy;
-import s2imf35.strategies.InputOrderLiftingStrategy;
 import s2imf35.util.ComparisonHelper;
 
 import java.util.Arrays;
@@ -16,19 +14,28 @@ import java.util.stream.Collectors;
 import static s2imf35.graph.NodeSpecification.Owner.Diamond;
 
 public class Solver {
-    public static Set<Integer> solve(ParityGame G) {
+    public static Set<Integer> solve(ParityGame G, boolean verbose, AbstractLiftingStrategy strategy) {
+        System.out.println("Solving: " + G.name);
+
         // Initialize rho data structure.
         ProgressMeasure rho = new ProgressMeasure(G);
-
-        // Get the desired iterator type.
-        AbstractLiftingStrategy strategy = new InputOrderLiftingStrategy(G);
-//        AbstractLiftingStrategy strategy = new FixedLiftingStrategy();
 
         // A table that holds all vertices that remain unchanged.
         Set<Integer> unchanged = new HashSet<>(G.n);
 
+        // The current step.
+        int i = 0;
+
+        if(verbose) {
+            System.out.println("M = " + Arrays.toString(G.M));
+        }
+
         // We loop until unchanged contains all vertices.
         while(unchanged.size() != G.n) {
+            if(i == 503) {
+                System.out.println();
+            }
+
             int v = strategy.next();
 
             // No need to lift vertices with the special symbol.
@@ -37,21 +44,35 @@ public class Solver {
                 continue;
             }
 
-            int[] liftValue = lift(v, rho, G);
+            if(verbose) {
+                System.out.print("Step " + i++ + ": p(v) = " + G.getPriority(v) + "; ");
+            }
 
-            // We only register a change when rho < lift_v(rho).
-            // TODO: This does seem to be counter-intuitive when combined with the max in lift.
-            // TODO Why even take max with rho.get(v), given that it will never improve the situation?
-            if(!ComparisonHelper.isEqual(liftValue, rho.get(v), G.d - 1)) {
+            int[] liftValue = lift(v, verbose, rho, G);
+
+            if(verbose) {
+                String name = G.getName(v);
+                name = name == null ? "v" + v : name;
+                System.out.print(" = rho[" + name + " := max{" + (rho.get(v) == null ? "T" : Arrays.toString(rho.get(v))) + ", " + (liftValue == null ? "T" : Arrays.toString(liftValue)) + "}]");
+            }
+
+            // We only register a change when rho < lift_v(rho). I.e., the value must have become larger.
+            if(ComparisonHelper.isGreater(liftValue, rho.get(v), G.d - 1)) {
                 rho.put(v, liftValue);
                 unchanged.clear();
             } else {
                 unchanged.add(v);
             }
 
-            String name = G.getName(v);
-            name = name == null ? "v" + v : name;
-            System.out.println("Lift(rho, " + name + ") = rho[" + name + " := " + Arrays.toString(liftValue) + "]");
+            if(verbose) {
+                String name = G.getName(v);
+                name = name == null ? "v" + v : name;
+                System.out.println(" = rho[" + name + " := " + (liftValue == null ? "T" : Arrays.toString(liftValue)) + "]");
+            }
+        }
+
+        if(verbose) {
+            rho.print(G);
         }
 
         // We have found a solution. Find which states belong to the winning set of player diamond.
@@ -67,7 +88,7 @@ public class Solver {
      * @param G The parity game graph.
      * @return The new value for rho(v).
      */
-    private static int[] lift(int v, ProgressMeasure rho, ParityGame G) {
+    private static int[] lift(int v, boolean verbose, ProgressMeasure rho, ParityGame G) {
         // Get all transitions starting in v.
         int[] W = G.getSuccessors(v);
 
@@ -77,29 +98,41 @@ public class Solver {
 
         int[] result;
         if(G.getOwner(v) == Diamond) {
+
+            if(verbose) {
+                String name = G.getName(v);
+                name = name == null ? "v" + v : name;
+                System.out.print("Lift(rho, " + name + ") = rho[" + name + " := min{" + progressMeasures.stream()
+                        .map(e -> e == null ? "T" : Arrays.toString(e)).collect(Collectors.joining(", ")) + "}]");
+            }
+
             // Find the minimal progress value.
             result = progressMeasures.get(0);
             for(int i = 1; i < progressMeasures.size(); i++) {
-                if(ComparisonHelper.isGreaterOrEqual(result, rho.get(i), G.d - 1)) {
+                if(ComparisonHelper.isGreaterOrEqual(result, progressMeasures.get(i), G.d - 1)) {
                     result = progressMeasures.get(i);
                 }
             }
         } else {
+
+            if(verbose) {
+                String name = G.getName(v);
+                name = name == null ? "v" + v : name;
+                System.out.print("Lift(rho, " + name + ") = rho[" + name + " := max{" + progressMeasures.stream()
+                        .map(e -> e == null ? "T" : Arrays.toString(e)).collect(Collectors.joining(", ")) + "}]");
+            }
+
             // Find the maximal progress value.
             result = progressMeasures.get(0);
             for(int i = 1; i < progressMeasures.size(); i++) {
-                if(ComparisonHelper.isGreaterOrEqual(rho.get(i), result, G.d - 1)) {
+                if(ComparisonHelper.isGreaterOrEqual(progressMeasures.get(i), result, G.d - 1)) {
                     result = progressMeasures.get(i);
                 }
             }
         }
 
         // Find the maximum between rho(v) and result.
-        if(ComparisonHelper.isGreater(result, rho.get(v),G.d - 1)) {
-            return result;
-        } else {
-            return rho.get(v);
-        }
+        return result;
     }
 
     /**

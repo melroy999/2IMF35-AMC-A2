@@ -1,6 +1,9 @@
 package s2imf35;
 
 import s2imf35.graph.ParityGame;
+import s2imf35.strategies.AbstractLiftingStrategy;
+import s2imf35.strategies.FixedLiftingStrategy;
+import s2imf35.strategies.InputOrderLiftingStrategy;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -14,18 +17,21 @@ public class Main {
      * @throws IOException Thrown when an input file cannot be found or read.
      */
     public static void main(String[] args) throws IOException {
-//		ParityGame game = Parser.parseParityGame("inputs/unitTests/slides.gm");
-//        Set<Integer> result = Solver.solve(game);
-//        print(result);
+		ParityGame G = Parser.parseParityGame("inputs/unitTests/slides.gm");
+
+        // Get the desired iterator type.
+        Set<Integer> result = Solver.solve(G, true, new FixedLiftingStrategy());
+        print(result);
+
         ParityGame[] games = {
             Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_inevitably_eat.gm"),
-            Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_plato_starves.gm"),
             Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_possibly_eat.gm"),
             Parser.parseParityGame("inputs/experiment1/dining_2.plato_infinitely_often_can_eat.gm"),
+            Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_plato_starves.gm"),
         };
 
         for(ParityGame game : games) {
-            Set<Integer> result = Solver.solve(game);
+            result = Solver.solve(game, false, new InputOrderLiftingStrategy(game));
             print(result);
         }
     }
@@ -40,5 +46,6 @@ public class Main {
         }
 
         System.out.println(list);
+        System.out.println();
     }
 }

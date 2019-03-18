@@ -20,6 +20,6 @@ public class Parser {
      */
     public static ParityGame parseParityGame(String path) throws IOException {
         String contents = new String(Files.readAllBytes(Paths.get(path)), StandardCharsets.UTF_8);
-        return new ParityGame(contents);
+        return new ParityGame(contents, path.split("/")[2]);
     }
 }
