@@ -24,7 +24,13 @@ public class ParityGame {
     // Get the original order of the vertices.
     public final int[] originalOrder;
 
-    public ParityGame(String input) throws NumberFormatException {
+    // A name which we can use to recognize the game.
+    public final String name;
+
+    public ParityGame(String input, String name) throws NumberFormatException {
+        // Set the name.
+        this.name = name;
+
         // Parse the input and split in the semicolon symbol, which terminates entries.
         String[] lines = Arrays.stream(input.split(";")).map(String::trim).toArray(String[]::new);
 

@@ -31,7 +31,7 @@ public class Main {
         };
 
         for(ParityGame game : games) {
-            result = Solver.solve(game, true, new InputOrderLiftingStrategy(game));
+            result = Solver.solve(game, false, new InputOrderLiftingStrategy(game));
             print(result);
         }
     }

@@ -15,6 +15,8 @@ import static s2imf35.graph.NodeSpecification.Owner.Diamond;
 
 public class Solver {
     public static Set<Integer> solve(ParityGame G, boolean verbose, AbstractLiftingStrategy strategy) {
+        System.out.println("Solving: " + G.name);
+
         // Initialize rho data structure.
         ProgressMeasure rho = new ProgressMeasure(G);
 
@@ -30,6 +32,10 @@ public class Solver {
 
         // We loop until unchanged contains all vertices.
         while(unchanged.size() != G.n) {
+            if(i == 503) {
+                System.out.println();
+            }
+
             int v = strategy.next();
 
             // No need to lift vertices with the special symbol.
@@ -63,6 +69,10 @@ public class Solver {
                 name = name == null ? "v" + v : name;
                 System.out.println(" = rho[" + name + " := " + (liftValue == null ? "T" : Arrays.toString(liftValue)) + "]");
             }
+        }
+
+        if(verbose) {
+            rho.print(G);
         }
 
         // We have found a solution. Find which states belong to the winning set of player diamond.
@@ -99,7 +109,7 @@ public class Solver {
             // Find the minimal progress value.
             result = progressMeasures.get(0);
             for(int i = 1; i < progressMeasures.size(); i++) {
-                if(ComparisonHelper.isGreaterOrEqual(result, rho.get(i), G.d - 1)) {
+                if(ComparisonHelper.isGreaterOrEqual(result, progressMeasures.get(i), G.d - 1)) {
                     result = progressMeasures.get(i);
                 }
             }
@@ -115,7 +125,7 @@ public class Solver {
             // Find the maximal progress value.
             result = progressMeasures.get(0);
             for(int i = 1; i < progressMeasures.size(); i++) {
-                if(ComparisonHelper.isGreaterOrEqual(rho.get(i), result, G.d - 1)) {
+                if(ComparisonHelper.isGreaterOrEqual(progressMeasures.get(i), result, G.d - 1)) {
                     result = progressMeasures.get(i);
                 }
             }

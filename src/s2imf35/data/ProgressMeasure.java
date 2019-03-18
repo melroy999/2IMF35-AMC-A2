@@ -2,6 +2,7 @@ package s2imf35.data;
 
 import s2imf35.graph.ParityGame;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,9 +12,6 @@ import java.util.Set;
 public class ProgressMeasure {
     // Naive implementation: the table is a 2d array of integers.
     private final int[][] data;
-
-    // The vertices that are set to the special value.
-    private final HashSet<Integer> trapped = new HashSet<>();
 
     public ProgressMeasure(ParityGame G) {
         data = new int[G.n][G.d];
@@ -35,5 +33,15 @@ public class ProgressMeasure {
             }
         }
         return result;
+    }
+
+    public void print(ParityGame G) {
+        System.out.println();
+        for(int v = 0; v < data.length; v++) {
+            String name = G.getName(v);
+            name = name == null ? "v" + v : name;
+            System.out.println(name + ": p(v) = " + G.getPriority(v) + "; " + (data[v] == null ? "T" : Arrays.toString(data[v])));
+        }
+        System.out.println();
     }
 }
