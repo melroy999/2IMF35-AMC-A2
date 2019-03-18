@@ -27,6 +27,10 @@ public class Validator {
         }
 
         // Check whether the two arrays are equal.
-        System.out.println("Valid result: " + answer.equals(result));
+        if(answer.equals(result)) {
+            System.out.println("Cross validation with PGSolver solution has been done successfully: the result is valid.");
+        } else {
+            System.out.println("WARNING: Cross validation shows that the result is invalid.");
+        }
     }
 }

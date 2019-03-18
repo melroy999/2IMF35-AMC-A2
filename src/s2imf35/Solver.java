@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 import static s2imf35.graph.NodeSpecification.Owner.Diamond;
 
 public class Solver {
-    public static Set<Integer> solve(ParityGame G, boolean verbose, AbstractLiftingStrategy strategy) {
+    public static Solution solve(ParityGame G, boolean verbose, AbstractLiftingStrategy strategy) {
         System.out.println("Solving: " + G.name);
 
         // Initialize rho data structure.
@@ -32,10 +32,6 @@ public class Solver {
 
         // We loop until unchanged contains all vertices.
         while(unchanged.size() != G.n) {
-            if(i == 503) {
-                System.out.println();
-            }
-
             int v = strategy.next();
 
             // No need to lift vertices with the special symbol.
@@ -76,7 +72,7 @@ public class Solver {
         }
 
         // We have found a solution. Find which states belong to the winning set of player diamond.
-        return rho.diamondWinningSet();
+        return new Solution(rho.diamondWinningSet(), null);
 
     }
 
