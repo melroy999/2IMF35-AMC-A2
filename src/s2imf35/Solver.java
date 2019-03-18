@@ -21,6 +21,9 @@ public class Solver {
         // A table that holds all vertices that remain unchanged.
         Set<Integer> unchanged = new HashSet<>(G.n);
 
+        // The current step.
+        int i = 0;
+
         // We loop until unchanged contains all vertices.
         while(unchanged.size() != G.n) {
             int v = strategy.next();
@@ -31,7 +34,18 @@ public class Solver {
                 continue;
             }
 
-            int[] liftValue = lift(v, rho, G);
+
+            if(verbose) {
+                System.out.print("Step " + i++ + ": ");
+            }
+
+            int[] liftValue = lift(v, verbose, rho, G);
+
+            if(verbose) {
+                String name = G.getName(v);
+                name = name == null ? "v" + v : name;
+                System.out.print(" = rho[" + name + " := max{" + (rho.get(v) == null ? "T" : Arrays.toString(rho.get(v))) + ", " + (liftValue == null ? "T" : Arrays.toString(liftValue)) + "}]");
+            }
 
             // We only register a change when rho < lift_v(rho). I.e., the value must have become larger.
             if(ComparisonHelper.isGreater(liftValue, rho.get(v), G.d - 1)) {
@@ -44,7 +58,7 @@ public class Solver {
             if(verbose) {
                 String name = G.getName(v);
                 name = name == null ? "v" + v : name;
-                System.out.println("Lift(rho, " + name + ") = rho[" + name + " := " + Arrays.toString(liftValue) + "]");
+                System.out.println(" = rho[" + name + " := " + (liftValue == null ? "T" : Arrays.toString(liftValue)) + "]");
             }
         }
 
@@ -61,7 +75,7 @@ public class Solver {
      * @param G The parity game graph.
      * @return The new value for rho(v).
      */
-    private static int[] lift(int v, ProgressMeasure rho, ParityGame G) {
+    private static int[] lift(int v, boolean verbose, ProgressMeasure rho, ParityGame G) {
         // Get all transitions starting in v.
         int[] W = G.getSuccessors(v);
 
@@ -71,6 +85,14 @@ public class Solver {
 
         int[] result;
         if(G.getOwner(v) == Diamond) {
+
+            if(verbose) {
+                String name = G.getName(v);
+                name = name == null ? "v" + v : name;
+                System.out.print("Lift(rho, " + name + ") = rho[" + name + " := min{" + progressMeasures.stream()
+                        .map(e -> e == null ? "T" : Arrays.toString(e)).collect(Collectors.joining(", ")) + "}]");
+            }
+
             // Find the minimal progress value.
             result = progressMeasures.get(0);
             for(int i = 1; i < progressMeasures.size(); i++) {
@@ -79,6 +101,14 @@ public class Solver {
                 }
             }
         } else {
+
+            if(verbose) {
+                String name = G.getName(v);
+                name = name == null ? "v" + v : name;
+                System.out.print("Lift(rho, " + name + ") = rho[" + name + " := max{" + progressMeasures.stream()
+                        .map(e -> e == null ? "T" : Arrays.toString(e)).collect(Collectors.joining(", ")) + "}]");
+            }
+
             // Find the maximal progress value.
             result = progressMeasures.get(0);
             for(int i = 1; i < progressMeasures.size(); i++) {
