@@ -1,0 +1,6 @@
+PGSolver Collection Ver. 4.0: Parity Game Solver
+Authors: Oliver Friedmann (University of Munich) and Martin Lange (University of Kassel), 2008-2017
+http://tcsprojects.org
+
+Parsing ............................... 4.90 sec
+Chosen solver `recursive' ............. 

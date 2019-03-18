@@ -8,7 +8,9 @@
 !/results/
 !/mcrl2/
 !/data/
+!/maxified-solutions/
 
 # Except for the following files:
 !.gitignore
 !README.md
+!maxify.sh
