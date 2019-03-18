@@ -41,6 +41,7 @@ public class Solver {
             // No need to lift vertices with the special symbol.
             if(rho.get(v) == null) {
                 counter.tSkips++;
+                noChangeIterations++;
                 continue;
             }
 
