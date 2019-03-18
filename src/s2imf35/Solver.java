@@ -24,6 +24,10 @@ public class Solver {
         // The current step.
         int i = 0;
 
+        if(verbose) {
+            System.out.println("M = " + Arrays.toString(G.M));
+        }
+
         // We loop until unchanged contains all vertices.
         while(unchanged.size() != G.n) {
             int v = strategy.next();
@@ -34,9 +38,8 @@ public class Solver {
                 continue;
             }
 
-
             if(verbose) {
-                System.out.print("Step " + i++ + ": ");
+                System.out.print("Step " + i++ + ": p(v) = " + G.getPriority(v) + "; ");
             }
 
             int[] liftValue = lift(v, verbose, rho, G);
