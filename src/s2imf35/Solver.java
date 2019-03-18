@@ -3,8 +3,6 @@ package s2imf35;
 import s2imf35.data.ProgressMeasure;
 import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
-import s2imf35.strategies.FixedLiftingStrategy;
-import s2imf35.strategies.InputOrderLiftingStrategy;
 import s2imf35.util.ComparisonHelper;
 
 import java.util.Arrays;
@@ -16,13 +14,9 @@ import java.util.stream.Collectors;
 import static s2imf35.graph.NodeSpecification.Owner.Diamond;
 
 public class Solver {
-    public static Set<Integer> solve(ParityGame G) {
+    public static Set<Integer> solve(ParityGame G, boolean verbose, AbstractLiftingStrategy strategy) {
         // Initialize rho data structure.
         ProgressMeasure rho = new ProgressMeasure(G);
-
-        // Get the desired iterator type.
-        AbstractLiftingStrategy strategy = new InputOrderLiftingStrategy(G);
-//        AbstractLiftingStrategy strategy = new FixedLiftingStrategy();
 
         // A table that holds all vertices that remain unchanged.
         Set<Integer> unchanged = new HashSet<>(G.n);
@@ -39,19 +33,19 @@ public class Solver {
 
             int[] liftValue = lift(v, rho, G);
 
-            // We only register a change when rho < lift_v(rho).
-            // TODO: This does seem to be counter-intuitive when combined with the max in lift.
-            // TODO Why even take max with rho.get(v), given that it will never improve the situation?
-            if(!ComparisonHelper.isEqual(liftValue, rho.get(v), G.d - 1)) {
+            // We only register a change when rho < lift_v(rho). I.e., the value must have become larger.
+            if(ComparisonHelper.isGreater(liftValue, rho.get(v), G.d - 1)) {
                 rho.put(v, liftValue);
                 unchanged.clear();
             } else {
                 unchanged.add(v);
             }
 
-            String name = G.getName(v);
-            name = name == null ? "v" + v : name;
-            System.out.println("Lift(rho, " + name + ") = rho[" + name + " := " + Arrays.toString(liftValue) + "]");
+            if(verbose) {
+                String name = G.getName(v);
+                name = name == null ? "v" + v : name;
+                System.out.println("Lift(rho, " + name + ") = rho[" + name + " := " + Arrays.toString(liftValue) + "]");
+            }
         }
 
         // We have found a solution. Find which states belong to the winning set of player diamond.
@@ -95,11 +89,7 @@ public class Solver {
         }
 
         // Find the maximum between rho(v) and result.
-        if(ComparisonHelper.isGreater(result, rho.get(v),G.d - 1)) {
-            return result;
-        } else {
-            return rho.get(v);
-        }
+        return result;
     }
 
     /**

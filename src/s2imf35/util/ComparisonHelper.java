@@ -12,13 +12,21 @@ public class ComparisonHelper {
      * @return Whether a >(_r) b holds.
      */
     public static boolean isGreater(int[] a, int[] b, int r) {
+        // T > T does not hold.
+        if(a == null && b == null) return false;
+
+        // T > b holds when b != T.
         if(a == null) return true;
+
+        // a > T does not hold.
         if(b == null) return false;
 
         for(int i = 0; i <= r; i++) {
             if(b[i] > a[i]) return false;
             if(b[i] < a[i]) return true;
         }
+
+        // The two pairs are equal.
         return false;
     }
 
@@ -31,13 +39,18 @@ public class ComparisonHelper {
      * @return Whether a >=(_r) b holds.
      */
     public static boolean isGreaterOrEqual(int[] a, int[] b, int r) {
+        // a >= T does not hold when a != T.
         if(b == null && a != null) return false;
+
+        // T >= b, where b may also be T.
         if(a == null) return true;
 
         for(int i = 0; i <= r; i++) {
             if(b[i] > a[i]) return false;
             if(b[i] < a[i]) return true;
         }
+
+        // The two pairs are equal.
         return true;
     }
 
