@@ -14,7 +14,7 @@ import static s2imf35.graph.NodeSpecification.Owner.Diamond;
 
 public class LinearSolver {
     public static Solution solve(ParityGame G, AbstractLiftingStrategy strategy) {
-        System.out.println("Solving: " + G.name);
+        System.out.println("Solving: " + G.name + "(d = " + G.d + ", n = " + G.n + ")");
 
         // Initialize rho data structure.
         LinearProgressMeasure rho = new LinearProgressMeasure(G);

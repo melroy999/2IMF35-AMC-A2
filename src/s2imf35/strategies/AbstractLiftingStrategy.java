@@ -12,6 +12,8 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
                 return new RandomLiftingStrategy(G, seed);
             case 2:
                 return new InputOrderRepeatLiftingStrategy(G);
+            case 3:
+                return new RandomRepeatLiftingStrategy(G, seed);
             case 0: default:
                 return new InputOrderLiftingStrategy(G);
         }
@@ -21,6 +23,7 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
         switch (i) {
             case 1: return "Random order";
             case 2: return "Input order with repetition";
+            case 3: return "Random order with repetition";
             case 0: default: return "Input order";
         }
     }

@@ -8,14 +8,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class RandomLiftingStrategy extends AbstractLiftingStrategy {
+public class RandomRepeatLiftingStrategy extends AbstractLiftingStrategy {
     // The order we have determined.
     private final Integer[] indices;
 
     // The current index.
     private int i = 0;
 
-    public RandomLiftingStrategy(ParityGame G, long seed) {
+    public RandomRepeatLiftingStrategy(ParityGame G, long seed) {
         List<Integer> indices = Arrays.stream(G.originalOrder).boxed().collect(Collectors.toList());
 
         // Create a seeded random.
@@ -54,5 +54,14 @@ public class RandomLiftingStrategy extends AbstractLiftingStrategy {
             i = 0;
         }
         return value;
+    }
+
+    @Override
+    public void back() {
+        if(i > 0) {
+            i--;
+        } else {
+            i = indices.length - 1;
+        }
     }
 }
