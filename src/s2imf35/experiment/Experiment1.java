@@ -2,13 +2,11 @@ package s2imf35.experiment;
 
 import s2imf35.*;
 import s2imf35.graph.ParityGame;
-import s2imf35.strategies.AbstractLiftingStrategy;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 /**
  * Solution for exercise one of part II.
@@ -26,9 +24,10 @@ public class Experiment1 extends AbstractExperiment {
         printHeader("Dining Philosophers");
 
         // Gather the optional parameters.
-        int strategyId = (Integer) argMap.getOrDefault("-strategy", 0);
-        boolean verbose = (Boolean) argMap.getOrDefault("-steps", false);
-        boolean validate = (Boolean) argMap.getOrDefault("-validate", false);
+        int strategyId = (int) argMap.getOrDefault("-strategy", 0);
+        boolean verbose = (boolean) argMap.getOrDefault("-steps", false);
+        boolean linear = (boolean) argMap.getOrDefault("-linear", false);
+        boolean validate = (boolean) argMap.getOrDefault("-validate", false);
 
         // Gather the files for the experiment.
         String rootPath = "inputs/experiment1/";
@@ -54,6 +53,6 @@ public class Experiment1 extends AbstractExperiment {
         }
 
         // Run the tests.
-        runAll(strategyId, rootPath, verbose, gameNames, metrics, validator);
+        runAll(strategyId, rootPath, verbose, linear, gameNames, metrics, validator);
     }
 }

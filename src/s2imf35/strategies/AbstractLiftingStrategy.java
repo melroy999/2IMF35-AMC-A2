@@ -11,6 +11,6 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
             case 0:
                 return new InputOrderLiftingStrategy(G);
         }
-        return null;
+        return new InputOrderLiftingStrategy(G);
     }
 }

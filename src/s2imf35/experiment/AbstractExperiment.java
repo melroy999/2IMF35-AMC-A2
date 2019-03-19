@@ -3,7 +3,8 @@ package s2imf35.experiment;
 import s2imf35.Parser;
 import s2imf35.PerformanceCounter;
 import s2imf35.Solution;
-import s2imf35.Solver;
+import s2imf35.solver.LinearSolver;
+import s2imf35.solver.Solver;
 import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
 
@@ -56,14 +57,20 @@ public abstract class AbstractExperiment {
                 .map(File::getName).collect(Collectors.toList());
     }
 
-    void runAll(int strategyId, String rootPath, boolean verbose, List<String> gameNames, HashMap<String, PerformanceCounter> metrics, BiConsumer<ParityGame, Set<Integer>> validator) throws IOException {
+    void runAll(int strategyId, String rootPath, boolean verbose, boolean linear, List<String> gameNames, HashMap<String, PerformanceCounter> metrics, BiConsumer<ParityGame, Set<Integer>> validator) throws IOException {
         for(String game : gameNames) {
             // Import the game.
             ParityGame G = Parser.parseParityGame(rootPath + game);
             System.out.println("Parity game: [" + game + "]");
 
             // Solve the game.
-            Solution solution = Solver.solve(G, verbose, AbstractLiftingStrategy.get(G, strategyId));
+            Solution solution;
+            if(linear) {
+                solution = LinearSolver.solve(G, AbstractLiftingStrategy.get(G, strategyId));
+            } else {
+                solution = Solver.solve(G, verbose, AbstractLiftingStrategy.get(G, strategyId));
+            }
+
             System.out.println(solution);
             System.out.println("Contains vertex with index 0: " + solution.V.contains(0));
 

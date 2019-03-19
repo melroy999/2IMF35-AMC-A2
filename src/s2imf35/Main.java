@@ -4,15 +4,14 @@ import s2imf35.experiment.Experiment1;
 import s2imf35.experiment.Experiment2;
 import s2imf35.experiment.Experiment3;
 import s2imf35.graph.ParityGame;
+import s2imf35.solver.LinearSolver;
+import s2imf35.solver.Solver;
 import s2imf35.strategies.AbstractLiftingStrategy;
 import s2imf35.strategies.FixedLiftingStrategy;
-import s2imf35.strategies.InputOrderLiftingStrategy;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class Main {
 
@@ -75,7 +74,8 @@ public class Main {
         }
 
         // Find the optional parameters.
-        boolean verbose = (Boolean) args.getOrDefault("-steps", false);
+        boolean verbose = (boolean) args.getOrDefault("-steps", false);
+        boolean linear = (boolean) args.getOrDefault("-linear", false);
 
         // Everything is filled in. Call the solver with the correct configuration.
         ParityGame G = Parser.parseParityGame(gameFile);
@@ -86,7 +86,13 @@ public class Main {
         System.out.println("Parity game: [" + temp[temp.length - 1] + "]");
 
         // Solve the parity game.
-        Solution solution = Solver.solve(G, verbose, strategy);
+        Solution solution;
+        if(linear) {
+            solution = LinearSolver.solve(G, strategy);
+        } else {
+            solution = Solver.solve(G, verbose, strategy);
+        }
+
         System.out.println(solution);
     }
 
@@ -120,6 +126,8 @@ public class Main {
                 data.put("-experiment3", true);
             } else if(arg.equals("-unit")) {
                 data.put("-unit", true);
+            } else if(arg.equals("-linear")) {
+                data.put("-linear", true);
             } else if(arg.equals("-all")) {
                 data.put("-unit", true);
                 data.put("-experiment1", true);

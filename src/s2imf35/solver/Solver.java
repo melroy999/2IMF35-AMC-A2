@@ -1,5 +1,7 @@
-package s2imf35;
+package s2imf35.solver;
 
+import s2imf35.PerformanceCounter;
+import s2imf35.Solution;
 import s2imf35.data.ProgressMeasure;
 import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
