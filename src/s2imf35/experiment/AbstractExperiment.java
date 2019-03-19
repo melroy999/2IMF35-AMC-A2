@@ -57,7 +57,18 @@ public abstract class AbstractExperiment {
                 .map(File::getName).collect(Collectors.toList());
     }
 
-    void runAll(int strategyId, String rootPath, boolean verbose, boolean linear, List<String> gameNames, HashMap<String, PerformanceCounter> metrics, BiConsumer<ParityGame, Set<Integer>> validator) throws IOException {
+    void runAll(String rootPath, List<String> gameNames, Map<String, Object> argMap, HashMap<String, PerformanceCounter> metrics, BiConsumer<ParityGame, Set<Integer>> validator) throws IOException {
+
+        int strategyId = (int) argMap.getOrDefault("-strategy", 0);
+        boolean verbose = (boolean) argMap.getOrDefault("-steps", false);
+        boolean linear = (boolean) argMap.getOrDefault("-linear", false);
+        int seed = (Integer) argMap.getOrDefault("-seed", 0);
+
+        System.out.println(">>> Strategy: [" + AbstractLiftingStrategy.getName(strategyId) + "]" +
+                ", seed = " + seed + ", linear = " + linear);
+        System.out.println();
+
+
         for(String game : gameNames) {
             // Import the game.
             ParityGame G = Parser.parseParityGame(rootPath + game);
@@ -66,9 +77,9 @@ public abstract class AbstractExperiment {
             // Solve the game.
             Solution solution;
             if(linear) {
-                solution = LinearSolver.solve(G, AbstractLiftingStrategy.get(G, strategyId));
+                solution = LinearSolver.solve(G, AbstractLiftingStrategy.get(G, strategyId, seed));
             } else {
-                solution = Solver.solve(G, verbose, AbstractLiftingStrategy.get(G, strategyId));
+                solution = Solver.solve(G, verbose, AbstractLiftingStrategy.get(G, strategyId, seed));
             }
 
             System.out.println(solution);

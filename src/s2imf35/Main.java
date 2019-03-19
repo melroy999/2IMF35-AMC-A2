@@ -65,6 +65,7 @@ public class Main {
         // Get the path of the parity game.
         String gameFile = (String) args.getOrDefault("-game", null);
         int strategyId = (Integer) args.getOrDefault("-strategy", 0);
+        int seed = (Integer) args.getOrDefault("-seed", 0);
 
         // Check whether we have all the required parameters.
         if(gameFile == null) {
@@ -79,7 +80,7 @@ public class Main {
 
         // Everything is filled in. Call the solver with the correct configuration.
         ParityGame G = Parser.parseParityGame(gameFile);
-        AbstractLiftingStrategy strategy = AbstractLiftingStrategy.get(G, strategyId);
+        AbstractLiftingStrategy strategy = AbstractLiftingStrategy.get(G, strategyId, seed);
 
         // Report the file name for clarity.
         String[] temp = gameFile.split("/");
@@ -116,8 +117,10 @@ public class Main {
                 data.put("-steps", true);
             }else if(arg.equals("-validate")) {
                 data.put("-validate", true);
-            } else if(arg.equals("-strategy")) {
-                data.put("-game", getStrategyId(arg.substring(arg.indexOf("=") + 1, arg.length())));
+            } else if(arg.startsWith("-strategy")) {
+                data.put("-strategy", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
+            } else if(arg.startsWith("-seed")) {
+                data.put("-seed", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
             } else if(arg.equals("-experiment1")) {
                 data.put("-experiment1", true);
             } else if(arg.equals("-experiment2")) {
@@ -137,10 +140,6 @@ public class Main {
         }
 
         return data;
-    }
-
-    private static int getStrategyId(String input) {
-        return Integer.parseInt(input);
     }
 
 //    public static void deo() throws IOException {

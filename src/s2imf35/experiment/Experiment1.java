@@ -24,9 +24,6 @@ public class Experiment1 extends AbstractExperiment {
         printHeader("Dining Philosophers");
 
         // Gather the optional parameters.
-        int strategyId = (int) argMap.getOrDefault("-strategy", 0);
-        boolean verbose = (boolean) argMap.getOrDefault("-steps", false);
-        boolean linear = (boolean) argMap.getOrDefault("-linear", false);
         boolean validate = (boolean) argMap.getOrDefault("-validate", false);
 
         // Gather the files for the experiment.
@@ -53,6 +50,6 @@ public class Experiment1 extends AbstractExperiment {
         }
 
         // Run the tests.
-        runAll(strategyId, rootPath, verbose, linear, gameNames, metrics, validator);
+        runAll(rootPath, gameNames, argMap, metrics, validator);
     }
 }
