@@ -76,20 +76,30 @@ public class LinearSolver {
         // The priority we are working under.
         int p = G.getPriority(v);
 
-        // Find all unique values in the progress measure table at positions in W, and progress.
-        Set<Long> values = new HashSet<>();
-        for(int w : W) {
-            values.add(rho.get(w));
-        }
-
         // Select the lift value.
         long result;
         if(G.getOwner(v) == Diamond) {
+            // Find the minimum rho value for elements in w.
+            long min = rho.get(W[0]);
+            for(int i = 1; i < W.length; i++) {
+                if(min > rho.get(W[i])) {
+                    min = rho.get(W[i]);
+                }
+            }
+
             // Find the minimal progress value.
-            result = progress(Collections.min(values), p, rho, G);
+            result = progress(min, p, rho, G);
         } else {
+            // Find the maximum rho value for elements in w.
+            long max = rho.get(W[0]);
+            for(int i = 1; i < W.length; i++) {
+                if(max < rho.get(W[i])) {
+                    max = rho.get(W[i]);
+                }
+            }
+
             // Find the maximal progress value.
-            result = progress(Collections.max(values), p, rho, G);
+            result = progress(max, p, rho, G);
         }
 
         // Our calculations might result in a larger value than T. Cap to T.
