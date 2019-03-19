@@ -26,9 +26,6 @@ public class LinearSolver {
         // The last vertex id that resulted in a change.
         int noChangeIterations = 0;
 
-        // The current step.
-        int i = 0;
-
         // We loop until unchanged contains all vertices.
         do {
             int v = strategy.next();
@@ -50,6 +47,7 @@ public class LinearSolver {
                 rho.set(v, lift);
                 noChangeIterations = 0;
                 counter.changed++;
+                strategy.back();
             } else {
                 noChangeIterations++;
             }
@@ -79,29 +77,19 @@ public class LinearSolver {
         int p = G.getPriority(v);
 
         // Find all unique values in the progress measure table at positions in W, and progress.
-//        Set<Long> values = new HashSet<>();
-//        for(int w : W) {
-//            values.add(rho.get(w));
-//        }
-//
-//        Set<Long> progressions = new HashSet<>();
-//        for(long prog : values) {
-//            progressions.add(progress(prog, p, rho, G));
-//        }
-
-        List<Long> progressions = new ArrayList<>();
+        Set<Long> values = new HashSet<>();
         for(int w : W) {
-            progressions.add(progress(rho.get(w), p, rho, G));
+            values.add(rho.get(w));
         }
 
         // Select the lift value.
         long result;
         if(G.getOwner(v) == Diamond) {
             // Find the minimal progress value.
-            result = Collections.min(progressions);
+            result = progress(Collections.min(values), p, rho, G);
         } else {
             // Find the maximal progress value.
-            result = Collections.max(progressions);
+            result = progress(Collections.max(values), p, rho, G);
         }
 
         // Our calculations might result in a larger value than T. Cap to T.

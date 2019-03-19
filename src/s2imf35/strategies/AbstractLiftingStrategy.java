@@ -10,6 +10,8 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
         switch (i) {
             case 1:
                 return new RandomLiftingStrategy(G, seed);
+            case 2:
+                return new InputOrderRepeatLiftingStrategy(G);
             case 0: default:
                 return new InputOrderLiftingStrategy(G);
         }
@@ -18,7 +20,12 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
     public static String getName(int i) {
         switch (i) {
             case 1: return "Random order";
+            case 2: return "Input order with repetition";
             case 0: default: return "Input order";
         }
+    }
+
+    public void back() {
+        // Default implementation does nothing on a back step.
     }
 }

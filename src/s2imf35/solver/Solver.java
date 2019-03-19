@@ -65,6 +65,7 @@ public class Solver {
                 rho.put(v, liftValue);
                 noChangeIterations = 0;
                 counter.changed++;
+                strategy.back();
             } else {
                 noChangeIterations++;
             }
