@@ -20,7 +20,7 @@ public class Validator {
 
         String target = contents.substring(contents.indexOf("{") + 1, contents.indexOf("}"));
 
-        Set<Integer> answer = new HashSet<>(G.n);  // Or a more realistic size
+        Set<Integer> answer = new HashSet<>(G.n);
         StringTokenizer st = new StringTokenizer(target, ",");
         while(st.hasMoreTokens()) {
             answer.add(Integer.parseInt(st.nextToken().trim()));

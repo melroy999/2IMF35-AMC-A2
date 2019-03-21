@@ -10,22 +10,32 @@ import java.util.stream.Collectors;
 
 public class RandomRepeatLiftingStrategy extends AbstractLiftingStrategy {
     // The order we have determined.
-    private final Integer[] indices;
+    private final int[] indices;
 
     // The current index.
     private int i = 0;
 
     public RandomRepeatLiftingStrategy(ParityGame G, long seed) {
-        List<Integer> indices = Arrays.stream(G.originalOrder).boxed().collect(Collectors.toList());
-
-        // Create a seeded random.
-        Random random = new Random(seed);
+        indices = G.originalOrder;
 
         // Shuffle the indices.
-        Collections.shuffle(indices, random);
+        shuffleArray(indices, seed);
+    }
 
-        // Convert the list to an array.
-        this.indices = indices.toArray(new Integer[indices.size()]);
+    // Implementing Fisher–Yates shuffle
+    //@https://stackoverflow.com/a/1520212
+    private static void shuffleArray(int[] ar, long seed)
+    {
+        // If running on Java 6 or older, use `new Random()` on RHS here
+        Random rnd = new Random(seed);
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+            // Simple swap
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
     }
 
     /**

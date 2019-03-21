@@ -51,7 +51,7 @@ public class Solver {
                 System.out.print("Step " + i++ + ": p(v) = " + G.getPriority(v) + "; ");
             }
 
-            int[] liftValue = lift(v, verbose, rho, G);
+            int[] liftValue = lift(v, verbose, rho, G, counter);
             counter.lifted++;
 
             if(verbose) {
@@ -64,8 +64,10 @@ public class Solver {
             if(ComparisonHelper.isGreater(liftValue, rho.get(v), G.d - 1)) {
                 rho.put(v, liftValue);
                 noChangeIterations = 0;
-                counter.changed++;
+                counter.updated++;
                 strategy.back();
+
+                if(G.getOwner(v) == Diamond) counter.updated_diamond++;
             } else {
                 noChangeIterations++;
             }
@@ -101,18 +103,22 @@ public class Solver {
      * @param G The parity game graph.
      * @return The new value for rho(v).
      */
-    private static int[] lift(int v, boolean verbose, ProgressMeasure rho, ParityGame G) {
+    private static int[] lift(int v, boolean verbose, ProgressMeasure rho, ParityGame G, PerformanceCounter counter) {
         // Get all transitions starting in v.
         int[] W = G.getSuccessors(v);
+
+        // How many successors have we considered?
+        counter.lifted_successor_count += W.length;
 
         // Calculate all the progress measures for the edges from v to W.
         List<int[]> progressMeasures = new ArrayList<>(W.length);
         for(int w : W) {
-            progressMeasures.add(progress(rho.get(w), G.getPriority(v), G));
+            progressMeasures.add(progress(rho.get(w), G.getPriority(v), G, counter));
         }
 
         int[] result;
         if(G.getOwner(v) == Diamond) {
+            counter.lifted_diamond++;
 
             if(verbose) {
                 String name = G.getName(v);
@@ -158,18 +164,23 @@ public class Solver {
      * @param G The parity game, containing the maximum M.
      * @return An array that is is the least option in M^T, or null (denoting T) when no such array is available.
      */
-    private static int[] progress(int[] a, int p, ParityGame G) {
+    private static int[] progress(int[] a, int p, ParityGame G, final PerformanceCounter counter) {
         if(a == null) {
+            counter.T_progressions++;
             return null;
         }
 
         if(p % 2 == 0) {
+            counter.even_progressions++;
+
             // p is even, so we should find the least m for which m >=_(p(v)) g(w) holds.
             // Thus, set all n_i values for i > p to 0.
             int[] b = new int[a.length];
             System.arraycopy(a, 0, b, 0, p + 1);
             return b;
         } else {
+            counter.odd_progressions++;
+
             // p is odd. Find the least m for which m >_(p(v)) g(w) holds if it exists.
             // If no such m exists, return T (denoted by null).
             boolean success = false;
