@@ -34,6 +34,11 @@ public class PerformanceCounter {
     // The number of times the progress step was done choosing the T path.
     public long T_progressions = 0;
 
+    public long min_search_steps = 0;
+    public long max_search_steps = 0;
+    public long min_search_step_changes = 0;
+    public long max_search_step_changes = 0;
+
     @Override
     public String toString() {
         return "i=" + i +
@@ -48,6 +53,12 @@ public class PerformanceCounter {
                 ", lifted_successor_count=" + lifted_successor_count +
                 ", even_progressions=" + even_progressions +
                 ", odd_progressions=" + odd_progressions +
-                ", T_progressions=" + T_progressions;
+                ", T_progressions=" + T_progressions +
+                ", min_search_steps=" + min_search_steps +
+                ", max_search_steps=" + max_search_steps +
+                ", min_search_step_changes=" + min_search_step_changes +
+                ", max_search_step_changes=" + max_search_step_changes +
+                ", min_search_step_no_changes=" + (min_search_steps - min_search_step_changes) +
+                ", max_search_step_no_changes=" + (max_search_steps - max_search_step_changes);
     }
 }

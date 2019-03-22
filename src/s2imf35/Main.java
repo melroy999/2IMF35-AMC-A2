@@ -86,6 +86,9 @@ public class Main {
         String[] temp = gameFile.split("/");
         System.out.println("Parity game: [" + temp[temp.length - 1] + "]");
 
+        System.out.println(">>> Strategy: [" + AbstractLiftingStrategy.getName(strategyId) + "]" +
+                ", seed = " + seed + ", linear = " + linear);
+
         // Solve the parity game.
         Solution solution;
         if(linear) {
@@ -141,38 +144,4 @@ public class Main {
 
         return data;
     }
-
-//    public static void deo() throws IOException {
-//		ParityGame G = Parser.parseParityGame("inputs/unitTests/slides.gm");
-//
-//        // Get the desired iterator type.
-//        Set<Integer> result = Solver.solve(G, false, new FixedLiftingStrategy());
-//        print(result);
-//
-//        ParityGame[] games = {
-//            Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_inevitably_eat.gm"),
-//            Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_possibly_eat.gm"),
-//            Parser.parseParityGame("inputs/experiment1/dining_2.plato_infinitely_often_can_eat.gm"),
-//            Parser.parseParityGame("inputs/experiment1/dining_2.invariantly_plato_starves.gm"),
-//        };
-//
-//        for(ParityGame game : games) {
-//            result = Solver.solve(game, false, new InputOrderLiftingStrategy(game));
-//            Validator.validate(game, 1, result);
-//            print(result);
-//        }
-//    }
-//
-//    private static void print(Set<Integer> data) {
-//        // Select only the first 20 states in the solution.
-//        Object[] first50States = data.stream().limit(20).toArray();
-//        String list = Arrays.toString(first50States);
-//
-//        if(data.size() != first50States.length) {
-//            list = list.substring(0, list.length() - 1) + ", ...]";
-//        }
-//
-//        System.out.println(list);
-//        System.out.println();
-//    }
 }

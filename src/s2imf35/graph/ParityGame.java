@@ -90,11 +90,11 @@ public class ParityGame {
         return specifications[v].priority;
     }
 
-    public int getD() {
-        return d;
-    }
-
     public String getName(int v) {
         return specifications[v].name;
+    }
+
+    public void sort(Comparator<NodeSpecification> comparator) {
+
     }
 }

@@ -90,7 +90,9 @@ public class LinearSolver {
             // Find the minimum rho value for elements in w.
             long min = rho.get(W[0]);
             for(int i = 1; i < W.length; i++) {
+                counter.min_search_steps++;
                 if(min > rho.get(W[i])) {
+                    counter.min_search_step_changes++;
                     min = rho.get(W[i]);
                 }
             }
@@ -102,7 +104,9 @@ public class LinearSolver {
             // Find the maximum rho value for elements in w.
             long max = rho.get(W[0]);
             for(int i = 1; i < W.length; i++) {
+                counter.max_search_steps++;
                 if(max < rho.get(W[i])) {
+                    counter.max_search_step_changes++;
                     max = rho.get(W[i]);
                 }
             }
