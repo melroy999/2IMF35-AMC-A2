@@ -93,8 +93,4 @@ public class ParityGame {
     public String getName(int v) {
         return specifications[v].name;
     }
-
-    public void sort(Comparator<NodeSpecification> comparator) {
-
-    }
 }
