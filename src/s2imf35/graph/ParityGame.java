@@ -2,15 +2,9 @@ package s2imf35.graph;
 
 import java.util.*;
 
-import static s2imf35.graph.NodeSpecification.*;
-import static s2imf35.graph.NodeSpecification.Owner.*;
-
 public class ParityGame {
     // The raw nodes read from the PGSolver format.
     private final NodeSpecification[] specifications;
-
-    // The vertices belonging to the diamond player.
-    private final Set<Integer> V_d;
 
     // The maximum priority d.
     public final int d;
@@ -39,7 +33,6 @@ public class ParityGame {
         specifications = new NodeSpecification[n];
 
         // Initialize the vertex lists.
-        V_d = new HashSet<>();
         int d = Integer.MIN_VALUE;
         originalOrder = new int[n];
 
@@ -52,11 +45,6 @@ public class ParityGame {
 
             NodeSpecification spec = new NodeSpecification(line);
             specifications[spec.identifier] = spec;
-
-            // Check which player the vertex belongs to.
-            if(spec.owner == Diamond) {
-                V_d.add(spec.identifier);
-            }
 
             // Update the max priority and priority lists.
             if(d < spec.priority) {
@@ -78,10 +66,6 @@ public class ParityGame {
         }
     }
 
-    public Owner getOwner(int v) {
-        return V_d.contains(v) ? Diamond : Box;
-    }
-
     public int[] getSuccessors(int v) {
         return specifications[v].successors;
     }
@@ -92,5 +76,9 @@ public class ParityGame {
 
     public String getName(int v) {
         return specifications[v].name;
+    }
+
+    public NodeSpecification get(int v) {
+        return specifications[v];
     }
 }

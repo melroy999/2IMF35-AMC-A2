@@ -3,12 +3,12 @@ package s2imf35.solver;
 import s2imf35.PerformanceCounter;
 import s2imf35.Solution;
 import s2imf35.data.LinearProgressMeasure;
+import s2imf35.graph.NodeSpecification;
 import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.*;
 
 import static s2imf35.graph.NodeSpecification.Owner.Diamond;
 
@@ -39,7 +39,7 @@ public class LinearSolver {
             }
 
             // Get the lift value for vertex v.
-            long lift = lift(v, rho, G, counter);
+            long lift = lift(v, rho, G);
             counter.lifted++;
 
             // We only register a change when rho < lift_v(rho). I.e., the value must have become larger.
@@ -48,8 +48,6 @@ public class LinearSolver {
                 noChangeIterations = 0;
                 counter.updated++;
                 strategy.back();
-
-                if(G.getOwner(v) == Diamond) counter.updated_diamond++;
             } else {
                 noChangeIterations++;
             }
@@ -69,50 +67,45 @@ public class LinearSolver {
      * @param v The vertex to lift.
      * @param rho The parity progress measure.
      * @param G The parity game graph.
-     * @param counter The performance counter that tracks the performance statistics.
      * @return The new value for rho(v).
      */
-    private static long lift(int v, LinearProgressMeasure rho, ParityGame G, final PerformanceCounter counter) {
-        // Get all transitions starting in v.
-        int[] W = G.getSuccessors(v);
+    private static long lift(int v, LinearProgressMeasure rho, ParityGame G) {
 
-        // How many successors have we considered?
-        counter.lifted_successor_count += W.length;
+        // Get the associated node.
+        NodeSpecification node = G.get(v);
+
+        // Get all transitions starting in v.
+        int[] W = node.successors;
 
         // The priority we are working under.
-        int p = G.getPriority(v);
+        int p = node.priority;
 
         // Select the lift value.
         long result;
-        if(G.getOwner(v) == Diamond) {
-            counter.lifted_diamond++;
+        if(node.owner == Diamond) {
 
             // Find the minimum rho value for elements in w.
             long min = rho.get(W[0]);
             for(int i = 1; i < W.length; i++) {
-                counter.min_search_steps++;
                 if(min > rho.get(W[i])) {
-                    counter.min_search_step_changes++;
                     min = rho.get(W[i]);
                 }
             }
 
             // Find the minimal progress value.
-            result = progress(min, p, rho, counter);
+            result = progress(min, p, rho);
         } else {
 
             // Find the maximum rho value for elements in w.
             long max = rho.get(W[0]);
             for(int i = 1; i < W.length; i++) {
-                counter.max_search_steps++;
                 if(max < rho.get(W[i])) {
-                    counter.max_search_step_changes++;
                     max = rho.get(W[i]);
                 }
             }
 
             // Find the maximal progress value.
-            result = progress(max, p, rho, counter);
+            result = progress(max, p, rho);
         }
 
         // Our calculations might result in a larger value than T. Cap to T.
@@ -127,10 +120,9 @@ public class LinearSolver {
      * @param rho The parity progress measure.
      * @return The linearized representation of the vector returned by Prog.
      */
-    private static long progress(long a, int p, LinearProgressMeasure rho, final PerformanceCounter counter) {
+    private static long progress(long a, int p, LinearProgressMeasure rho) {
         // We cannot progress values that are already maximized.
         if(a == rho.T) {
-            counter.T_progressions++;
             return rho.T;
         }
 
@@ -139,11 +131,9 @@ public class LinearSolver {
         long result = a - a % rho.B[p];
 
         if(p % 2 == 0) {
-            counter.even_progressions++;
             // This way, we have that a =_{p} m, which is the smallest attainable value for a >=_{p} m.
             return result;
         } else {
-            counter.odd_progressions++;
 
             // We can find the next value in the topological order by simply adding B[i].
             // This works since, just like binary and any other base number, the value carries over to the next order.
