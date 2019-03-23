@@ -46,7 +46,7 @@ public class LinearProgressMeasure {
         for(int i = 0; i < B.length; i++) {
             T = Math.addExact(T, Math.multiplyExact(G.M[i], B[i]));
         }
-        T = Math.addExact(T, 1L);
+        T = Math.addExact(T, B[0]);
     }
 
     public boolean greater(long a, long b, int p) {
