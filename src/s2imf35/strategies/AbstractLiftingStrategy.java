@@ -39,6 +39,18 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
         }
     }
 
+    public static String getSlug(int i) {
+        switch (i) {
+            case 1: return "random_order";
+            case 2: return "input_order_rep";
+            case 3: return "random_order_rep";
+            case 4: return "predecessors";
+            case 5: return "predecessors_rep";
+            case 6: return "predecessors_diamond_first";
+            case 0: default: return "input_order";
+        }
+    }
+
     /**
      * This method is called when a vertex has been lifted successfully.
      *

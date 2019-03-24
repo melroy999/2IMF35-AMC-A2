@@ -3,6 +3,7 @@ package s2imf35.experiment;
 import s2imf35.PerformanceCounter;
 import s2imf35.Validator;
 import s2imf35.graph.ParityGame;
+import s2imf35.strategies.AbstractLiftingStrategy;
 
 import java.io.File;
 import java.io.IOException;
@@ -71,6 +72,10 @@ public class Experiment2 extends AbstractExperiment {
      */
     @Override
     public void runMulti(Map<String, Object> argMap, int n) throws IOException {
+
+        int strategyId = (int) argMap.getOrDefault("-strategy", 0);
+        String strategy = AbstractLiftingStrategy.getSlug(strategyId);
+
         // Create a collection of metrics over all the turns.
         List<HashMap<String, PerformanceCounter>> metrics = new ArrayList<>();
 
@@ -80,7 +85,7 @@ public class Experiment2 extends AbstractExperiment {
         }
 
         // The folder to output the files to.
-        String folder = "data/experiment2";
+        String folder = "data/experiment2/" + strategy;
         Path path = Paths.get(folder);
         if(Files.notExists(path)) {
             Files.createDirectories(path);
@@ -91,7 +96,7 @@ public class Experiment2 extends AbstractExperiment {
 
         // Create separate folders for all the runs.
         for(int i = 0; i < n; i++) {
-            String experimentFolder = "data/experiment2/run" + (i + 1);
+            String experimentFolder = "data/experiment2/" + strategy + "/run" + (i + 1);
             Path experimentPath = Paths.get(experimentFolder);
             if(Files.notExists(experimentPath)) {
                 Files.createDirectories(experimentPath);
