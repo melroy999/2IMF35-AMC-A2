@@ -22,17 +22,7 @@ public class NodeSpecification {
     }
 
     public enum Owner {
-        Diamond(false), Box(true);
-
-        Owner(boolean sign) {
-            this.sign = sign;
-        }
-
-        private final boolean sign;
-
-        public boolean sign() {
-            return sign;
-        }
+        Diamond, Box;
 
         public static Owner get(String target) {
             return target.equals("0") ? Diamond : Box;

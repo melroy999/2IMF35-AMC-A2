@@ -20,6 +20,8 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
                 return new PredecessorLiftingStrategy(G);
             case 5:
                 return new PredecessorRepeatLiftingStrategy(G);
+            case 6:
+                return new PredecessorDiamondFirstLiftingStrategy(G);
             case 0: default:
                 return new InputOrderLiftingStrategy(G);
         }
@@ -32,6 +34,7 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
             case 3: return "Random order with repetition";
             case 4: return "Predecessors";
             case 5: return "Predecessors with repetition";
+            case 6: return "Predecessors with box first heuristic";
             case 0: default: return "Input order";
         }
     }
