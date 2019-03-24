@@ -4,21 +4,23 @@ import s2imf35.data.LinearProgressMeasure;
 import s2imf35.graph.NodeSpecification;
 import s2imf35.graph.ParityGame;
 
+import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class PredecessorRepeatLiftingStrategy extends AbstractLiftingStrategy {
     // Whether we have enqueued the given vertex.
     private final boolean[] enqueued;
 
     // The priority queue that holds the vertices we are about to visit.
-    private final PriorityQueue<Integer> queue;
+    private final Queue<Integer> queue;
 
     // The last vertex we have lifted successfully. Null if it does not exist.
     private Integer lastLifted = null;
 
     public PredecessorRepeatLiftingStrategy(ParityGame G) {
         enqueued = new boolean[G.n];
-        queue = new PriorityQueue<>(G.n);
+        queue = new LinkedList<>();
 
         // Enqueue all vertices.
         for(int v = 0; v < G.n; v++) {
