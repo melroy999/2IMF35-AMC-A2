@@ -1,5 +1,7 @@
 package s2imf35.strategies;
 
+import s2imf35.data.LinearProgressMeasure;
+import s2imf35.graph.NodeSpecification;
 import s2imf35.graph.ParityGame;
 
 import java.util.Arrays;
@@ -14,6 +16,9 @@ public class RandomRepeatLiftingStrategy extends AbstractLiftingStrategy {
 
     // The current index.
     private int i = 0;
+
+    // The number of unchanged iterations.
+    private int unchangedIterations = 0;
 
     public RandomRepeatLiftingStrategy(ParityGame G, long seed) {
         indices = G.originalOrder;
@@ -38,6 +43,11 @@ public class RandomRepeatLiftingStrategy extends AbstractLiftingStrategy {
         }
     }
 
+    @Override
+    public boolean hasNext() {
+        return unchangedIterations < indices.length;
+    }
+
     /**
      * Returns the next element in the iteration.
      *
@@ -48,14 +58,43 @@ public class RandomRepeatLiftingStrategy extends AbstractLiftingStrategy {
         int value = indices[i];
         if(i < indices.length - 1) {
             i++;
+            unchangedIterations++;
         } else {
             i = 0;
         }
         return value;
     }
 
+    /**
+     * This method is called when a vertex has been lifted successfully.
+     *
+     * @param v   The vertex that has been lifted successfully.
+     * @param rho The process measure that contains vector information.
+     */
     @Override
-    public void back() {
+    public void lifted(NodeSpecification v, LinearProgressMeasure rho) {
+        // We reset the unchanged counter.
+        unchangedIterations = 0;
+
+        // Backtrack one index.
+        if(i > 0) {
+            i--;
+        } else {
+            i = indices.length - 1;
+        }
+    }
+
+    /**
+     * This method is called when a vertex has been lifted successfully.
+     *
+     * @param v The vertex that has been lifted successfully.
+     */
+    @Override
+    public void lifted(NodeSpecification v) {
+        // We reset the unchanged counter.
+        unchangedIterations = 0;
+
+        // Backtrack one index.
         if(i > 0) {
             i--;
         } else {

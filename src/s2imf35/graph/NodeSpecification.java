@@ -1,12 +1,14 @@
 package s2imf35.graph;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class NodeSpecification {
     public final int identifier;
     public final int priority;
     public final Owner owner;
     public final int[] successors;
+    public int[] predecessors;
     public final String name;
 
     public NodeSpecification(String line) throws NumberFormatException {
@@ -35,5 +37,16 @@ public class NodeSpecification {
         public static Owner get(String target) {
             return target.equals("0") ? Diamond : Box;
         }
+    }
+
+    @Override
+    public String toString() {
+        return identifier +
+                ", p=" + priority +
+                ", owner=" + owner;
+    }
+
+    public void setPredecessors(List<Integer> predecessors) {
+        this.predecessors = predecessors.stream().mapToInt(e -> e).toArray();
     }
 }

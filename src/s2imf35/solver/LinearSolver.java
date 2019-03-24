@@ -23,9 +23,6 @@ public class LinearSolver {
         final PerformanceCounter counter = new PerformanceCounter();
         Instant start = Instant.now();
 
-        // The last vertex id that resulted in a change.
-        int noChangeIterations = 0;
-
         // We loop until unchanged contains all vertices.
         do {
             int v = strategy.next();
@@ -34,24 +31,23 @@ public class LinearSolver {
             // We do not need to lift vertices that have the special symbol T.
             if(rho.get(v) == rho.T) {
                 counter.tSkips++;
-                noChangeIterations++;
                 continue;
             }
 
+            // Get the associated node.
+            NodeSpecification node = G.get(v);
+
             // Get the lift value for vertex v.
-            long lift = lift(v, rho, G);
+            long lift = lift(node, rho, G);
             counter.lifted++;
 
             // We only register a change when rho < lift_v(rho). I.e., the value must have become larger.
             if(rho.get(v) < lift) {
                 rho.set(v, lift);
-                noChangeIterations = 0;
                 counter.updated++;
-                strategy.back();
-            } else {
-                noChangeIterations++;
+                strategy.lifted(node, rho);
             }
-        } while(noChangeIterations <= G.n);
+        } while(strategy.hasNext());
 
         // Measure the elapsed time.
         Instant finish = Instant.now();
@@ -64,15 +60,12 @@ public class LinearSolver {
     /**
      * Lift the given vertex and alter the given progress measure to adhere to the new situation.
      *
-     * @param v The vertex to lift.
+     * @param node The vertex to lift.
      * @param rho The parity progress measure.
      * @param G The parity game graph.
      * @return The new value for rho(v).
      */
-    private static long lift(int v, LinearProgressMeasure rho, ParityGame G) {
-
-        // Get the associated node.
-        NodeSpecification node = G.get(v);
+    private static long lift(NodeSpecification node, LinearProgressMeasure rho, ParityGame G) {
 
         // Get all transitions starting in v.
         int[] W = node.successors;

@@ -38,6 +38,13 @@ public class ParityGame {
 
         // Load the specification.
         HashMap<Integer, Set<Integer>> priorityMap = new HashMap<>();
+
+        // Keep a predecessor list.
+        List<List<Integer>> predecessors = new ArrayList<>();
+        for(int i = 1; i < lines.length; i++) {
+            predecessors.add(new ArrayList<>());
+        }
+
         for (int i = 1; i < lines.length; i++) {
             String line = lines[i];
             // Skip the empty line at the end.
@@ -52,10 +59,20 @@ public class ParityGame {
             }
             priorityMap.computeIfAbsent(spec.priority, e -> new HashSet<>()).add(spec.identifier);
 
+            // Set the predecessors.
+            for(int w : spec.successors) {
+                predecessors.get(w).add(spec.identifier);
+            }
+
             // Make sure that we track the original order of the vertices.
             originalOrder[i - 1] = spec.identifier;
         }
         this.d = d + 1;
+
+        // Add the predecessors to the node specification.
+        for(int i = 0; i < specifications.length; i++) {
+            specifications[i].setPredecessors(predecessors.get(i));
+        }
 
         // Create the maximum value T.
         M = new int[this.d];
@@ -70,6 +87,10 @@ public class ParityGame {
         return specifications[v].successors;
     }
 
+    public int[] getPredecessors(int v) {
+        return specifications[v].predecessors;
+    }
+
     public int getPriority(int v) {
         return specifications[v].priority;
     }
@@ -80,5 +101,9 @@ public class ParityGame {
 
     public NodeSpecification get(int v) {
         return specifications[v];
+    }
+
+    public NodeSpecification.Owner getOwner(int v) {
+        return specifications[v].owner;
     }
 }

@@ -1,5 +1,7 @@
 package s2imf35.strategies;
 
+import s2imf35.data.LinearProgressMeasure;
+import s2imf35.graph.NodeSpecification;
 import s2imf35.graph.ParityGame;
 
 import java.util.Arrays;
@@ -15,6 +17,9 @@ public class RandomLiftingStrategy extends AbstractLiftingStrategy {
     // The current index.
     private int i = 0;
 
+    // The number of unchanged iterations.
+    private int unchangedIterations = 0;
+
     public RandomLiftingStrategy(ParityGame G, long seed) {
         List<Integer> indices = Arrays.stream(G.originalOrder).boxed().collect(Collectors.toList());
 
@@ -28,6 +33,11 @@ public class RandomLiftingStrategy extends AbstractLiftingStrategy {
         this.indices = indices.toArray(new Integer[indices.size()]);
     }
 
+    @Override
+    public boolean hasNext() {
+        return unchangedIterations < indices.length;
+    }
+
     /**
      * Returns the next element in the iteration.
      *
@@ -38,9 +48,33 @@ public class RandomLiftingStrategy extends AbstractLiftingStrategy {
         int value = indices[i];
         if(i < indices.length - 1) {
             i++;
+            unchangedIterations++;
         } else {
             i = 0;
         }
         return value;
+    }
+
+    /**
+     * This method is called when a vertex has been lifted successfully.
+     *
+     * @param v   The vertex that has been lifted successfully.
+     * @param rho The process measure that contains vector information.
+     */
+    @Override
+    public void lifted(NodeSpecification v, LinearProgressMeasure rho) {
+        // We reset the unchanged counter.
+        unchangedIterations = 0;
+    }
+
+    /**
+     * This method is called when a vertex has been lifted successfully.
+     *
+     * @param v The vertex that has been lifted successfully.
+     */
+    @Override
+    public void lifted(NodeSpecification v) {
+        // We reset the unchanged counter.
+        unchangedIterations = 0;
     }
 }

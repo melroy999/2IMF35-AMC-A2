@@ -33,9 +33,6 @@ public class Solver {
             System.out.println("M = " + Arrays.toString(G.M));
         }
 
-        // The last vertex id that resulted in a change.
-        int noChangeIterations = 0;
-
         // We loop until unchanged contains all vertices.
         do {
             int v = strategy.next();
@@ -44,7 +41,6 @@ public class Solver {
             // No need to lift vertices with the special symbol.
             if(rho.get(v) == null) {
                 counter.tSkips++;
-                noChangeIterations++;
                 continue;
             }
 
@@ -67,11 +63,8 @@ public class Solver {
             // We only register a change when rho < lift_v(rho). I.e., the value must have become larger.
             if(ComparisonHelper.isGreater(liftValue, rho.get(v), G.d - 1)) {
                 rho.put(v, liftValue);
-                noChangeIterations = 0;
                 counter.updated++;
-                strategy.back();
-            } else {
-                noChangeIterations++;
+                strategy.lifted(node);
             }
 
             if(verbose) {
@@ -79,7 +72,7 @@ public class Solver {
                 name = name == null ? "v" + v : name;
                 System.out.println(" = rho[" + name + " := " + (liftValue == null ? "T" : Arrays.toString(liftValue)) + "]");
             }
-        } while(noChangeIterations <= G.n);
+        } while(strategy.hasNext());
 
         if(verbose) {
             rho.print(G);

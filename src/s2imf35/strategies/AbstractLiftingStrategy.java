@@ -1,5 +1,7 @@
 package s2imf35.strategies;
 
+import s2imf35.data.LinearProgressMeasure;
+import s2imf35.graph.NodeSpecification;
 import s2imf35.graph.ParityGame;
 
 import java.util.Iterator;
@@ -15,11 +17,9 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
             case 3:
                 return new RandomRepeatLiftingStrategy(G, seed);
             case 4:
-                return new PriorityAscRepeatLiftingStrategy(G);
+                return new PredecessorLiftingStrategy(G);
             case 5:
-                return new PriorityDescRepeatLiftingStrategy(G);
-            case 6:
-                return new InDegreeRepeatLiftingStrategy(G);
+                return new PredecessorRepeatLiftingStrategy(G);
             case 0: default:
                 return new InputOrderLiftingStrategy(G);
         }
@@ -30,26 +30,24 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
             case 1: return "Random order";
             case 2: return "Input order with repetition";
             case 3: return "Random order with repetition";
-            case 4: return "Priority in ascending order with repetition";
-            case 5: return "Priority in descending order with repetition";
-            case 6: return "In-degree order with repetition";
+            case 4: return "Predecessors";
+            case 5: return "Predecessors with repetition";
             case 0: default: return "Input order";
         }
     }
 
     /**
-     * Returns {@code true} if the iteration has more elements.
-     * (In other words, returns {@code true} if {@link #next} would
-     * return an element rather than throwing an exception.)
+     * This method is called when a vertex has been lifted successfully.
      *
-     * @return {@code true} if the iteration has more elements
+     * @param v The vertex that has been lifted successfully.
+     * @param rho The process measure that contains vector information.
      */
-    @Override
-    public boolean hasNext() {
-        return true;
-    }
+    public abstract void lifted(NodeSpecification v, LinearProgressMeasure rho);
 
-    public void back() {
-        // Default implementation does nothing on a back step.
-    }
+    /**
+     * This method is called when a vertex has been lifted successfully.
+     *
+     * @param v The vertex that has been lifted successfully.
+     */
+    public abstract void lifted(NodeSpecification v);
 }
