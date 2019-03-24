@@ -51,7 +51,7 @@ public class LinearSolver {
 
         // Measure the elapsed time.
         Instant finish = Instant.now();
-        counter.duration = Duration.between(start, finish).toMillis();
+        counter.duration = Math.max(1, Duration.between(start, finish).toMillis());
 
         return new Solution(rho.diamondWinningSet(), counter);
 

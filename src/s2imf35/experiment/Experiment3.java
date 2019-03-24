@@ -20,7 +20,7 @@ public class Experiment3 extends AbstractExperiment {
      * @throws IOException Thrown when the file cannot be found or read.
      */
     @Override
-    public void run(Map<String, Object> argMap) throws IOException {
+    public HashMap<String, PerformanceCounter> run(Map<String, Object> argMap) throws IOException {
         // Print an identifiable header for the test group.
         printHeader("Elevator");
 
@@ -52,5 +52,19 @@ public class Experiment3 extends AbstractExperiment {
 
         // Run the tests.
         runAll(rootPath, gameNames, argMap, metrics, validator);
+
+        return metrics;
+    }
+
+    /**
+     * Run the formulas within the experiment and evaluate the results. The experiment is repeated n times.
+     *
+     * @param argMap The arguments given for the experiment.
+     * @param n The number of times to repeat the experiment.
+     * @throws IOException Thrown when the file cannot be found or read.
+     */
+    @Override
+    public void runMulti(Map<String, Object> argMap, int n) throws IOException {
+
     }
 }

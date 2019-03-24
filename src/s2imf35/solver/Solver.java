@@ -80,7 +80,7 @@ public class Solver {
 
         // Measure the elapsed time.
         Instant finish = Instant.now();
-        counter.duration = Duration.between(start, finish).toMillis();
+        counter.duration = Math.max(1, Duration.between(start, finish).toMillis());
 
         System.out.println("d = " + G.d);
         rho.printStatistics();

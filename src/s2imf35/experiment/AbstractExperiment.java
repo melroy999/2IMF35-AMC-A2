@@ -9,7 +9,9 @@ import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
@@ -24,7 +26,16 @@ public abstract class AbstractExperiment {
      * @param argMap The arguments given for the experiment.
      * @throws IOException Thrown when the file cannot be found or read.
      */
-    public abstract void run(Map<String, Object> argMap) throws IOException;
+    public abstract HashMap<String, PerformanceCounter> run(Map<String, Object> argMap) throws IOException;
+
+    /**
+     * Run the formulas within the experiment and evaluate the results. The experiment is repeated n times.
+     *
+     * @param argMap The arguments given for the experiment.
+     * @param n The number of times to repeat the experiment.
+     * @throws IOException Thrown when the file cannot be found or read.
+     */
+    public abstract void runMulti(Map<String, Object> argMap, int n) throws IOException;
 
     /**
      * Print a fancy header for the experiment.
@@ -89,7 +100,19 @@ public abstract class AbstractExperiment {
                 validator.accept(G, solution.V);
             }
 
+            metrics.put(game, solution.counter);
+
             System.out.println();
+        }
+    }
+
+    public <T> void outputToFile(String folder, String name, Map<Integer, T> data) {
+        try (PrintWriter out = new PrintWriter(folder + "/" + name + ".txt")) {
+            for(Map.Entry<Integer, T> entry : data.entrySet()) {
+                out.println(entry.getKey() + "\t" + entry.getValue());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }

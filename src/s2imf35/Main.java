@@ -7,7 +7,6 @@ import s2imf35.graph.ParityGame;
 import s2imf35.solver.LinearSolver;
 import s2imf35.solver.Solver;
 import s2imf35.strategies.AbstractLiftingStrategy;
-import s2imf35.strategies.FixedLiftingStrategy;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -35,21 +34,43 @@ public class Main {
         if(argMap.containsKey("-game")) {
             run(argMap);
         } else {
-            // Run the specified tests.
-            for(String arg : argMap.keySet()) {
-                switch (arg) {
-                    case "-experiment1":
-                        new Experiment1().run(argMap);
-                        break;
-                    case "-experiment2":
-                        new Experiment2().run(argMap);
-                        break;
-                    case "-experiment3":
-                        new Experiment3().run(argMap);
-                        break;
-                    case "-unit":
-                        // TODO implement unit test.
-                        break;
+            if(argMap.containsKey("-n")) {
+                int n = (int) argMap.get("-n");
+
+                // Run the specified tests.
+                for(String arg : argMap.keySet()) {
+                    switch (arg) {
+                        case "-experiment1":
+                            new Experiment1().runMulti(argMap, n);
+                            break;
+                        case "-experiment2":
+                            new Experiment2().runMulti(argMap, n);
+                            break;
+                        case "-experiment3":
+                            new Experiment3().runMulti(argMap, n);
+                            break;
+                        case "-unit":
+                            // TODO implement unit test.
+                            break;
+                    }
+                }
+            } else {
+                // Run the specified tests.
+                for(String arg : argMap.keySet()) {
+                    switch (arg) {
+                        case "-experiment1":
+                            new Experiment1().run(argMap);
+                            break;
+                        case "-experiment2":
+                            new Experiment2().run(argMap);
+                            break;
+                        case "-experiment3":
+                            new Experiment3().run(argMap);
+                            break;
+                        case "-unit":
+                            // TODO implement unit test.
+                            break;
+                    }
                 }
             }
         }
@@ -124,6 +145,8 @@ public class Main {
                 data.put("-strategy", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
             } else if(arg.startsWith("-seed")) {
                 data.put("-seed", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
+            } else if(arg.startsWith("-n")) {
+                data.put("-n", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
             } else if(arg.equals("-experiment1")) {
                 data.put("-experiment1", true);
             } else if(arg.equals("-experiment2")) {
