@@ -123,7 +123,7 @@ public class Experiment2 extends AbstractExperiment {
                 tSkip_counts.put(x, data.get("_tskip_count").get(x).divide(BigDecimal.valueOf(n), RoundingMode.DOWN).longValue());
                 lifted_counts.put(x, data.get("_lifted_count").get(x).divide(BigDecimal.valueOf(n), RoundingMode.DOWN).longValue());
                 updated_counts.put(x, data.get("_updated_count").get(x).divide(BigDecimal.valueOf(n), RoundingMode.DOWN).longValue());
-                lift_update_ratio.put(x, data.get("_updated_count").get(x).divide(data.get("_lifted_count").get(x), RoundingMode.HALF_UP).doubleValue());
+                lift_update_ratio.put(x, data.get("_updated_count").get(x).divide(data.get("_lifted_count").get(x), 4, RoundingMode.HALF_UP).doubleValue());
                 duration.put(x, data.get("_duration").get(x).divide(BigDecimal.valueOf(n), RoundingMode.UP).longValue());
             }
 
