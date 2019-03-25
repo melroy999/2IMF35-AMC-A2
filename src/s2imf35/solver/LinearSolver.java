@@ -47,6 +47,11 @@ public class LinearSolver {
                 counter.updated++;
                 strategy.lifted(node, rho);
             }
+
+            if(Thread.currentThread().isInterrupted()) {
+                return null;
+            }
+
         } while(strategy.hasNext());
 
         // Measure the elapsed time.

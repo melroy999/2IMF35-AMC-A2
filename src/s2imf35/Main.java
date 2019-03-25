@@ -11,6 +11,7 @@ import s2imf35.strategies.AbstractLiftingStrategy;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.*;
 
 public class Main {
 
@@ -87,6 +88,7 @@ public class Main {
         String gameFile = (String) args.getOrDefault("-game", null);
         int strategyId = (Integer) args.getOrDefault("-strategy", 0);
         int seed = (Integer) args.getOrDefault("-seed", 0);
+        int timeout = (Integer) args.getOrDefault("-timeout", -1);
 
         // Check whether we have all the required parameters.
         if(gameFile == null) {
@@ -112,13 +114,47 @@ public class Main {
 
         // Solve the parity game.
         Solution solution;
-        if(linear) {
-            solution = LinearSolver.solve(G, strategy);
+
+        if(timeout != -1) {
+            ExecutorService service = Executors.newSingleThreadExecutor();
+            Future<Solution> task;
+
+            if(linear) {
+                task = service.submit(() -> LinearSolver.solve(G, AbstractLiftingStrategy.get(G, strategyId, seed)));
+            } else {
+                task = service.submit(() -> Solver.solve(G, verbose, AbstractLiftingStrategy.get(G, strategyId, seed)));
+            }
+
+            // Perform the check with a timeout.
+            try {
+                solution = task.get(timeout, TimeUnit.SECONDS);
+            } catch (InterruptedException | ExecutionException | TimeoutException e) {
+                solution = null;
+            }
+
+            // Perform the check with a timeout.
+            try {
+                solution = task.get(timeout, TimeUnit.SECONDS);
+            } catch (InterruptedException | ExecutionException | TimeoutException e) {
+                solution = null;
+            }
+
+            // Do not forget to shut down the executor service.
+            service.shutdownNow();
+
         } else {
-            solution = Solver.solve(G, verbose, strategy);
+            if(linear) {
+                solution = LinearSolver.solve(G, strategy);
+            } else {
+                solution = Solver.solve(G, verbose, strategy);
+            }
         }
 
-        System.out.println(solution);
+        if(solution == null) {
+            System.out.println("The calculation hit the timeout limit.");
+        } else {
+            System.out.println(solution);
+        }
     }
 
     /**
@@ -147,6 +183,8 @@ public class Main {
                 data.put("-seed", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
             } else if(arg.startsWith("-n")) {
                 data.put("-n", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
+            } else if(arg.startsWith("-timeout")) {
+                data.put("-timeout", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
             } else if(arg.equals("-experiment1")) {
                 data.put("-experiment1", true);
             } else if(arg.equals("-experiment2")) {

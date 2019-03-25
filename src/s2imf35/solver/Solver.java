@@ -72,6 +72,11 @@ public class Solver {
                 name = name == null ? "v" + v : name;
                 System.out.println(" = rho[" + name + " := " + (liftValue == null ? "T" : Arrays.toString(liftValue)) + "]");
             }
+
+            if(Thread.currentThread().isInterrupted()) {
+                return null;
+            }
+
         } while(strategy.hasNext());
 
         if(verbose) {

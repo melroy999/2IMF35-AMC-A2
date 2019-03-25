@@ -13,6 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
+import java.util.concurrent.*;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 
@@ -74,6 +75,7 @@ public abstract class AbstractExperiment {
         boolean verbose = (boolean) argMap.getOrDefault("-steps", false);
         boolean linear = (boolean) argMap.getOrDefault("-linear", false);
         int seed = (Integer) argMap.getOrDefault("-seed", 0);
+        int timeout = (Integer) argMap.getOrDefault("-timeout", -1);
 
         System.out.println(">>> Strategy: [" + AbstractLiftingStrategy.getName(strategyId) + "]" +
                 ", seed = " + seed + ", linear = " + linear);
@@ -87,23 +89,55 @@ public abstract class AbstractExperiment {
 
             // Solve the game.
             Solution solution;
-            if(linear) {
-                solution = LinearSolver.solve(G, AbstractLiftingStrategy.get(G, strategyId, seed));
+
+            if(timeout != -1) {
+
+                // Create an executor service, which will be used to enforce timeouts.
+                ExecutorService service = Executors.newSingleThreadExecutor();
+
+                Future<Solution> task;
+
+                if(linear) {
+                    task = service.submit(() -> LinearSolver.solve(G, AbstractLiftingStrategy.get(G, strategyId, seed)));
+                } else {
+                    task = service.submit(() -> Solver.solve(G, verbose, AbstractLiftingStrategy.get(G, strategyId, seed)));
+                }
+
+                // Perform the check with a timeout.
+                try {
+                    solution = task.get(timeout, TimeUnit.SECONDS);
+                } catch (InterruptedException | ExecutionException | TimeoutException e) {
+                    solution = null;
+                }
+
+                // Do not forget to shut down the executor service.
+                service.shutdownNow();
+
             } else {
-                solution = Solver.solve(G, verbose, AbstractLiftingStrategy.get(G, strategyId, seed));
+                if(linear) {
+                    solution = LinearSolver.solve(G, AbstractLiftingStrategy.get(G, strategyId, seed));
+                } else {
+                    solution = Solver.solve(G, verbose, AbstractLiftingStrategy.get(G, strategyId, seed));
+                }
             }
 
-            System.out.println(solution);
-            System.out.println("Contains vertex with index 0: " + solution.V.contains(0));
+            if(solution == null) {
+                System.out.println("The calculation hit the timeout limit. Proceeding to next calculation.");
+            } else {
+                System.out.println(solution);
+                System.out.println("Contains vertex with index 0: " + solution.V.contains(0));
 
-            if(validator != null) {
-                validator.accept(G, solution.V);
+                if(validator != null) {
+                    validator.accept(G, solution.V);
+                }
+
+                metrics.put(game, solution.counter);
             }
-
-            metrics.put(game, solution.counter);
 
             System.out.println();
         }
+
+        int i = 1 + 1;
     }
 
     public <T> void outputToFile(String folder, String name, Map<Integer, T> data) {

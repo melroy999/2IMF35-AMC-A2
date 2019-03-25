@@ -157,6 +157,9 @@ public class Experiment3 extends AbstractExperiment {
 
             for(int x : xValues) {
                 PerformanceCounter counter = metric.get(experiment + "_" + x + ".gm");
+
+                if(counter == null) continue;
+
                 i_counts.put(x, counter.i);
                 tSkip_counts.put(x, counter.tSkips);
                 lifted_counts.put(x, counter.lifted);
