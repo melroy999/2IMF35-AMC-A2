@@ -136,8 +136,6 @@ public abstract class AbstractExperiment {
 
             System.out.println();
         }
-
-        int i = 1 + 1;
     }
 
     public <T> void outputToFile(String folder, String name, Map<Integer, T> data) {
