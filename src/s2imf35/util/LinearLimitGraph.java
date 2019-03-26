@@ -19,11 +19,11 @@ public class LinearLimitGraph {
             // Given b0, we can recalculate root.
             root = (long) Math.pow(max - b0, 1.0/(d / 2));
 
-            // We also have that our calculated value is not the full value; we have to multiply by d/2.
 //            System.out.println("" + d + " & " + (root * (d / 2)) + "\\\\");
 
             // How many random trials will we do?
             int n = 10000001;
+//            int n = 1;
 
             long[] footprints = new long[n];
 
@@ -66,6 +66,25 @@ public class LinearLimitGraph {
             int max_factor = (int) ((double) max / footprints[n - 1]);
 
             System.out.println(d + " " + average_factor + " " + median_factor + " " + min_factor + " " + max_factor);
+        }
+    }
+
+    private static void printTableEntries() {
+        long max = Long.MAX_VALUE;
+
+        for(int d = 2; d < 41; d += 2) {
+            // Calculate the safe value. First, find the d/2th root.
+            long root = (long) Math.pow(max, 1.0/(d / 2));
+
+            // Now, we know that root^(d/2) = max. However, we do not want that the addition of B[0] overflows.
+            // We know that B[0] = root^(d/2-1).
+            long b0 = (long) Math.pow(root, d/2 - 1);
+
+            // Given b0, we can recalculate root.
+            root = (long) Math.pow(max - b0, 1.0/(d / 2));
+
+            // We also have that our calculated value is not the full value; we have to multiply by d/2.
+            System.out.println("" + d + " & " + (root * (d / 2)) + "\\\\");
         }
     }
 

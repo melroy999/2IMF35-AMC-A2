@@ -21,6 +21,9 @@ public class ParityGame {
     // A name which we can use to recognize the game.
     public final String name;
 
+    // The number of edges in the parity game.
+    private long noEdges = 0;
+
     public ParityGame(String input, String name) throws NumberFormatException {
         // Set the name.
         this.name = name;
@@ -64,6 +67,9 @@ public class ParityGame {
                 predecessors.get(w).add(spec.identifier);
             }
 
+            // Update the number of edges.
+            noEdges += spec.successors.length;
+
             // Make sure that we track the original order of the vertices.
             originalOrder[i - 1] = spec.identifier;
         }
@@ -105,5 +111,9 @@ public class ParityGame {
 
     public NodeSpecification.Owner getOwner(int v) {
         return specifications[v].owner;
+    }
+
+    public long getNoEdges() {
+        return noEdges;
     }
 }

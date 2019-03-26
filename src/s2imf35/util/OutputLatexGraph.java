@@ -1,16 +1,16 @@
 package s2imf35.util;
 
+import s2imf35.Parser;
+import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
 
-import java.awt.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 public class OutputLatexGraph {
@@ -60,6 +60,8 @@ public class OutputLatexGraph {
             String yLabel = "Running Time [ms]";
             printDurationTable(strategies, experiment, experiment1, yLabel, minx, maxx);
 
+            printSideData(minx, maxx, experiment1, (i, s) -> "inputs/experiment1/dining_" + i + "." + s + ".gm");
+
             yLabel = "Number of Iterations";
             printIterationTable(strategies, experiment, experiment1, yLabel, minx, maxx);
 
@@ -67,7 +69,7 @@ public class OutputLatexGraph {
             printRatioTable(strategies, experiment, experiment1, xLabel, yLabel, minx, maxx);
 
             System.out.println("\\caption{Performance statistics for the \\texttt{dining\\_n." + experiment1.replace("_", "\\_") + ".gm} parity games representing the dining philosophers problem set with $n \\in [2, \\dots, 11]$ dining philosophers.}");
-            System.out.println("\\label{graph.duration." + experiment1 + "}");
+            System.out.println("\\label{graph.performance." + experiment1 + "}");
             System.out.println("\\end{figure}");
         }
     }
@@ -93,6 +95,8 @@ public class OutputLatexGraph {
             String yLabel = "Running Time [ms]";
             printDurationTable(strategies, experiment, experiment1, yLabel, minx, maxx);
 
+            printSideData(minx, maxx, experiment1, (i, s) -> "inputs/experiment2/german_linear_" + i + "." + s + ".gm");
+
             yLabel = "Number of Iterations";
             printIterationTable(strategies, experiment, experiment1, yLabel, minx, maxx);
 
@@ -102,7 +106,7 @@ public class OutputLatexGraph {
             experiment1 = experiment1.replace("invariantly_eventually_fair_shared_access", "invariantly_eventually_fair_ shared_access");
 
             System.out.println("\\caption{Performance statistics for the \\texttt{german\\_linear\\_n." + experiment1.replace("_", "\\_") + ".gm} parity games representing the cache coherence problem set with $n \\in [2, \\dots, 5]$ clients.}");
-            System.out.println("\\label{graph.duration." + experiment1 + "}");
+            System.out.println("\\label{graph.performance." + experiment1 + "}");
             System.out.println("\\end{figure}");
         }
     }
@@ -128,6 +132,8 @@ public class OutputLatexGraph {
             String yLabel = "Running Time [ms]";
             printDurationTable(strategies, experiment, experiment1, yLabel, minx, maxx);
 
+            printSideData(minx, maxx, experiment1, (i, s) -> "inputs/experiment3/" + experiment1 +  "_" + i + ".gm");
+
             yLabel = "Number of Iterations";
             printIterationTable(strategies, experiment, experiment1, yLabel, minx, maxx);
 
@@ -135,7 +141,7 @@ public class OutputLatexGraph {
             printRatioTable(strategies, experiment, experiment1, xLabel, yLabel, minx, maxx);
 
             System.out.println("\\caption{Performance statistics for the \\texttt{" + experiment1.replace("_", "\\_") + "\\_n.gm} parity games representing the elevator fairness verification problem set with $n \\in [2, \\dots, 7]$ floors.}");
-            System.out.println("\\label{graph.duration." + experiment1 + "}");
+            System.out.println("\\label{graph.performance." + experiment1 + "}");
             System.out.println("\\end{figure}");
         }
     }
@@ -237,6 +243,60 @@ public class OutputLatexGraph {
         }
 
         printTableFooter(builder);
+        System.out.println(builder.toString());
+    }
+
+    private static void printSideData(int minx, int maxx, String experiment, BiFunction<Integer, String, String> getFilePath) throws IOException {
+        StringBuilder builder = new StringBuilder();
+
+        // What number of vertices does each of the graphs have?
+        Map<Integer, Integer> noVertices = new LinkedHashMap<>();
+        Map<Integer, Long> noEdges = new LinkedHashMap<>();
+        Map<Integer, Integer> dSize = new LinkedHashMap<>();
+
+        for(int i = minx; i < maxx + 1; i++) {
+            String path = getFilePath.apply(i, experiment);
+            ParityGame parityGame = Parser.parseParityGame(path);
+            noVertices.put(i, parityGame.n);
+            noEdges.put(i, parityGame.getNoEdges());
+            dSize.put(i, parityGame.d);
+        }
+
+        builder.append("\\node[anchor=north west, below= 0.3cm of leg] (R) {").append(System.lineSeparator());
+        builder.append("\t\\small\\texttt{repetitions = 10}").append(System.lineSeparator());
+        builder.append("};").append(System.lineSeparator());
+
+        if(dSize.values().stream().distinct().count() == 1) {
+            builder.append("\\node[anchor=north west, below= 0cm of R] (D) {").append(System.lineSeparator());
+            builder.append("\t\\small\\texttt{d = ").append(dSize.get(minx)).append("}").append(System.lineSeparator());
+            builder.append("};").append(System.lineSeparator());
+        } else {
+            builder.append("\\node[anchor=north west, below= 0.3cm of R] (D) {").append(System.lineSeparator());
+            builder.append("\t\\begin{tabular}{>{\\small\\ttfamily}c||>{\\small\\ttfamily}l}").append(System.lineSeparator());
+            builder.append("\t\tn & d\\\\").append(System.lineSeparator());
+            builder.append("\t\t\\hline").append(System.lineSeparator());
+            for(int i = minx; i < maxx + 1; i++) {
+                builder.append("\t\t").append(i).append(" & ").append(dSize.get(i)).append("\\\\").append(System.lineSeparator());
+            }
+            builder.append("\\end{tabular}").append(System.lineSeparator());
+            builder.append("};").append(System.lineSeparator());
+        }
+
+        builder.append("\\node[anchor=north west, below= 0.3cm of D] (V) {").append(System.lineSeparator());
+        builder.append("\t\\begin{tabular}{>{\\small\\ttfamily}c||>{\\small\\ttfamily}l}").append(System.lineSeparator());
+        builder.append("\t\tn & |V|\\\\").append(System.lineSeparator());
+        builder.append("\t\t\\hline").append(System.lineSeparator());
+        for(int i = minx; i < maxx + 1; i++) {
+            builder.append("\t\t").append(i).append(" & ").append(noVertices.get(i)).append("\\\\").append(System.lineSeparator());
+        }
+        builder.append("\t\t\\multicolumn{2}{c}{}\\\\").append(System.lineSeparator());
+        builder.append("\t\tn & |E|\\\\").append(System.lineSeparator());
+        builder.append("\t\t\\hline").append(System.lineSeparator());
+        for(int i = minx; i < maxx + 1; i++) {
+            builder.append("\t\t").append(i).append(" & ").append(noEdges.get(i)).append("\\\\").append(System.lineSeparator());
+        }
+        builder.append("\\end{tabular}").append(System.lineSeparator());
+        builder.append("};").append(System.lineSeparator());
 
         System.out.println(builder.toString());
     }
