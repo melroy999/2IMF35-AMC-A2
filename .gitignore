@@ -9,6 +9,7 @@
 !/mcrl2/
 !/data/
 !/maxified-solutions/
+!/logs/
 
 # Except for the following files:
 !.gitignore

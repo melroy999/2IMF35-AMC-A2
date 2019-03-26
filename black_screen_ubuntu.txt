@@ -1,0 +1,2 @@
+Use the following script to force Ubuntu 18.04 to stay out of hibernation and lock screens:
+https://askubuntu.com/questions/1089769/ubuntu-18-04-will-not-stop-blanking-screen

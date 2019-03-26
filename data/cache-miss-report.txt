@@ -1,0 +1,2640 @@
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+        6136876082      L1-dcache-loads                                               (78.64%)
+         242920533      L1-dcache-load-misses     #    3.96% of all L1-dcache hits    (80.02%)
+        6107284863      dTLB-loads                                                    (80.79%)
+           5711647      dTLB-load-misses          #    0.09% of all dTLB cache hits   (81.55%)
+         109558383      cache-misses                                                  (79.01%)
+
+       0.963363047 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+        5180838237      L1-dcache-loads                                               (81.09%)
+         205237463      L1-dcache-load-misses     #    3.96% of all L1-dcache hits    (79.53%)
+        5114566009      dTLB-loads                                                    (79.71%)
+           6022307      dTLB-load-misses          #    0.12% of all dTLB cache hits   (79.48%)
+          91746147      cache-misses                                                  (80.18%)
+
+       0.921893631 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+      152767014801      L1-dcache-loads                                               (80.03%)
+        7190418460      L1-dcache-load-misses     #    4.71% of all L1-dcache hits    (79.92%)
+      152723098363      dTLB-loads                                                    (80.00%)
+         102657255      dTLB-load-misses          #    0.07% of all dTLB cache hits   (80.04%)
+       11022539493      cache-misses                                                  (80.01%)
+
+      60.753737053 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+      172473326765      L1-dcache-loads                                               (80.14%)
+        2161050016      L1-dcache-load-misses     #    1.25% of all L1-dcache hits    (79.87%)
+      172678783751      dTLB-loads                                                    (80.00%)
+           5849358      dTLB-load-misses          #    0.00% of all dTLB cache hits   (79.95%)
+         109583580      cache-misses                                                  (80.04%)
+
+      23.271825129 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+        5429764456      L1-dcache-loads                                               (78.80%)
+         221530973      L1-dcache-load-misses     #    4.08% of all L1-dcache hits    (79.61%)
+        5440657895      dTLB-loads                                                    (81.13%)
+           4208905      dTLB-load-misses          #    0.08% of all dTLB cache hits   (81.94%)
+          96242589      cache-misses                                                  (78.51%)
+
+       0.838245364 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+        4909482456      L1-dcache-loads                                               (80.16%)
+         220492596      L1-dcache-load-misses     #    4.49% of all L1-dcache hits    (78.52%)
+        4890337951      dTLB-loads                                                    (79.68%)
+           4896923      dTLB-load-misses          #    0.10% of all dTLB cache hits   (80.95%)
+          85122636      cache-misses                                                  (80.69%)
+
+       0.850412749 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+        4566664701      L1-dcache-loads                                               (77.84%)
+         196456623      L1-dcache-load-misses     #    4.30% of all L1-dcache hits    (79.13%)
+        4570334677      dTLB-loads                                                    (80.00%)
+           3542183      dTLB-load-misses          #    0.08% of all dTLB cache hits   (82.09%)
+          68927517      cache-misses                                                  (80.94%)
+
+       0.677959542 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+        5014368104      L1-dcache-loads                                               (79.96%)
+         216735736      L1-dcache-load-misses     #    4.32% of all L1-dcache hits    (79.82%)
+        5030497349      dTLB-loads                                                    (79.75%)
+           3809730      dTLB-load-misses          #    0.08% of all dTLB cache hits   (79.00%)
+          81851920      cache-misses                                                  (81.47%)
+
+       0.739376333 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+        6724131101      L1-dcache-loads                                               (78.33%)
+         256171691      L1-dcache-load-misses     #    3.81% of all L1-dcache hits    (79.18%)
+        6699118916      dTLB-loads                                                    (80.21%)
+           6255318      dTLB-load-misses          #    0.09% of all dTLB cache hits   (81.34%)
+         123699889      cache-misses                                                  (80.94%)
+
+       1.120430384 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+        6511190474      L1-dcache-loads                                               (78.90%)
+         302686061      L1-dcache-load-misses     #    4.65% of all L1-dcache hits    (79.70%)
+        6566123745      dTLB-loads                                                    (80.48%)
+          11413210      dTLB-load-misses          #    0.17% of all dTLB cache hits   (80.81%)
+         140187385      cache-misses                                                  (80.11%)
+
+       1.552385750 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+        6941154996      L1-dcache-loads                                               (79.40%)
+         282136960      L1-dcache-load-misses     #    4.06% of all L1-dcache hits    (78.61%)
+        6868001819      dTLB-loads                                                    (80.59%)
+           6588943      dTLB-load-misses          #    0.10% of all dTLB cache hits   (80.45%)
+         126061560      cache-misses                                                  (80.95%)
+
+       1.161087611 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+        8286874186      L1-dcache-loads                                               (80.82%)
+         290418707      L1-dcache-load-misses     #    3.50% of all L1-dcache hits    (79.32%)
+        8411214990      dTLB-loads                                                    (79.40%)
+           6560313      dTLB-load-misses          #    0.08% of all dTLB cache hits   (80.58%)
+         123138373      cache-misses                                                  (79.88%)
+
+       1.582492326 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+        4829237272      L1-dcache-loads                                               (80.20%)
+         204685955      L1-dcache-load-misses     #    4.24% of all L1-dcache hits    (79.03%)
+        4839837156      dTLB-loads                                                    (80.68%)
+           3498849      dTLB-load-misses          #    0.07% of all dTLB cache hits   (79.82%)
+          76077623      cache-misses                                                  (80.28%)
+
+       0.750066798 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+        4577488217      L1-dcache-loads                                               (79.18%)
+         240933453      L1-dcache-load-misses     #    5.26% of all L1-dcache hits    (80.73%)
+        4609034320      dTLB-loads                                                    (80.18%)
+           6464499      dTLB-load-misses          #    0.14% of all dTLB cache hits   (80.63%)
+          81913240      cache-misses                                                  (79.28%)
+
+       1.037553281 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+        4725344569      L1-dcache-loads                                               (77.18%)
+         216584366      L1-dcache-load-misses     #    4.58% of all L1-dcache hits    (78.37%)
+        4802413138      dTLB-loads                                                    (80.08%)
+           3706443      dTLB-load-misses          #    0.08% of all dTLB cache hits   (83.27%)
+          78199925      cache-misses                                                  (81.11%)
+
+       0.753818977 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_10.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+        4992622872      L1-dcache-loads                                               (79.68%)
+         228968385      L1-dcache-load-misses     #    4.59% of all L1-dcache hits    (79.93%)
+        4956759232      dTLB-loads                                                    (81.26%)
+           3831147      dTLB-load-misses          #    0.08% of all dTLB cache hits   (80.22%)
+          76907721      cache-misses                                                  (78.92%)
+
+       0.788692731 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+       14535897410      L1-dcache-loads                                               (79.51%)
+         428229087      L1-dcache-load-misses     #    2.95% of all L1-dcache hits    (79.91%)
+       14488628761      dTLB-loads                                                    (80.50%)
+          16530954      dTLB-load-misses          #    0.11% of all dTLB cache hits   (80.44%)
+         335136400      cache-misses                                                  (79.63%)
+
+       2.393564714 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+       12715558529      L1-dcache-loads                                               (80.30%)
+         435701986      L1-dcache-load-misses     #    3.43% of all L1-dcache hits    (79.19%)
+       12737853159      dTLB-loads                                                    (80.08%)
+          29741499      dTLB-load-misses          #    0.23% of all dTLB cache hits   (80.04%)
+         346458556      cache-misses                                                  (80.38%)
+
+       2.825827792 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+      139620683798      L1-dcache-loads                                               (80.00%)
+        7553467435      L1-dcache-load-misses     #    5.41% of all L1-dcache hits    (80.03%)
+      139696281610      dTLB-loads                                                    (80.01%)
+         140547563      dTLB-load-misses          #    0.10% of all dTLB cache hits   (79.97%)
+       11876317031      cache-misses                                                  (79.99%)
+
+      61.927561698 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+      451953256125      L1-dcache-loads                                               (79.97%)
+        5765038505      L1-dcache-load-misses     #    1.28% of all L1-dcache hits    (80.01%)
+      451890122044      dTLB-loads                                                    (80.00%)
+          15902604      dTLB-load-misses          #    0.00% of all dTLB cache hits   (80.02%)
+         287536595      cache-misses                                                  (80.01%)
+
+      61.903722006 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+       12123018157      L1-dcache-loads                                               (79.50%)
+         387327754      L1-dcache-load-misses     #    3.19% of all L1-dcache hits    (79.14%)
+       12094188126      dTLB-loads                                                    (80.29%)
+          12444723      dTLB-load-misses          #    0.10% of all dTLB cache hits   (80.49%)
+         287995075      cache-misses                                                  (80.58%)
+
+       2.060327544 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+       11644186631      L1-dcache-loads                                               (80.19%)
+         409901759      L1-dcache-load-misses     #    3.52% of all L1-dcache hits    (79.77%)
+       11646266530      dTLB-loads                                                    (79.39%)
+          24864458      dTLB-load-misses          #    0.21% of all dTLB cache hits   (80.39%)
+         292561441      cache-misses                                                  (80.25%)
+
+       2.371212799 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+       11952023549      L1-dcache-loads                                               (79.69%)
+         392118612      L1-dcache-load-misses     #    3.28% of all L1-dcache hits    (79.76%)
+       11928147482      dTLB-loads                                                    (80.32%)
+          13205996      dTLB-load-misses          #    0.11% of all dTLB cache hits   (80.32%)
+         243944820      cache-misses                                                  (79.92%)
+
+       1.832583797 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+       12276633909      L1-dcache-loads                                               (80.05%)
+         400129034      L1-dcache-load-misses     #    3.26% of all L1-dcache hits    (79.57%)
+       12271536594      dTLB-loads                                                    (80.03%)
+          13544883      dTLB-load-misses          #    0.11% of all dTLB cache hits   (80.42%)
+         270829417      cache-misses                                                  (79.93%)
+
+       2.004660947 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+       16886191501      L1-dcache-loads                                               (80.27%)
+         526418875      L1-dcache-load-misses     #    3.12% of all L1-dcache hits    (80.01%)
+       16973516923      dTLB-loads                                                    (79.52%)
+          18596059      dTLB-load-misses          #    0.11% of all dTLB cache hits   (80.07%)
+         424620860      cache-misses                                                  (80.13%)
+
+       2.997782860 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+       16523463155      L1-dcache-loads                                               (80.12%)
+         710160466      L1-dcache-load-misses     #    4.30% of all L1-dcache hits    (79.84%)
+       16333315967      dTLB-loads                                                    (80.09%)
+          84643728      dTLB-load-misses          #    0.52% of all dTLB cache hits   (79.74%)
+         596135530      cache-misses                                                  (80.22%)
+
+       5.739269121 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+       18736605831      L1-dcache-loads                                               (79.84%)
+         627094312      L1-dcache-load-misses     #    3.35% of all L1-dcache hits    (79.77%)
+       18812040616      dTLB-loads                                                    (79.98%)
+          21180780      dTLB-load-misses          #    0.11% of all dTLB cache hits   (79.87%)
+         437908057      cache-misses                                                  (80.54%)
+
+       3.346106667 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+       22962094435      L1-dcache-loads                                               (80.07%)
+         628751953      L1-dcache-load-misses     #    2.74% of all L1-dcache hits    (79.79%)
+       22859644437      dTLB-loads                                                    (80.03%)
+          22880695      dTLB-load-misses          #    0.10% of all dTLB cache hits   (79.89%)
+         422421331      cache-misses                                                  (80.22%)
+
+       4.974297045 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+       10571010856      L1-dcache-loads                                               (79.53%)
+         355737565      L1-dcache-load-misses     #    3.37% of all L1-dcache hits    (78.99%)
+       10599038047      dTLB-loads                                                    (80.49%)
+          10391639      dTLB-load-misses          #    0.10% of all dTLB cache hits   (81.16%)
+         241360076      cache-misses                                                  (79.83%)
+
+       1.899967212 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+       10356745229      L1-dcache-loads                                               (80.10%)
+         510866243      L1-dcache-load-misses     #    4.93% of all L1-dcache hits    (79.81%)
+       10336835996      dTLB-loads                                                    (79.85%)
+          49474217      dTLB-load-misses          #    0.48% of all dTLB cache hits   (80.04%)
+         350989378      cache-misses                                                  (80.20%)
+
+       3.967157595 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+       10914539832      L1-dcache-loads                                               (79.99%)
+         378755065      L1-dcache-load-misses     #    3.47% of all L1-dcache hits    (79.66%)
+       10903491389      dTLB-loads                                                    (79.63%)
+          11635435      dTLB-load-misses          #    0.11% of all dTLB cache hits   (80.08%)
+         238693442      cache-misses                                                  (80.63%)
+
+       2.004309494 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_11.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+       11306429430      L1-dcache-loads                                               (80.12%)
+         414563454      L1-dcache-load-misses     #    3.67% of all L1-dcache hits    (79.51%)
+       11234343207      dTLB-loads                                                    (79.24%)
+          12855637      dTLB-load-misses          #    0.11% of all dTLB cache hits   (80.53%)
+         233916665      cache-misses                                                  (80.60%)
+
+       2.207651893 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+         456747406      L1-dcache-loads                                               (77.88%)
+          28837421      L1-dcache-load-misses     #    6.31% of all L1-dcache hits    (82.99%)
+         447761812      dTLB-loads                                                    (82.53%)
+            249738      dTLB-load-misses          #    0.06% of all dTLB cache hits   (77.82%)
+           3085948      cache-misses                                                  (78.77%)
+
+       0.125187916 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+         468338257      L1-dcache-loads                                               (75.75%)
+          31088110      L1-dcache-load-misses     #    6.64% of all L1-dcache hits    (77.89%)
+         457691559      dTLB-loads                                                    (82.42%)
+            303710      dTLB-load-misses          #    0.07% of all dTLB cache hits   (85.27%)
+           3304634      cache-misses                                                  (78.66%)
+
+       0.128890283 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+         433205320      L1-dcache-loads                                               (77.34%)
+          29263792      L1-dcache-load-misses     #    6.76% of all L1-dcache hits    (81.31%)
+         426843403      dTLB-loads                                                    (81.79%)
+            274228      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.76%)
+           3074779      cache-misses                                                  (78.80%)
+
+       0.123933755 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+         430170204      L1-dcache-loads                                               (80.14%)
+          30263968      L1-dcache-load-misses     #    7.04% of all L1-dcache hits    (82.60%)
+         435884627      dTLB-loads                                                    (82.93%)
+            275463      dTLB-load-misses          #    0.06% of all dTLB cache hits   (78.26%)
+           2952967      cache-misses                                                  (76.06%)
+
+       0.128256033 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+         440547579      L1-dcache-loads                                               (80.59%)
+          27530016      L1-dcache-load-misses     #    6.25% of all L1-dcache hits    (76.86%)
+         438541604      dTLB-loads                                                    (78.17%)
+            242540      dTLB-load-misses          #    0.06% of all dTLB cache hits   (83.70%)
+           3043744      cache-misses                                                  (80.67%)
+
+       0.123585080 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+         440857077      L1-dcache-loads                                               (81.01%)
+          29449731      L1-dcache-load-misses     #    6.68% of all L1-dcache hits    (83.51%)
+         442541578      dTLB-loads                                                    (79.01%)
+            255258      dTLB-load-misses          #    0.06% of all dTLB cache hits   (79.98%)
+           2864834      cache-misses                                                  (76.50%)
+
+       0.122852388 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+         451600003      L1-dcache-loads                                               (77.76%)
+          26988792      L1-dcache-load-misses     #    5.98% of all L1-dcache hits    (78.55%)
+         451193057      dTLB-loads                                                    (80.14%)
+            257678      dTLB-load-misses          #    0.06% of all dTLB cache hits   (85.46%)
+           3969966      cache-misses                                                  (78.08%)
+
+       0.125555137 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+         468280657      L1-dcache-loads                                               (80.89%)
+          32118984      L1-dcache-load-misses     #    6.86% of all L1-dcache hits    (77.96%)
+         481155972      dTLB-loads                                                    (82.55%)
+            293288      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.77%)
+           3284045      cache-misses                                                  (75.83%)
+
+       0.132306875 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+         460131303      L1-dcache-loads                                               (79.54%)
+          32253893      L1-dcache-load-misses     #    7.01% of all L1-dcache hits    (79.21%)
+         470405059      dTLB-loads                                                    (82.86%)
+            300892      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.35%)
+           4797919      cache-misses                                                  (76.04%)
+
+       0.135475382 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+         413601890      L1-dcache-loads                                               (77.10%)
+          29574083      L1-dcache-load-misses     #    7.15% of all L1-dcache hits    (80.72%)
+         400826003      dTLB-loads                                                    (81.18%)
+            272404      dTLB-load-misses          #    0.07% of all dTLB cache hits   (82.20%)
+           2861050      cache-misses                                                  (78.80%)
+
+       0.124952925 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+         442213991      L1-dcache-loads                                               (79.82%)
+          31075287      L1-dcache-load-misses     #    7.03% of all L1-dcache hits    (80.84%)
+         444870439      dTLB-loads                                                    (83.41%)
+            307318      dTLB-load-misses          #    0.07% of all dTLB cache hits   (76.80%)
+           3800563      cache-misses                                                  (79.13%)
+
+       0.131402310 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+         474682173      L1-dcache-loads                                               (79.27%)
+          31227125      L1-dcache-load-misses     #    6.58% of all L1-dcache hits    (81.87%)
+         468297136      dTLB-loads                                                    (78.22%)
+            293466      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.81%)
+           3932311      cache-misses                                                  (77.83%)
+
+       0.134992784 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+         426740991      L1-dcache-loads                                               (78.48%)
+          29990479      L1-dcache-load-misses     #    7.03% of all L1-dcache hits    (79.40%)
+         434301128      dTLB-loads                                                    (79.51%)
+            273068      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.26%)
+           3429754      cache-misses                                                  (82.35%)
+
+       0.126251705 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+         446381855      L1-dcache-loads                                               (77.87%)
+          29185368      L1-dcache-load-misses     #    6.54% of all L1-dcache hits    (80.62%)
+         454551729      dTLB-loads                                                    (80.09%)
+            264796      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.05%)
+           3792840      cache-misses                                                  (81.38%)
+
+       0.125356941 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+         448054604      L1-dcache-loads                                               (76.55%)
+          29927260      L1-dcache-load-misses     #    6.68% of all L1-dcache hits    (80.04%)
+         444785098      dTLB-loads                                                    (80.80%)
+            284081      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.14%)
+           4004125      cache-misses                                                  (81.47%)
+
+       0.126546711 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_2.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+         457379771      L1-dcache-loads                                               (77.20%)
+          31424133      L1-dcache-load-misses     #    6.87% of all L1-dcache hits    (82.03%)
+         458617031      dTLB-loads                                                    (81.04%)
+            303616      dTLB-load-misses          #    0.07% of all dTLB cache hits   (78.59%)
+           4028046      cache-misses                                                  (81.14%)
+
+       0.132129401 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+         446963809      L1-dcache-loads                                               (80.35%)
+          31551241      L1-dcache-load-misses     #    7.06% of all L1-dcache hits    (78.95%)
+         451549918      dTLB-loads                                                    (80.42%)
+            251556      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.67%)
+           4013415      cache-misses                                                  (79.60%)
+
+       0.125672338 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+         461890220      L1-dcache-loads                                               (75.97%)
+          31045128      L1-dcache-load-misses     #    6.72% of all L1-dcache hits    (80.90%)
+         464484658      dTLB-loads                                                    (82.82%)
+            333783      dTLB-load-misses          #    0.07% of all dTLB cache hits   (80.06%)
+           3499301      cache-misses                                                  (80.26%)
+
+       0.135405822 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+         460220532      L1-dcache-loads                                               (80.57%)
+          31484380      L1-dcache-load-misses     #    6.84% of all L1-dcache hits    (81.65%)
+         463872170      dTLB-loads                                                    (80.92%)
+            273500      dTLB-load-misses          #    0.06% of all dTLB cache hits   (78.89%)
+           3186072      cache-misses                                                  (77.96%)
+
+       0.130281410 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+         434658911      L1-dcache-loads                                               (81.47%)
+          30342758      L1-dcache-load-misses     #    6.98% of all L1-dcache hits    (79.94%)
+         430178505      dTLB-loads                                                    (81.29%)
+            265217      dTLB-load-misses          #    0.06% of all dTLB cache hits   (78.72%)
+           3743292      cache-misses                                                  (78.58%)
+
+       0.127641376 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+         462078995      L1-dcache-loads                                               (75.49%)
+          31551031      L1-dcache-load-misses     #    6.83% of all L1-dcache hits    (79.91%)
+         438996466      dTLB-loads                                                    (84.04%)
+            285684      dTLB-load-misses          #    0.07% of all dTLB cache hits   (82.39%)
+           3357966      cache-misses                                                  (78.17%)
+
+       0.132960179 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+         462608136      L1-dcache-loads                                               (75.90%)
+          31196903      L1-dcache-load-misses     #    6.74% of all L1-dcache hits    (77.76%)
+         447666074      dTLB-loads                                                    (79.55%)
+            261643      dTLB-load-misses          #    0.06% of all dTLB cache hits   (84.58%)
+           3611219      cache-misses                                                  (82.21%)
+
+       0.128496106 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+         446787407      L1-dcache-loads                                               (78.01%)
+          32325009      L1-dcache-load-misses     #    7.23% of all L1-dcache hits    (80.39%)
+         449912866      dTLB-loads                                                    (82.11%)
+            296199      dTLB-load-misses          #    0.07% of all dTLB cache hits   (80.62%)
+           4111326      cache-misses                                                  (78.87%)
+
+       0.132957176 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+         441741661      L1-dcache-loads                                               (79.02%)
+          30971968      L1-dcache-load-misses     #    7.01% of all L1-dcache hits    (80.17%)
+         435616381      dTLB-loads                                                    (80.87%)
+            284580      dTLB-load-misses          #    0.07% of all dTLB cache hits   (82.10%)
+           4277459      cache-misses                                                  (77.83%)
+
+       0.129047866 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+         459874472      L1-dcache-loads                                               (79.97%)
+          33702837      L1-dcache-load-misses     #    7.33% of all L1-dcache hits    (81.08%)
+         455754008      dTLB-loads                                                    (83.00%)
+            358514      dTLB-load-misses          #    0.08% of all dTLB cache hits   (81.49%)
+           3124629      cache-misses                                                  (74.46%)
+
+       0.137153735 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+         447478562      L1-dcache-loads                                               (77.28%)
+          31460478      L1-dcache-load-misses     #    7.03% of all L1-dcache hits    (79.80%)
+         438449231      dTLB-loads                                                    (83.48%)
+            258566      dTLB-load-misses          #    0.06% of all dTLB cache hits   (79.08%)
+           2999851      cache-misses                                                  (80.36%)
+
+       0.127639718 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+         441748224      L1-dcache-loads                                               (79.90%)
+          31849682      L1-dcache-load-misses     #    7.21% of all L1-dcache hits    (81.89%)
+         443458971      dTLB-loads                                                    (83.04%)
+            278627      dTLB-load-misses          #    0.06% of all dTLB cache hits   (75.68%)
+           4206838      cache-misses                                                  (79.49%)
+
+       0.133356716 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+         460764566      L1-dcache-loads                                               (78.98%)
+          33451813      L1-dcache-load-misses     #    7.26% of all L1-dcache hits    (80.81%)
+         453135372      dTLB-loads                                                    (78.29%)
+            284235      dTLB-load-misses          #    0.06% of all dTLB cache hits   (83.58%)
+           3854551      cache-misses                                                  (78.33%)
+
+       0.130900113 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+         483650131      L1-dcache-loads                                               (77.16%)
+          33175678      L1-dcache-load-misses     #    6.86% of all L1-dcache hits    (81.12%)
+         477574850      dTLB-loads                                                    (83.50%)
+            281905      dTLB-load-misses          #    0.06% of all dTLB cache hits   (77.30%)
+           3605065      cache-misses                                                  (80.92%)
+
+       0.133153428 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+         467435975      L1-dcache-loads                                               (79.27%)
+          30509145      L1-dcache-load-misses     #    6.53% of all L1-dcache hits    (81.19%)
+         465007316      dTLB-loads                                                    (82.42%)
+            284503      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.93%)
+           3875870      cache-misses                                                  (76.18%)
+
+       0.133061996 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+         422785807      L1-dcache-loads                                               (77.61%)
+          29005977      L1-dcache-load-misses     #    6.86% of all L1-dcache hits    (75.91%)
+         429103851      dTLB-loads                                                    (80.74%)
+            257812      dTLB-load-misses          #    0.06% of all dTLB cache hits   (84.87%)
+           3396738      cache-misses                                                  (80.87%)
+
+       0.125628298 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_3.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+         467748852      L1-dcache-loads                                               (78.77%)
+          33303024      L1-dcache-load-misses     #    7.12% of all L1-dcache hits    (80.16%)
+         466617902      dTLB-loads                                                    (80.51%)
+            301016      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.56%)
+           3891942      cache-misses                                                  (78.01%)
+
+       0.135589511 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+         513710919      L1-dcache-loads                                               (78.80%)
+          38233775      L1-dcache-load-misses     #    7.44% of all L1-dcache hits    (80.62%)
+         491583121      dTLB-loads                                                    (83.20%)
+            434433      dTLB-load-misses          #    0.09% of all dTLB cache hits   (77.90%)
+           5328271      cache-misses                                                  (79.47%)
+
+       0.164588078 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+         474288698      L1-dcache-loads                                               (74.36%)
+          34098321      L1-dcache-load-misses     #    7.19% of all L1-dcache hits    (82.84%)
+         489884325      dTLB-loads                                                    (82.21%)
+            297885      dTLB-load-misses          #    0.06% of all dTLB cache hits   (83.36%)
+           3884069      cache-misses                                                  (77.24%)
+
+       0.138064035 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+         519387193      L1-dcache-loads                                               (79.02%)
+          33923184      L1-dcache-load-misses     #    6.53% of all L1-dcache hits    (81.16%)
+         534201077      dTLB-loads                                                    (80.28%)
+            276217      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.31%)
+           3485301      cache-misses                                                  (79.23%)
+
+       0.139878410 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+         496037543      L1-dcache-loads                                               (75.15%)
+          34261665      L1-dcache-load-misses     #    6.91% of all L1-dcache hits    (77.31%)
+         471715539      dTLB-loads                                                    (81.52%)
+            289189      dTLB-load-misses          #    0.06% of all dTLB cache hits   (84.73%)
+           3371237      cache-misses                                                  (81.29%)
+
+       0.137212044 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+         464526030      L1-dcache-loads                                               (81.59%)
+          33478965      L1-dcache-load-misses     #    7.21% of all L1-dcache hits    (83.35%)
+         479929591      dTLB-loads                                                    (82.73%)
+            290007      dTLB-load-misses          #    0.06% of all dTLB cache hits   (79.35%)
+           3976390      cache-misses                                                  (72.97%)
+
+       0.139174793 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+         449178767      L1-dcache-loads                                               (78.18%)
+          32733836      L1-dcache-load-misses     #    7.29% of all L1-dcache hits    (82.65%)
+         452763642      dTLB-loads                                                    (79.59%)
+            307917      dTLB-load-misses          #    0.07% of all dTLB cache hits   (83.04%)
+           5011820      cache-misses                                                  (76.55%)
+
+       0.139456455 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+         478148141      L1-dcache-loads                                               (74.23%)
+          35339147      L1-dcache-load-misses     #    7.39% of all L1-dcache hits    (79.22%)
+         473171615      dTLB-loads                                                    (83.97%)
+            340673      dTLB-load-misses          #    0.07% of all dTLB cache hits   (83.95%)
+           5237928      cache-misses                                                  (78.63%)
+
+       0.148244028 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+         489482774      L1-dcache-loads                                               (81.14%)
+          34578166      L1-dcache-load-misses     #    7.06% of all L1-dcache hits    (74.93%)
+         475173063      dTLB-loads                                                    (78.49%)
+            330516      dTLB-load-misses          #    0.07% of all dTLB cache hits   (81.88%)
+           5085892      cache-misses                                                  (83.56%)
+
+       0.146706680 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+         479537733      L1-dcache-loads                                               (78.51%)
+          34447541      L1-dcache-load-misses     #    7.18% of all L1-dcache hits    (82.09%)
+         479928531      dTLB-loads                                                    (80.28%)
+            293352      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.29%)
+           5236234      cache-misses                                                  (77.83%)
+
+       0.139542853 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+         481619008      L1-dcache-loads                                               (79.66%)
+          35869671      L1-dcache-load-misses     #    7.45% of all L1-dcache hits    (77.94%)
+         484332877      dTLB-loads                                                    (82.57%)
+            341120      dTLB-load-misses          #    0.07% of all dTLB cache hits   (84.09%)
+           4871333      cache-misses                                                  (75.73%)
+
+       0.143520988 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+         498630604      L1-dcache-loads                                               (77.39%)
+          35882331      L1-dcache-load-misses     #    7.20% of all L1-dcache hits    (82.19%)
+         487003628      dTLB-loads                                                    (79.54%)
+            309015      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.52%)
+           4903469      cache-misses                                                  (78.36%)
+
+       0.139116468 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+         512444109      L1-dcache-loads                                               (78.18%)
+          36965551      L1-dcache-load-misses     #    7.21% of all L1-dcache hits    (79.11%)
+         506499801      dTLB-loads                                                    (80.44%)
+            312950      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.83%)
+           4373330      cache-misses                                                  (80.44%)
+
+       0.142754119 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+         466058220      L1-dcache-loads                                               (76.65%)
+          32126254      L1-dcache-load-misses     #    6.89% of all L1-dcache hits    (78.57%)
+         456029734      dTLB-loads                                                    (83.27%)
+            293846      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.58%)
+           3977035      cache-misses                                                  (79.93%)
+
+       0.132960338 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+         465313993      L1-dcache-loads                                               (78.72%)
+          31512516      L1-dcache-load-misses     #    6.77% of all L1-dcache hits    (82.52%)
+         471931354      dTLB-loads                                                    (78.56%)
+            283251      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.73%)
+           3287590      cache-misses                                                  (78.46%)
+
+       0.129338625 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+         488371892      L1-dcache-loads                                               (78.40%)
+          32634404      L1-dcache-load-misses     #    6.68% of all L1-dcache hits    (81.61%)
+         482803288      dTLB-loads                                                    (82.72%)
+            287975      dTLB-load-misses          #    0.06% of all dTLB cache hits   (79.02%)
+           3268163      cache-misses                                                  (78.25%)
+
+       0.133130581 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_4.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+         476851438      L1-dcache-loads                                               (80.74%)
+          34654423      L1-dcache-load-misses     #    7.27% of all L1-dcache hits    (80.63%)
+         479494089      dTLB-loads                                                    (82.67%)
+            334668      dTLB-load-misses          #    0.07% of all dTLB cache hits   (78.03%)
+           3208825      cache-misses                                                  (77.93%)
+
+       0.149129714 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+         584208836      L1-dcache-loads                                               (77.87%)
+          41456782      L1-dcache-load-misses     #    7.10% of all L1-dcache hits    (79.36%)
+         587078403      dTLB-loads                                                    (80.31%)
+            305050      dTLB-load-misses          #    0.05% of all dTLB cache hits   (84.01%)
+           4071748      cache-misses                                                  (78.46%)
+
+       0.148339771 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+         557101461      L1-dcache-loads                                               (82.17%)
+          42266644      L1-dcache-load-misses     #    7.59% of all L1-dcache hits    (80.90%)
+         549083361      dTLB-loads                                                    (79.17%)
+            323887      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.67%)
+           4407014      cache-misses                                                  (76.09%)
+
+       0.150050580 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+         761692795      L1-dcache-loads                                               (79.30%)
+          48990081      L1-dcache-load-misses     #    6.43% of all L1-dcache hits    (81.65%)
+         780879844      dTLB-loads                                                    (79.92%)
+            388994      dTLB-load-misses          #    0.05% of all dTLB cache hits   (79.34%)
+           4738589      cache-misses                                                  (79.79%)
+
+       0.184425705 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+         629975683      L1-dcache-loads                                               (78.78%)
+          45549251      L1-dcache-load-misses     #    7.23% of all L1-dcache hits    (76.89%)
+         617272437      dTLB-loads                                                    (80.31%)
+            395939      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.56%)
+           3965274      cache-misses                                                  (81.46%)
+
+       0.164009925 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+         554317601      L1-dcache-loads                                               (77.66%)
+          41350787      L1-dcache-load-misses     #    7.46% of all L1-dcache hits    (81.18%)
+         559753159      dTLB-loads                                                    (81.20%)
+            332041      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.95%)
+           3453685      cache-misses                                                  (78.02%)
+
+       0.148477465 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+         567402102      L1-dcache-loads                                               (80.35%)
+          38399952      L1-dcache-load-misses     #    6.77% of all L1-dcache hits    (81.40%)
+         545242333      dTLB-loads                                                    (75.24%)
+            309847      dTLB-load-misses          #    0.06% of all dTLB cache hits   (83.37%)
+           3756174      cache-misses                                                  (79.64%)
+
+       0.143362012 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+         575993309      L1-dcache-loads                                               (78.08%)
+          41186637      L1-dcache-load-misses     #    7.15% of all L1-dcache hits    (80.13%)
+         555130167      dTLB-loads                                                    (80.93%)
+            301743      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.59%)
+           3598019      cache-misses                                                  (79.25%)
+
+       0.156395771 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+         555637346      L1-dcache-loads                                               (78.77%)
+          39311587      L1-dcache-load-misses     #    7.08% of all L1-dcache hits    (80.46%)
+         568759798      dTLB-loads                                                    (80.29%)
+            314193      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.15%)
+           3594781      cache-misses                                                  (79.33%)
+
+       0.146833245 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+         625491179      L1-dcache-loads                                               (77.83%)
+          43095854      L1-dcache-load-misses     #    6.89% of all L1-dcache hits    (81.13%)
+         627538914      dTLB-loads                                                    (81.25%)
+            321878      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.86%)
+           4138504      cache-misses                                                  (77.92%)
+
+       0.153227355 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+         602796554      L1-dcache-loads                                               (79.06%)
+          44171841      L1-dcache-load-misses     #    7.33% of all L1-dcache hits    (79.31%)
+         621474312      dTLB-loads                                                    (82.01%)
+            325576      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.87%)
+           4338587      cache-misses                                                  (78.75%)
+
+       0.154375281 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+         643390623      L1-dcache-loads                                               (78.25%)
+          44981101      L1-dcache-load-misses     #    6.99% of all L1-dcache hits    (78.83%)
+         631408256      dTLB-loads                                                    (81.44%)
+            331810      dTLB-load-misses          #    0.05% of all dTLB cache hits   (82.95%)
+           4409963      cache-misses                                                  (78.54%)
+
+       0.156093375 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+         636784713      L1-dcache-loads                                               (77.82%)
+          46824416      L1-dcache-load-misses     #    7.35% of all L1-dcache hits    (83.16%)
+         630814817      dTLB-loads                                                    (79.52%)
+            352282      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.77%)
+           4190264      cache-misses                                                  (77.73%)
+
+       0.156224887 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+         524881973      L1-dcache-loads                                               (78.69%)
+          38388742      L1-dcache-load-misses     #    7.31% of all L1-dcache hits    (80.24%)
+         524070254      dTLB-loads                                                    (79.85%)
+            332352      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.50%)
+           3784110      cache-misses                                                  (79.71%)
+
+       0.146026171 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+         513771240      L1-dcache-loads                                               (77.03%)
+          35408220      L1-dcache-load-misses     #    6.89% of all L1-dcache hits    (77.76%)
+         504578177      dTLB-loads                                                    (80.98%)
+            281547      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.54%)
+           3803905      cache-misses                                                  (82.69%)
+
+       0.142917444 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+         488593126      L1-dcache-loads                                               (78.57%)
+          35969847      L1-dcache-load-misses     #    7.36% of all L1-dcache hits    (81.18%)
+         500475279      dTLB-loads                                                    (81.10%)
+            287881      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.47%)
+           3222633      cache-misses                                                  (77.67%)
+
+       0.139017781 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_5.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+         547316156      L1-dcache-loads                                               (78.73%)
+          37485949      L1-dcache-load-misses     #    6.85% of all L1-dcache hits    (77.14%)
+         539940943      dTLB-loads                                                    (80.87%)
+            313680      dTLB-load-misses          #    0.06% of all dTLB cache hits   (83.42%)
+           3463776      cache-misses                                                  (79.85%)
+
+       0.142909728 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+         747406332      L1-dcache-loads                                               (80.81%)
+          53551471      L1-dcache-load-misses     #    7.16% of all L1-dcache hits    (79.43%)
+         731510529      dTLB-loads                                                    (81.61%)
+            366604      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.06%)
+           4051846      cache-misses                                                  (78.10%)
+
+       0.169314883 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+         773501939      L1-dcache-loads                                               (81.83%)
+          55751106      L1-dcache-load-misses     #    7.21% of all L1-dcache hits    (78.29%)
+         751954763      dTLB-loads                                                    (79.69%)
+            360627      dTLB-load-misses          #    0.05% of all dTLB cache hits   (79.74%)
+           4302493      cache-misses                                                  (80.44%)
+
+       0.170028372 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+        1209247478      L1-dcache-loads                                               (80.39%)
+          67360324      L1-dcache-load-misses     #    5.57% of all L1-dcache hits    (80.98%)
+        1188611196      dTLB-loads                                                    (80.05%)
+            790452      dTLB-load-misses          #    0.07% of all dTLB cache hits   (79.97%)
+           8164845      cache-misses                                                  (78.62%)
+
+       0.295470801 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+         861317346      L1-dcache-loads                                               (80.29%)
+          56698438      L1-dcache-load-misses     #    6.58% of all L1-dcache hits    (80.80%)
+         834486245      dTLB-loads                                                    (79.70%)
+            372802      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.68%)
+           4495018      cache-misses                                                  (79.53%)
+
+       0.173688834 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+         720885863      L1-dcache-loads                                               (81.89%)
+          53539093      L1-dcache-load-misses     #    7.43% of all L1-dcache hits    (79.94%)
+         770385271      dTLB-loads                                                    (80.13%)
+            376865      dTLB-load-misses          #    0.05% of all dTLB cache hits   (79.10%)
+           4288183      cache-misses                                                  (78.94%)
+
+       0.169924350 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+         694447407      L1-dcache-loads                                               (79.81%)
+          49196725      L1-dcache-load-misses     #    7.08% of all L1-dcache hits    (80.58%)
+         679392902      dTLB-loads                                                    (79.83%)
+            335123      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.49%)
+           3942435      cache-misses                                                  (78.28%)
+
+       0.160970875 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+         711806571      L1-dcache-loads                                               (76.35%)
+          46848930      L1-dcache-load-misses     #    6.58% of all L1-dcache hits    (79.36%)
+         700498641      dTLB-loads                                                    (79.00%)
+            341577      dTLB-load-misses          #    0.05% of all dTLB cache hits   (84.56%)
+           4330455      cache-misses                                                  (80.72%)
+
+       0.162314019 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+         714931189      L1-dcache-loads                                               (79.88%)
+          52739691      L1-dcache-load-misses     #    7.38% of all L1-dcache hits    (79.97%)
+         720744131      dTLB-loads                                                    (81.36%)
+            431164      dTLB-load-misses          #    0.06% of all dTLB cache hits   (78.59%)
+           3917533      cache-misses                                                  (80.20%)
+
+       0.187256365 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+         771095324      L1-dcache-loads                                               (79.62%)
+          55940442      L1-dcache-load-misses     #    7.25% of all L1-dcache hits    (79.07%)
+         797347877      dTLB-loads                                                    (80.35%)
+            412583      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.72%)
+           4219322      cache-misses                                                  (80.24%)
+
+       0.184498504 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+         781503123      L1-dcache-loads                                               (77.91%)
+          50710365      L1-dcache-load-misses     #    6.49% of all L1-dcache hits    (79.56%)
+         780016569      dTLB-loads                                                    (81.76%)
+            350672      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.54%)
+           4384828      cache-misses                                                  (80.23%)
+
+       0.167583062 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+         833718264      L1-dcache-loads                                               (78.21%)
+          53578666      L1-dcache-load-misses     #    6.43% of all L1-dcache hits    (78.71%)
+         815909449      dTLB-loads                                                    (80.16%)
+            366564      dTLB-load-misses          #    0.04% of all dTLB cache hits   (83.03%)
+           4553766      cache-misses                                                  (79.88%)
+
+       0.171625241 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+         858700707      L1-dcache-loads                                               (79.47%)
+          60999065      L1-dcache-load-misses     #    7.10% of all L1-dcache hits    (80.48%)
+         855366138      dTLB-loads                                                    (81.79%)
+            454638      dTLB-load-misses          #    0.05% of all dTLB cache hits   (79.73%)
+           4693313      cache-misses                                                  (78.54%)
+
+       0.194883146 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+         669279526      L1-dcache-loads                                               (78.67%)
+          49132195      L1-dcache-load-misses     #    7.34% of all L1-dcache hits    (78.06%)
+         668605182      dTLB-loads                                                    (81.02%)
+            343791      dTLB-load-misses          #    0.05% of all dTLB cache hits   (82.59%)
+           3954402      cache-misses                                                  (79.65%)
+
+       0.161595361 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+         677578315      L1-dcache-loads                                               (80.55%)
+          47910315      L1-dcache-load-misses     #    7.07% of all L1-dcache hits    (78.41%)
+         687090596      dTLB-loads                                                    (79.71%)
+            339167      dTLB-load-misses          #    0.05% of all dTLB cache hits   (82.81%)
+           4094509      cache-misses                                                  (78.51%)
+
+       0.160903428 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+         708024113      L1-dcache-loads                                               (78.88%)
+          52785682      L1-dcache-load-misses     #    7.46% of all L1-dcache hits    (82.92%)
+         730982062      dTLB-loads                                                    (79.22%)
+            354348      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.57%)
+           3801687      cache-misses                                                  (78.41%)
+
+       0.163547001 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_6.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+         687827069      L1-dcache-loads                                               (79.04%)
+          49412752      L1-dcache-load-misses     #    7.18% of all L1-dcache hits    (81.60%)
+         698009126      dTLB-loads                                                    (79.90%)
+            334270      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.54%)
+           4143564      cache-misses                                                  (77.92%)
+
+       0.159492724 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+        1461428189      L1-dcache-loads                                               (76.83%)
+          97273383      L1-dcache-load-misses     #    6.66% of all L1-dcache hits    (80.70%)
+        1440568781      dTLB-loads                                                    (81.53%)
+            511416      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.76%)
+          12986303      cache-misses                                                  (79.18%)
+
+       0.207876494 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+        1536599515      L1-dcache-loads                                               (77.24%)
+         102798703      L1-dcache-load-misses     #    6.69% of all L1-dcache hits    (78.56%)
+        1499371199      dTLB-loads                                                    (82.59%)
+            576766      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.24%)
+          13757982      cache-misses                                                  (80.38%)
+
+       0.245210049 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+        6508141626      L1-dcache-loads                                               (79.72%)
+         334779231      L1-dcache-load-misses     #    5.14% of all L1-dcache hits    (78.42%)
+        6455401386      dTLB-loads                                                    (80.72%)
+           1714891      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.55%)
+          74360229      cache-misses                                                  (80.59%)
+
+       1.361814719 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+        1657497616      L1-dcache-loads                                               (81.04%)
+         103642956      L1-dcache-load-misses     #    6.25% of all L1-dcache hits    (79.06%)
+        1666654600      dTLB-loads                                                    (81.54%)
+            552131      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.52%)
+          11121817      cache-misses                                                  (77.83%)
+
+       0.219903930 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+        1380297783      L1-dcache-loads                                               (78.92%)
+         102483222      L1-dcache-load-misses     #    7.42% of all L1-dcache hits    (79.81%)
+        1356114046      dTLB-loads                                                    (80.88%)
+            559131      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.45%)
+          13045147      cache-misses                                                  (79.94%)
+
+       0.210165275 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+        1297784629      L1-dcache-loads                                               (80.00%)
+          87878494      L1-dcache-load-misses     #    6.77% of all L1-dcache hits    (80.35%)
+        1292770418      dTLB-loads                                                    (79.69%)
+            483287      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.72%)
+           9711595      cache-misses                                                  (80.23%)
+
+       0.197974903 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+        1202450221      L1-dcache-loads                                               (78.48%)
+          78861156      L1-dcache-load-misses     #    6.56% of all L1-dcache hits    (80.40%)
+        1211571833      dTLB-loads                                                    (81.05%)
+            426344      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.43%)
+          10095501      cache-misses                                                  (79.65%)
+
+       0.190133336 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+        1350176877      L1-dcache-loads                                               (80.72%)
+          86286495      L1-dcache-load-misses     #    6.39% of all L1-dcache hits    (78.42%)
+        1315429968      dTLB-loads                                                    (79.78%)
+            480258      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.40%)
+          10949469      cache-misses                                                  (79.69%)
+
+       0.202472067 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+        1565498522      L1-dcache-loads                                               (77.86%)
+          92493802      L1-dcache-load-misses     #    5.91% of all L1-dcache hits    (79.76%)
+        1543554501      dTLB-loads                                                    (80.27%)
+            507241      dTLB-load-misses          #    0.03% of all dTLB cache hits   (81.74%)
+          12758793      cache-misses                                                  (80.37%)
+
+       0.216450438 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+        1596916751      L1-dcache-loads                                               (79.33%)
+         105039529      L1-dcache-load-misses     #    6.58% of all L1-dcache hits    (81.09%)
+        1584218126      dTLB-loads                                                    (80.67%)
+            504755      dTLB-load-misses          #    0.03% of all dTLB cache hits   (81.06%)
+          12959455      cache-misses                                                  (77.84%)
+
+       0.207993835 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+        1585604187      L1-dcache-loads                                               (77.58%)
+          94804116      L1-dcache-load-misses     #    5.98% of all L1-dcache hits    (80.33%)
+        1566959718      dTLB-loads                                                    (80.02%)
+            473183      dTLB-load-misses          #    0.03% of all dTLB cache hits   (81.78%)
+          11941530      cache-misses                                                  (80.30%)
+
+       0.209150358 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+        1963053019      L1-dcache-loads                                               (78.44%)
+         113748741      L1-dcache-load-misses     #    5.79% of all L1-dcache hits    (79.24%)
+        1948123679      dTLB-loads                                                    (79.72%)
+            544811      dTLB-load-misses          #    0.03% of all dTLB cache hits   (81.00%)
+          14964256      cache-misses                                                  (81.60%)
+
+       0.251204181 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+        1151179513      L1-dcache-loads                                               (79.82%)
+          76137670      L1-dcache-load-misses     #    6.61% of all L1-dcache hits    (80.62%)
+        1162558065      dTLB-loads                                                    (81.77%)
+            451414      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.59%)
+           6777485      cache-misses                                                  (78.19%)
+
+       0.205235237 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+        1137594562      L1-dcache-loads                                               (79.14%)
+          75065570      L1-dcache-load-misses     #    6.60% of all L1-dcache hits    (80.38%)
+        1143255464      dTLB-loads                                                    (78.45%)
+            487234      dTLB-load-misses          #    0.04% of all dTLB cache hits   (82.24%)
+           7641874      cache-misses                                                  (79.80%)
+
+       0.198532698 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+        1165617630      L1-dcache-loads                                               (81.53%)
+          77083484      L1-dcache-load-misses     #    6.61% of all L1-dcache hits    (80.87%)
+        1153265182      dTLB-loads                                                    (81.00%)
+            438273      dTLB-load-misses          #    0.04% of all dTLB cache hits   (78.79%)
+           7827802      cache-misses                                                  (77.81%)
+
+       0.196248950 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_7.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+        1324162212      L1-dcache-loads                                               (80.24%)
+          96228668      L1-dcache-load-misses     #    7.27% of all L1-dcache hits    (79.82%)
+        1327673179      dTLB-loads                                                    (77.96%)
+            505993      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.28%)
+           9684982      cache-misses                                                  (80.71%)
+
+       0.201414752 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+        2267270601      L1-dcache-loads                                               (79.10%)
+         147966813      L1-dcache-load-misses     #    6.53% of all L1-dcache hits    (79.51%)
+        2255156132      dTLB-loads                                                    (80.50%)
+            783069      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.84%)
+          21028252      cache-misses                                                  (80.05%)
+
+       0.312158015 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+        2160849114      L1-dcache-loads                                               (78.33%)
+         140812725      L1-dcache-load-misses     #    6.52% of all L1-dcache hits    (80.59%)
+        2135158538      dTLB-loads                                                    (81.58%)
+            760252      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.75%)
+          18156778      cache-misses                                                  (77.74%)
+
+       0.283537168 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+       39017241133      L1-dcache-loads                                               (79.42%)
+        1614292192      L1-dcache-load-misses     #    4.14% of all L1-dcache hits    (79.62%)
+       38650374794      dTLB-loads                                                    (80.62%)
+           9214909      dTLB-load-misses          #    0.02% of all dTLB cache hits   (79.84%)
+         485947125      cache-misses                                                  (80.51%)
+
+      10.492754529 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+        3752516773      L1-dcache-loads                                               (78.87%)
+         205770917      L1-dcache-load-misses     #    5.48% of all L1-dcache hits    (80.12%)
+        3717672905      dTLB-loads                                                    (81.41%)
+            988644      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.58%)
+          25600579      cache-misses                                                  (79.02%)
+
+       0.411962044 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+        2133517702      L1-dcache-loads                                               (79.87%)
+         151179819      L1-dcache-load-misses     #    7.09% of all L1-dcache hits    (80.16%)
+        2147468666      dTLB-loads                                                    (81.17%)
+            826676      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.33%)
+          21321709      cache-misses                                                  (78.47%)
+
+       0.276696516 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+        1980587567      L1-dcache-loads                                               (79.70%)
+         127476851      L1-dcache-load-misses     #    6.44% of all L1-dcache hits    (79.93%)
+        1981018860      dTLB-loads                                                    (79.85%)
+            704920      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.83%)
+          15790910      cache-misses                                                  (78.69%)
+
+       0.283699325 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+        1729186185      L1-dcache-loads                                               (78.04%)
+         110749169      L1-dcache-load-misses     #    6.40% of all L1-dcache hits    (79.44%)
+        1731175142      dTLB-loads                                                    (79.60%)
+            609729      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.90%)
+          15539117      cache-misses                                                  (81.01%)
+
+       0.242597517 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+        1947283250      L1-dcache-loads                                               (79.34%)
+         123311417      L1-dcache-load-misses     #    6.33% of all L1-dcache hits    (79.91%)
+        1943547357      dTLB-loads                                                    (80.31%)
+            694323      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.65%)
+          16554442      cache-misses                                                  (79.79%)
+
+       0.272287748 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+        2484874998      L1-dcache-loads                                               (81.03%)
+         169847844      L1-dcache-load-misses     #    6.84% of all L1-dcache hits    (80.47%)
+        2521427523      dTLB-loads                                                    (80.60%)
+           1030363      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.36%)
+          25976651      cache-misses                                                  (78.54%)
+
+       0.323535748 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+        2563334762      L1-dcache-loads                                               (79.53%)
+         167134291      L1-dcache-load-misses     #    6.52% of all L1-dcache hits    (81.78%)
+        2496493913      dTLB-loads                                                    (80.60%)
+           1268671      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.51%)
+          23686746      cache-misses                                                  (77.58%)
+
+       0.340746189 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+        2648039772      L1-dcache-loads                                               (78.99%)
+         178936348      L1-dcache-load-misses     #    6.76% of all L1-dcache hits    (81.44%)
+        2625368999      dTLB-loads                                                    (81.17%)
+           1018521      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.46%)
+          30386204      cache-misses                                                  (77.94%)
+
+       0.334480212 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+        3017119055      L1-dcache-loads                                               (78.02%)
+         199294116      L1-dcache-load-misses     #    6.61% of all L1-dcache hits    (79.53%)
+        3052643172      dTLB-loads                                                    (80.62%)
+           1253920      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.03%)
+          27886360      cache-misses                                                  (80.79%)
+
+       0.387303509 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+        1959796609      L1-dcache-loads                                               (79.80%)
+         116835696      L1-dcache-load-misses     #    5.96% of all L1-dcache hits    (78.44%)
+        1930078089      dTLB-loads                                                    (81.27%)
+            668084      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.81%)
+          16788592      cache-misses                                                  (79.67%)
+
+       0.255270223 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+        1989656163      L1-dcache-loads                                               (80.84%)
+         143036959      L1-dcache-load-misses     #    7.19% of all L1-dcache hits    (78.98%)
+        2044325969      dTLB-loads                                                    (80.60%)
+            845395      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.42%)
+          18780274      cache-misses                                                  (79.16%)
+
+       0.295202761 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+        1902204787      L1-dcache-loads                                               (79.40%)
+         122101986      L1-dcache-load-misses     #    6.42% of all L1-dcache hits    (78.56%)
+        1876885277      dTLB-loads                                                    (80.33%)
+            647458      dTLB-load-misses          #    0.03% of all dTLB cache hits   (81.48%)
+          17231661      cache-misses                                                  (80.22%)
+
+       0.258609953 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_8.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+        1992257034      L1-dcache-loads                                               (79.56%)
+         124017741      L1-dcache-load-misses     #    6.22% of all L1-dcache hits    (79.81%)
+        1965740176      dTLB-loads                                                    (79.93%)
+            676632      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.80%)
+          18005779      cache-misses                                                  (79.90%)
+
+       0.260945861 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_inevitably_eat.gm -linear -strategy=2 -timeout=30':
+
+        3097084273      L1-dcache-loads                                               (77.70%)
+         157749520      L1-dcache-load-misses     #    5.09% of all L1-dcache hits    (80.63%)
+        3077144736      dTLB-loads                                                    (81.44%)
+           1702829      dTLB-load-misses          #    0.06% of all dTLB cache hits   (79.67%)
+          36473547      cache-misses                                                  (80.57%)
+
+       0.445376207 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_inevitably_eat.gm -linear -strategy=3 -timeout=30':
+
+        2933753456      L1-dcache-loads                                               (80.59%)
+         147305036      L1-dcache-load-misses     #    5.02% of all L1-dcache hits    (79.35%)
+        2930333353      dTLB-loads                                                    (80.64%)
+           1784665      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.48%)
+          32352960      cache-misses                                                  (78.94%)
+
+       0.464528718 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_inevitably_eat.gm -linear -strategy=4 -timeout=30':
+
+      176601404375      L1-dcache-loads                                               (79.98%)
+        8169802560      L1-dcache-load-misses     #    4.63% of all L1-dcache hits    (79.93%)
+      176539852114      dTLB-loads                                                    (79.98%)
+         121600685      dTLB-load-misses          #    0.07% of all dTLB cache hits   (80.03%)
+        6857295202      cache-misses                                                  (80.08%)
+
+      60.377168925 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_inevitably_eat.gm -linear -strategy=6 -timeout=30':
+
+       10719708185      L1-dcache-loads                                               (80.04%)
+         363768040      L1-dcache-load-misses     #    3.39% of all L1-dcache hits    (79.82%)
+       10668258716      dTLB-loads                                                    (80.24%)
+           1739167      dTLB-load-misses          #    0.02% of all dTLB cache hits   (79.59%)
+          40923415      cache-misses                                                  (80.31%)
+
+       1.642711944 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_plato_starves.gm -linear -strategy=2 -timeout=30':
+
+        4132469676      L1-dcache-loads                                               (79.21%)
+         224771947      L1-dcache-load-misses     #    5.44% of all L1-dcache hits    (80.66%)
+        4112419487      dTLB-loads                                                    (79.92%)
+           1624152      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.09%)
+          61167316      cache-misses                                                  (80.12%)
+
+       0.467045504 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_plato_starves.gm -linear -strategy=3 -timeout=30':
+
+        3773416821      L1-dcache-loads                                               (79.55%)
+         223689805      L1-dcache-load-misses     #    5.93% of all L1-dcache hits    (79.88%)
+        3781868900      dTLB-loads                                                    (80.03%)
+           1764410      dTLB-load-misses          #    0.05% of all dTLB cache hits   (79.70%)
+          55624590      cache-misses                                                  (80.84%)
+
+       0.453394207 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_plato_starves.gm -linear -strategy=4 -timeout=30':
+
+        3275199942      L1-dcache-loads                                               (80.00%)
+         207706144      L1-dcache-load-misses     #    6.34% of all L1-dcache hits    (80.23%)
+        3250914839      dTLB-loads                                                    (80.64%)
+           1535879      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.25%)
+          44964668      cache-misses                                                  (78.88%)
+
+       0.475969658 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_plato_starves.gm -linear -strategy=6 -timeout=30':
+
+        3590393392      L1-dcache-loads                                               (80.12%)
+         210291811      L1-dcache-load-misses     #    5.86% of all L1-dcache hits    (78.67%)
+        3654679090      dTLB-loads                                                    (79.43%)
+           1545560      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.90%)
+          51674992      cache-misses                                                  (80.88%)
+
+       0.409210358 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_possibly_eat.gm -linear -strategy=2 -timeout=30':
+
+        3800055962      L1-dcache-loads                                               (80.92%)
+         190088546      L1-dcache-load-misses     #    5.00% of all L1-dcache hits    (78.69%)
+        3771241390      dTLB-loads                                                    (80.17%)
+           2148051      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.26%)
+          53099188      cache-misses                                                  (79.97%)
+
+       0.539353213 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_possibly_eat.gm -linear -strategy=3 -timeout=30':
+
+        3514312347      L1-dcache-loads                                               (77.08%)
+         184406000      L1-dcache-load-misses     #    5.25% of all L1-dcache hits    (78.66%)
+        3498710248      dTLB-loads                                                    (82.26%)
+           2704685      dTLB-load-misses          #    0.08% of all dTLB cache hits   (81.30%)
+          48038906      cache-misses                                                  (80.70%)
+
+       0.572700313 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_possibly_eat.gm -linear -strategy=4 -timeout=30':
+
+        3530461797      L1-dcache-loads                                               (78.60%)
+         158855869      L1-dcache-load-misses     #    4.50% of all L1-dcache hits    (80.03%)
+        3464042690      dTLB-loads                                                    (81.29%)
+           1997336      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.33%)
+          40391344      cache-misses                                                  (79.75%)
+
+       0.506506945 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.invariantly_possibly_eat.gm -linear -strategy=6 -timeout=30':
+
+        4054428418      L1-dcache-loads                                               (78.30%)
+         184736850      L1-dcache-load-misses     #    4.56% of all L1-dcache hits    (80.00%)
+        4019178597      dTLB-loads                                                    (80.68%)
+           2314191      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.09%)
+          47597015      cache-misses                                                  (80.93%)
+
+       0.593773643 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.plato_infinitely_often_can_eat.gm -linear -strategy=2 -timeout=30':
+
+        3459964841      L1-dcache-loads                                               (78.30%)
+         226774175      L1-dcache-load-misses     #    6.55% of all L1-dcache hits    (80.08%)
+        3439693396      dTLB-loads                                                    (80.46%)
+           1605008      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.59%)
+          53990816      cache-misses                                                  (79.57%)
+
+       0.450394144 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.plato_infinitely_often_can_eat.gm -linear -strategy=3 -timeout=30':
+
+        4152235690      L1-dcache-loads                                               (79.76%)
+         352953026      L1-dcache-load-misses     #    8.50% of all L1-dcache hits    (79.37%)
+        4149994093      dTLB-loads                                                    (79.21%)
+           1670530      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.15%)
+          39110641      cache-misses                                                  (80.50%)
+
+       0.531599704 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.plato_infinitely_often_can_eat.gm -linear -strategy=4 -timeout=30':
+
+        3942624405      L1-dcache-loads                                               (77.24%)
+         287429683      L1-dcache-load-misses     #    7.29% of all L1-dcache hits    (79.72%)
+        3886471818      dTLB-loads                                                    (80.63%)
+           1553125      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.31%)
+          44791965      cache-misses                                                  (81.09%)
+
+       0.458174879 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment1/dining_9.plato_infinitely_often_can_eat.gm -linear -strategy=6 -timeout=30':
+
+        4038933210      L1-dcache-loads                                               (79.67%)
+         342079332      L1-dcache-load-misses     #    8.47% of all L1-dcache hits    (78.39%)
+        4054797895      dTLB-loads                                                    (79.46%)
+           1479201      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.31%)
+          33636962      cache-misses                                                  (81.16%)
+
+       0.488732362 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_2.infinite_run_no_access.gm -linear -strategy=2 -timeout=30':
+
+         545044217      L1-dcache-loads                                               (78.62%)
+          38361003      L1-dcache-load-misses     #    7.04% of all L1-dcache hits    (80.47%)
+         538587694      dTLB-loads                                                    (79.13%)
+            298758      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.82%)
+           4472329      cache-misses                                                  (80.95%)
+
+       0.146418770 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_2.infinite_run_no_access.gm -linear -strategy=3 -timeout=30':
+
+         548502474      L1-dcache-loads                                               (74.36%)
+          40665112      L1-dcache-load-misses     #    7.41% of all L1-dcache hits    (80.38%)
+         551874455      dTLB-loads                                                    (79.94%)
+            352764      dTLB-load-misses          #    0.06% of all dTLB cache hits   (84.43%)
+           4523851      cache-misses                                                  (80.89%)
+
+       0.152373200 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_2.infinite_run_no_access.gm -linear -strategy=4 -timeout=30':
+
+         522845475      L1-dcache-loads                                               (76.08%)
+          37880754      L1-dcache-load-misses     #    7.25% of all L1-dcache hits    (79.54%)
+         521783670      dTLB-loads                                                    (84.54%)
+            307820      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.78%)
+           4141623      cache-misses                                                  (77.06%)
+
+       0.144403709 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_2.infinite_run_no_access.gm -linear -strategy=6 -timeout=30':
+
+         536201548      L1-dcache-loads                                               (75.95%)
+          35163618      L1-dcache-load-misses     #    6.56% of all L1-dcache hits    (81.91%)
+         532798426      dTLB-loads                                                    (81.17%)
+            305567      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.01%)
+           3550850      cache-misses                                                  (80.96%)
+
+       0.143798931 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_2.invariantly_eventually_fair_shared_access.gm -linear -strategy=2 -timeout=30':
+
+         615118045      L1-dcache-loads                                               (75.97%)
+          47091238      L1-dcache-load-misses     #    7.66% of all L1-dcache hits    (80.87%)
+         612030144      dTLB-loads                                                    (82.30%)
+            337893      dTLB-load-misses          #    0.06% of all dTLB cache hits   (83.13%)
+           5461596      cache-misses                                                  (77.73%)
+
+       0.161683686 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_2.invariantly_eventually_fair_shared_access.gm -linear -strategy=3 -timeout=30':
+
+         597720080      L1-dcache-loads                                               (77.03%)
+          45046426      L1-dcache-load-misses     #    7.54% of all L1-dcache hits    (79.00%)
+         596774654      dTLB-loads                                                    (81.77%)
+            339519      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.46%)
+           4716568      cache-misses                                                  (79.75%)
+
+       0.156321329 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_2.invariantly_eventually_fair_shared_access.gm -linear -strategy=4 -timeout=30':
+
+         583911266      L1-dcache-loads                                               (78.30%)
+          43091797      L1-dcache-load-misses     #    7.38% of all L1-dcache hits    (80.59%)
+         581140877      dTLB-loads                                                    (79.05%)
+            325083      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.94%)
+           4276532      cache-misses                                                  (81.13%)
+
+       0.151809037 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_2.invariantly_eventually_fair_shared_access.gm -linear -strategy=6 -timeout=30':
+
+         594276827      L1-dcache-loads                                               (79.68%)
+          45381656      L1-dcache-load-misses     #    7.64% of all L1-dcache hits    (78.41%)
+         597490713      dTLB-loads                                                    (81.95%)
+            321620      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.49%)
+           4380962      cache-misses                                                  (78.48%)
+
+       0.155161310 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_3.infinite_run_no_access.gm -linear -strategy=2 -timeout=30':
+
+        1021352582      L1-dcache-loads                                               (80.19%)
+          67463993      L1-dcache-load-misses     #    6.61% of all L1-dcache hits    (81.18%)
+        1031905326      dTLB-loads                                                    (78.84%)
+            395763      dTLB-load-misses          #    0.04% of all dTLB cache hits   (78.95%)
+           7757826      cache-misses                                                  (80.84%)
+
+       0.179468529 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_3.infinite_run_no_access.gm -linear -strategy=3 -timeout=30':
+
+        1082022453      L1-dcache-loads                                               (79.24%)
+          72350915      L1-dcache-load-misses     #    6.69% of all L1-dcache hits    (78.76%)
+        1071128238      dTLB-loads                                                    (79.86%)
+            435645      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.96%)
+           7779601      cache-misses                                                  (80.18%)
+
+       0.201047495 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_3.infinite_run_no_access.gm -linear -strategy=4 -timeout=30':
+
+         985260247      L1-dcache-loads                                               (78.47%)
+          64725023      L1-dcache-load-misses     #    6.57% of all L1-dcache hits    (81.90%)
+         963020870      dTLB-loads                                                    (81.19%)
+            372258      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.15%)
+           6397960      cache-misses                                                  (78.28%)
+
+       0.181756332 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_3.infinite_run_no_access.gm -linear -strategy=6 -timeout=30':
+
+         979295624      L1-dcache-loads                                               (78.88%)
+          69789232      L1-dcache-load-misses     #    7.13% of all L1-dcache hits    (80.56%)
+         953718539      dTLB-loads                                                    (81.13%)
+            394501      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.19%)
+           8429598      cache-misses                                                  (80.24%)
+
+       0.183644039 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_3.invariantly_eventually_fair_shared_access.gm -linear -strategy=2 -timeout=30':
+
+        1351635260      L1-dcache-loads                                               (80.28%)
+          94150816      L1-dcache-load-misses     #    6.97% of all L1-dcache hits    (81.40%)
+        1333404576      dTLB-loads                                                    (81.91%)
+            525871      dTLB-load-misses          #    0.04% of all dTLB cache hits   (78.04%)
+          13942700      cache-misses                                                  (78.38%)
+
+       0.207609258 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_3.invariantly_eventually_fair_shared_access.gm -linear -strategy=3 -timeout=30':
+
+        1312632499      L1-dcache-loads                                               (79.81%)
+          95937244      L1-dcache-load-misses     #    7.31% of all L1-dcache hits    (80.70%)
+        1310829002      dTLB-loads                                                    (80.24%)
+            640328      dTLB-load-misses          #    0.05% of all dTLB cache hits   (79.67%)
+          12057798      cache-misses                                                  (79.57%)
+
+       0.225565370 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_3.invariantly_eventually_fair_shared_access.gm -linear -strategy=4 -timeout=30':
+
+        1305383778      L1-dcache-loads                                               (78.69%)
+          87200960      L1-dcache-load-misses     #    6.68% of all L1-dcache hits    (80.10%)
+        1299995804      dTLB-loads                                                    (81.46%)
+            497737      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.96%)
+          12143762      cache-misses                                                  (79.79%)
+
+       0.206843513 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_3.invariantly_eventually_fair_shared_access.gm -linear -strategy=6 -timeout=30':
+
+        1283307736      L1-dcache-loads                                               (80.09%)
+          86993231      L1-dcache-load-misses     #    6.78% of all L1-dcache hits    (80.34%)
+        1271898802      dTLB-loads                                                    (80.01%)
+            481366      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.10%)
+          11569395      cache-misses                                                  (80.45%)
+
+       0.202358565 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_4.infinite_run_no_access.gm -linear -strategy=2 -timeout=30':
+
+        1989442759      L1-dcache-loads                                               (78.05%)
+         131142644      L1-dcache-load-misses     #    6.59% of all L1-dcache hits    (80.28%)
+        1964333927      dTLB-loads                                                    (81.80%)
+            724361      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.33%)
+          16219428      cache-misses                                                  (80.54%)
+
+       0.277099352 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_4.infinite_run_no_access.gm -linear -strategy=3 -timeout=30':
+
+        2332281909      L1-dcache-loads                                               (78.36%)
+         177800823      L1-dcache-load-misses     #    7.62% of all L1-dcache hits    (79.11%)
+        2289492357      dTLB-loads                                                    (80.82%)
+            891059      dTLB-load-misses          #    0.04% of all dTLB cache hits   (81.27%)
+          22885228      cache-misses                                                  (80.44%)
+
+       0.321933772 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_4.infinite_run_no_access.gm -linear -strategy=4 -timeout=30':
+
+        1502069056      L1-dcache-loads                                               (77.32%)
+         107658467      L1-dcache-load-misses     #    7.17% of all L1-dcache hits    (79.94%)
+        1436660747      dTLB-loads                                                    (80.26%)
+            681980      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.69%)
+          17276216      cache-misses                                                  (80.79%)
+
+       0.235746247 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_4.infinite_run_no_access.gm -linear -strategy=6 -timeout=30':
+
+        1823347242      L1-dcache-loads                                               (79.48%)
+         132278111      L1-dcache-load-misses     #    7.25% of all L1-dcache hits    (77.71%)
+        1873255813      dTLB-loads                                                    (79.94%)
+            587006      dTLB-load-misses          #    0.03% of all dTLB cache hits   (81.52%)
+          15897891      cache-misses                                                  (81.35%)
+
+       0.249720934 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_4.invariantly_eventually_fair_shared_access.gm -linear -strategy=2 -timeout=30':
+
+        2378452032      L1-dcache-loads                                               (79.05%)
+         150696565      L1-dcache-load-misses     #    6.34% of all L1-dcache hits    (79.23%)
+        2341635215      dTLB-loads                                                    (80.42%)
+           1055747      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.65%)
+          31594753      cache-misses                                                  (80.65%)
+
+       0.333152615 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_4.invariantly_eventually_fair_shared_access.gm -linear -strategy=3 -timeout=30':
+
+        2372401012      L1-dcache-loads                                               (78.15%)
+         151674229      L1-dcache-load-misses     #    6.39% of all L1-dcache hits    (79.99%)
+        2371096260      dTLB-loads                                                    (81.02%)
+           1547198      dTLB-load-misses          #    0.07% of all dTLB cache hits   (81.12%)
+          30452849      cache-misses                                                  (79.72%)
+
+       0.378426690 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_4.invariantly_eventually_fair_shared_access.gm -linear -strategy=4 -timeout=30':
+
+        1966761803      L1-dcache-loads                                               (78.69%)
+         140884002      L1-dcache-load-misses     #    7.16% of all L1-dcache hits    (80.47%)
+        1951534671      dTLB-loads                                                    (80.04%)
+            768622      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.81%)
+          19027651      cache-misses                                                  (79.98%)
+
+       0.287895537 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_4.invariantly_eventually_fair_shared_access.gm -linear -strategy=6 -timeout=30':
+
+        2367238239      L1-dcache-loads                                               (77.96%)
+         152158322      L1-dcache-load-misses     #    6.43% of all L1-dcache hits    (80.06%)
+        2353914076      dTLB-loads                                                    (80.82%)
+            847271      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.96%)
+          21980708      cache-misses                                                  (80.21%)
+
+       0.299125183 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_5.infinite_run_no_access.gm -linear -strategy=2 -timeout=30':
+
+        3625579617      L1-dcache-loads                                               (79.85%)
+         183596502      L1-dcache-load-misses     #    5.06% of all L1-dcache hits    (79.59%)
+        3586329846      dTLB-loads                                                    (80.32%)
+           1772293      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.19%)
+          56967584      cache-misses                                                  (80.04%)
+
+       0.469937268 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_5.infinite_run_no_access.gm -linear -strategy=3 -timeout=30':
+
+        4439771207      L1-dcache-loads                                               (80.17%)
+         361088911      L1-dcache-load-misses     #    8.13% of all L1-dcache hits    (78.67%)
+        4430373104      dTLB-loads                                                    (79.89%)
+           1762415      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.88%)
+          50078963      cache-misses                                                  (80.39%)
+
+       0.576482197 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_5.infinite_run_no_access.gm -linear -strategy=4 -timeout=30':
+
+        3339663194      L1-dcache-loads                                               (80.87%)
+         186041460      L1-dcache-load-misses     #    5.57% of all L1-dcache hits    (78.27%)
+        3346387032      dTLB-loads                                                    (77.87%)
+           1600521      dTLB-load-misses          #    0.05% of all dTLB cache hits   (82.05%)
+          48334265      cache-misses                                                  (80.93%)
+
+       0.407914496 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_5.infinite_run_no_access.gm -linear -strategy=6 -timeout=30':
+
+        3632025455      L1-dcache-loads                                               (80.54%)
+         206497089      L1-dcache-load-misses     #    5.69% of all L1-dcache hits    (80.11%)
+        3630725312      dTLB-loads                                                    (78.44%)
+           1584841      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.51%)
+          49669835      cache-misses                                                  (81.40%)
+
+       0.426935591 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_5.invariantly_eventually_fair_shared_access.gm -linear -strategy=2 -timeout=30':
+
+        3798727922      L1-dcache-loads                                               (79.76%)
+         199487121      L1-dcache-load-misses     #    5.25% of all L1-dcache hits    (77.74%)
+        3775479345      dTLB-loads                                                    (82.18%)
+           2245261      dTLB-load-misses          #    0.06% of all dTLB cache hits   (79.91%)
+          49015162      cache-misses                                                  (80.41%)
+
+       0.570259136 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_5.invariantly_eventually_fair_shared_access.gm -linear -strategy=3 -timeout=30':
+
+        3874006284      L1-dcache-loads                                               (80.73%)
+         208466030      L1-dcache-load-misses     #    5.38% of all L1-dcache hits    (78.38%)
+        3837067005      dTLB-loads                                                    (81.06%)
+           3520618      dTLB-load-misses          #    0.09% of all dTLB cache hits   (79.10%)
+          52175904      cache-misses                                                  (80.75%)
+
+       0.668628880 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_5.invariantly_eventually_fair_shared_access.gm -linear -strategy=4 -timeout=30':
+
+        4037744988      L1-dcache-loads                                               (78.28%)
+         209205562      L1-dcache-load-misses     #    5.18% of all L1-dcache hits    (80.88%)
+        4084640470      dTLB-loads                                                    (81.11%)
+           2186361      dTLB-load-misses          #    0.05% of all dTLB cache hits   (79.71%)
+          56647239      cache-misses                                                  (80.01%)
+
+       0.513981447 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment2/german_linear_5.invariantly_eventually_fair_shared_access.gm -linear -strategy=6 -timeout=30':
+
+        4629516890      L1-dcache-loads                                               (79.94%)
+         237383820      L1-dcache-load-misses     #    5.13% of all L1-dcache hits    (79.64%)
+        4621215754      dTLB-loads                                                    (81.05%)
+           2311829      dTLB-load-misses          #    0.05% of all dTLB cache hits   (79.42%)
+          64542313      cache-misses                                                  (79.96%)
+
+       0.555961642 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_2.gm -linear -strategy=2 -timeout=30':
+
+         481495687      L1-dcache-loads                                               (78.38%)
+          31706591      L1-dcache-load-misses     #    6.59% of all L1-dcache hits    (82.11%)
+         485986022      dTLB-loads                                                    (82.59%)
+            273772      dTLB-load-misses          #    0.06% of all dTLB cache hits   (79.47%)
+           2881909      cache-misses                                                  (77.45%)
+
+       0.131867522 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_2.gm -linear -strategy=3 -timeout=30':
+
+         475551136      L1-dcache-loads                                               (81.03%)
+          33064201      L1-dcache-load-misses     #    6.95% of all L1-dcache hits    (78.89%)
+         468674755      dTLB-loads                                                    (80.62%)
+            274561      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.91%)
+           2988797      cache-misses                                                  (77.54%)
+
+       0.131626015 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_2.gm -linear -strategy=4 -timeout=30':
+
+         487554485      L1-dcache-loads                                               (79.40%)
+          32456387      L1-dcache-load-misses     #    6.66% of all L1-dcache hits    (79.66%)
+         482541879      dTLB-loads                                                    (81.90%)
+            264678      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.06%)
+           3272598      cache-misses                                                  (77.98%)
+
+       0.130949520 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_2.gm -linear -strategy=6 -timeout=30':
+
+         489382778      L1-dcache-loads                                               (78.73%)
+          33560777      L1-dcache-load-misses     #    6.86% of all L1-dcache hits    (80.20%)
+         486645800      dTLB-loads                                                    (83.60%)
+            279810      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.96%)
+           3221121      cache-misses                                                  (74.50%)
+
+       0.132634943 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_3.gm -linear -strategy=2 -timeout=30':
+
+         591437332      L1-dcache-loads                                               (77.22%)
+          43255195      L1-dcache-load-misses     #    7.31% of all L1-dcache hits    (80.33%)
+         613052707      dTLB-loads                                                    (79.63%)
+            360246      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.56%)
+           3923262      cache-misses                                                  (80.25%)
+
+       0.161216681 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_3.gm -linear -strategy=3 -timeout=30':
+
+         575245778      L1-dcache-loads                                               (79.85%)
+          40413752      L1-dcache-load-misses     #    7.03% of all L1-dcache hits    (78.31%)
+         571488670      dTLB-loads                                                    (78.87%)
+            296957      dTLB-load-misses          #    0.05% of all dTLB cache hits   (82.27%)
+           3973436      cache-misses                                                  (80.70%)
+
+       0.150246444 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_3.gm -linear -strategy=4 -timeout=30':
+
+         633175489      L1-dcache-loads                                               (79.28%)
+          46369693      L1-dcache-load-misses     #    7.32% of all L1-dcache hits    (80.65%)
+         633123873      dTLB-loads                                                    (80.28%)
+            399057      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.56%)
+           3859829      cache-misses                                                  (78.22%)
+
+       0.180734471 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_3.gm -linear -strategy=6 -timeout=30':
+
+         615581524      L1-dcache-loads                                               (79.00%)
+          43962715      L1-dcache-load-misses     #    7.14% of all L1-dcache hits    (79.89%)
+         610612690      dTLB-loads                                                    (81.85%)
+            327202      dTLB-load-misses          #    0.05% of all dTLB cache hits   (82.61%)
+           3738490      cache-misses                                                  (76.65%)
+
+       0.154720560 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_4.gm -linear -strategy=2 -timeout=30':
+
+        1494388655      L1-dcache-loads                                               (78.68%)
+          95921433      L1-dcache-load-misses     #    6.42% of all L1-dcache hits    (80.18%)
+        1473704362      dTLB-loads                                                    (79.92%)
+            600604      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.37%)
+          11797220      cache-misses                                                  (80.85%)
+
+       0.242239219 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_4.gm -linear -strategy=3 -timeout=30':
+
+        1392556503      L1-dcache-loads                                               (79.46%)
+          79105949      L1-dcache-load-misses     #    5.68% of all L1-dcache hits    (79.47%)
+        1375584110      dTLB-loads                                                    (80.28%)
+            436509      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.65%)
+          11095159      cache-misses                                                  (80.14%)
+
+       0.199594927 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_4.gm -linear -strategy=4 -timeout=30':
+
+        1480832344      L1-dcache-loads                                               (80.03%)
+          90654968      L1-dcache-load-misses     #    6.12% of all L1-dcache hits    (80.20%)
+        1459245624      dTLB-loads                                                    (81.03%)
+            565153      dTLB-load-misses          #    0.04% of all dTLB cache hits   (79.40%)
+          12562237      cache-misses                                                  (79.34%)
+
+       0.219832545 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_4.gm -linear -strategy=6 -timeout=30':
+
+        1569402324      L1-dcache-loads                                               (78.70%)
+          85984588      L1-dcache-load-misses     #    5.48% of all L1-dcache hits    (80.39%)
+        1544157576      dTLB-loads                                                    (81.13%)
+            451567      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.98%)
+          11401421      cache-misses                                                  (78.80%)
+
+       0.216505271 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_5.gm -linear -strategy=2 -timeout=30':
+
+        3117530712      L1-dcache-loads                                               (79.64%)
+         173529741      L1-dcache-load-misses     #    5.57% of all L1-dcache hits    (79.09%)
+        3097241309      dTLB-loads                                                    (80.61%)
+           1651469      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.14%)
+          28726980      cache-misses                                                  (79.52%)
+
+       0.458983633 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_5.gm -linear -strategy=3 -timeout=30':
+
+        3039051439      L1-dcache-loads                                               (79.99%)
+         171724497      L1-dcache-load-misses     #    5.65% of all L1-dcache hits    (80.00%)
+        3040426305      dTLB-loads                                                    (80.66%)
+           1782225      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.32%)
+          25491563      cache-misses                                                  (79.03%)
+
+       0.452309272 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_5.gm -linear -strategy=4 -timeout=30':
+
+        5226353946      L1-dcache-loads                                               (79.46%)
+         294272759      L1-dcache-load-misses     #    5.63% of all L1-dcache hits    (79.56%)
+        5216729931      dTLB-loads                                                    (80.59%)
+           4683222      dTLB-load-misses          #    0.09% of all dTLB cache hits   (80.78%)
+          63745531      cache-misses                                                  (79.61%)
+
+       1.047068135 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_5.gm -linear -strategy=6 -timeout=30':
+
+        5909021646      L1-dcache-loads                                               (79.01%)
+         171224567      L1-dcache-load-misses     #    2.90% of all L1-dcache hits    (79.65%)
+        5871151311      dTLB-loads                                                    (80.19%)
+           1654195      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.51%)
+          26941301      cache-misses                                                  (80.64%)
+
+       0.911863563 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_6.gm -linear -strategy=2 -timeout=30':
+
+       24574440843      L1-dcache-loads                                               (80.29%)
+         318663024      L1-dcache-load-misses     #    1.30% of all L1-dcache hits    (79.52%)
+       24606338581      dTLB-loads                                                    (79.92%)
+           5607440      dTLB-load-misses          #    0.02% of all dTLB cache hits   (80.24%)
+         219271458      cache-misses                                                  (80.03%)
+
+       6.695351236 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_6.gm -linear -strategy=3 -timeout=30':
+
+       24898195498      L1-dcache-loads                                               (79.91%)
+         362002295      L1-dcache-load-misses     #    1.45% of all L1-dcache hits    (79.79%)
+       24981099863      dTLB-loads                                                    (79.82%)
+          12869493      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.35%)
+         229067575      cache-misses                                                  (80.13%)
+
+       7.220002703 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_6.gm -linear -strategy=4 -timeout=30':
+
+      129438272832      L1-dcache-loads                                               (79.92%)
+        6091326429      L1-dcache-load-misses     #    4.71% of all L1-dcache hits    (79.96%)
+      129350659346      dTLB-loads                                                    (80.01%)
+         123424533      dTLB-load-misses          #    0.10% of all dTLB cache hits   (80.14%)
+        6596077451      cache-misses                                                  (79.97%)
+
+      43.849690089 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_6.gm -linear -strategy=6 -timeout=30':
+
+      200983436550      L1-dcache-loads                                               (80.02%)
+         461550675      L1-dcache-load-misses     #    0.23% of all L1-dcache hits    (79.93%)
+      200945367031      dTLB-loads                                                    (80.00%)
+          14000209      dTLB-load-misses          #    0.01% of all dTLB cache hits   (80.05%)
+         369604772      cache-misses                                                  (80.00%)
+
+      44.214270760 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_7.gm -linear -strategy=2 -timeout=30':
+
+      225399711522      L1-dcache-loads                                               (80.04%)
+        1365563440      L1-dcache-load-misses     #    0.61% of all L1-dcache hits    (79.88%)
+      225341823694      dTLB-loads                                                    (80.02%)
+          17507643      dTLB-load-misses          #    0.01% of all dTLB cache hits   (79.98%)
+        1891396912      cache-misses                                                  (80.08%)
+
+      61.599269783 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_7.gm -linear -strategy=3 -timeout=30':
+
+      220659928105      L1-dcache-loads                                               (80.03%)
+        1336580299      L1-dcache-load-misses     #    0.61% of all L1-dcache hits    (79.99%)
+      220784946297      dTLB-loads                                                    (80.00%)
+          17255192      dTLB-load-misses          #    0.01% of all dTLB cache hits   (79.93%)
+        1867815785      cache-misses                                                  (80.05%)
+
+      61.635525863 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_7.gm -linear -strategy=4 -timeout=30':
+
+      145966040163      L1-dcache-loads                                               (79.94%)
+        6864234050      L1-dcache-load-misses     #    4.70% of all L1-dcache hits    (80.00%)
+      145646184122      dTLB-loads                                                    (79.98%)
+         119449884      dTLB-load-misses          #    0.08% of all dTLB cache hits   (80.05%)
+       12593154469      cache-misses                                                  (80.03%)
+
+      61.697238784 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator1_7.gm -linear -strategy=6 -timeout=30':
+
+      263218413751      L1-dcache-loads                                               (80.08%)
+        1369778297      L1-dcache-load-misses     #    0.52% of all L1-dcache hits    (79.98%)
+      263541158559      dTLB-loads                                                    (79.92%)
+          39142935      dTLB-load-misses          #    0.01% of all dTLB cache hits   (80.02%)
+        1486324920      cache-misses                                                  (80.01%)
+
+      61.688910700 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_2.gm -linear -strategy=2 -timeout=30':
+
+         494496201      L1-dcache-loads                                               (78.40%)
+          33902725      L1-dcache-load-misses     #    6.86% of all L1-dcache hits    (79.71%)
+         499251754      dTLB-loads                                                    (83.12%)
+            284360      dTLB-load-misses          #    0.06% of all dTLB cache hits   (82.87%)
+           3131583      cache-misses                                                  (75.89%)
+
+       0.135703856 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_2.gm -linear -strategy=3 -timeout=30':
+
+         480548785      L1-dcache-loads                                               (78.43%)
+          33683473      L1-dcache-load-misses     #    7.01% of all L1-dcache hits    (78.70%)
+         487801394      dTLB-loads                                                    (84.30%)
+            282332      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.76%)
+           3067842      cache-misses                                                  (76.81%)
+
+       0.134635325 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_2.gm -linear -strategy=4 -timeout=30':
+
+         470797232      L1-dcache-loads                                               (80.36%)
+          31071277      L1-dcache-load-misses     #    6.60% of all L1-dcache hits    (81.88%)
+         470254159      dTLB-loads                                                    (80.84%)
+            274396      dTLB-load-misses          #    0.06% of all dTLB cache hits   (81.29%)
+           3015599      cache-misses                                                  (75.62%)
+
+       0.129193374 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_2.gm -linear -strategy=6 -timeout=30':
+
+         477311881      L1-dcache-loads                                               (78.46%)
+          34526092      L1-dcache-load-misses     #    7.23% of all L1-dcache hits    (80.45%)
+         484519950      dTLB-loads                                                    (82.28%)
+            340793      dTLB-load-misses          #    0.07% of all dTLB cache hits   (81.24%)
+           3126129      cache-misses                                                  (77.56%)
+
+       0.141516814 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_3.gm -linear -strategy=2 -timeout=30':
+
+         686216326      L1-dcache-loads                                               (77.72%)
+          42830228      L1-dcache-load-misses     #    6.24% of all L1-dcache hits    (82.38%)
+         675639047      dTLB-loads                                                    (81.37%)
+            327427      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.71%)
+           3697444      cache-misses                                                  (76.80%)
+
+       0.168414738 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_3.gm -linear -strategy=3 -timeout=30':
+
+         665703046      L1-dcache-loads                                               (79.16%)
+          44051048      L1-dcache-load-misses     #    6.62% of all L1-dcache hits    (79.12%)
+         673362312      dTLB-loads                                                    (80.27%)
+            341837      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.63%)
+           3933194      cache-misses                                                  (80.82%)
+
+       0.163507571 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_3.gm -linear -strategy=4 -timeout=30':
+
+         682863060      L1-dcache-loads                                               (80.24%)
+          45392607      L1-dcache-load-misses     #    6.65% of all L1-dcache hits    (79.83%)
+         684225333      dTLB-loads                                                    (78.49%)
+            340892      dTLB-load-misses          #    0.05% of all dTLB cache hits   (81.14%)
+           4598755      cache-misses                                                  (80.30%)
+
+       0.164792768 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_3.gm -linear -strategy=6 -timeout=30':
+
+         656421657      L1-dcache-loads                                               (79.45%)
+          43713826      L1-dcache-load-misses     #    6.66% of all L1-dcache hits    (82.46%)
+         659399719      dTLB-loads                                                    (80.88%)
+            312328      dTLB-load-misses          #    0.05% of all dTLB cache hits   (80.54%)
+           4103292      cache-misses                                                  (76.65%)
+
+       0.153252443 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_4.gm -linear -strategy=2 -timeout=30':
+
+        2341472908      L1-dcache-loads                                               (79.32%)
+         142978603      L1-dcache-load-misses     #    6.11% of all L1-dcache hits    (81.04%)
+        2284243952      dTLB-loads                                                    (79.91%)
+            946741      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.04%)
+          18565625      cache-misses                                                  (79.69%)
+
+       0.370512846 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_4.gm -linear -strategy=3 -timeout=30':
+
+        2139104759      L1-dcache-loads                                               (79.61%)
+         143954388      L1-dcache-load-misses     #    6.73% of all L1-dcache hits    (79.92%)
+        2125510854      dTLB-loads                                                    (80.71%)
+            752457      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.24%)
+          15287286      cache-misses                                                  (79.51%)
+
+       0.362308687 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_4.gm -linear -strategy=4 -timeout=30':
+
+        2062198976      L1-dcache-loads                                               (79.19%)
+         112254135      L1-dcache-load-misses     #    5.44% of all L1-dcache hits    (80.19%)
+        2028157091      dTLB-loads                                                    (79.79%)
+            784268      dTLB-load-misses          #    0.04% of all dTLB cache hits   (80.99%)
+          18002541      cache-misses                                                  (79.84%)
+
+       0.291831878 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_4.gm -linear -strategy=6 -timeout=30':
+
+        1274827475      L1-dcache-loads                                               (79.39%)
+          72740547      L1-dcache-load-misses     #    5.71% of all L1-dcache hits    (81.52%)
+        1249264895      dTLB-loads                                                    (81.68%)
+            462977      dTLB-load-misses          #    0.04% of all dTLB cache hits   (78.53%)
+           7194586      cache-misses                                                  (78.89%)
+
+       0.217002232 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_5.gm -linear -strategy=2 -timeout=30':
+
+       16497713800      L1-dcache-loads                                               (79.96%)
+         682045769      L1-dcache-load-misses     #    4.13% of all L1-dcache hits    (79.82%)
+       16490397229      dTLB-loads                                                    (80.00%)
+           4291990      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.13%)
+         137389836      cache-misses                                                  (80.10%)
+
+       4.857242354 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_5.gm -linear -strategy=3 -timeout=30':
+
+        8884744677      L1-dcache-loads                                               (79.14%)
+         578508190      L1-dcache-load-misses     #    6.51% of all L1-dcache hits    (80.26%)
+        8835156244      dTLB-loads                                                    (80.18%)
+           5726919      dTLB-load-misses          #    0.06% of all dTLB cache hits   (80.16%)
+          86095684      cache-misses                                                  (80.26%)
+
+       3.583065948 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_5.gm -linear -strategy=4 -timeout=30':
+
+       10583474714      L1-dcache-loads                                               (80.82%)
+         593019523      L1-dcache-load-misses     #    5.60% of all L1-dcache hits    (78.96%)
+       10700253984      dTLB-loads                                                    (79.82%)
+           5418324      dTLB-load-misses          #    0.05% of all dTLB cache hits   (79.73%)
+         150753931      cache-misses                                                  (80.66%)
+
+       3.131397832 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_5.gm -linear -strategy=6 -timeout=30':
+
+        6388247426      L1-dcache-loads                                               (79.39%)
+         185081059      L1-dcache-load-misses     #    2.90% of all L1-dcache hits    (80.56%)
+        6335590882      dTLB-loads                                                    (80.82%)
+           1787715      dTLB-load-misses          #    0.03% of all dTLB cache hits   (79.89%)
+          25343701      cache-misses                                                  (79.35%)
+
+       0.996190210 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_6.gm -linear -strategy=2 -timeout=30':
+
+      199849208935      L1-dcache-loads                                               (79.98%)
+        5854502966      L1-dcache-load-misses     #    2.93% of all L1-dcache hits    (80.04%)
+      199911659209      dTLB-loads                                                    (80.06%)
+          57874497      dTLB-load-misses          #    0.03% of all dTLB cache hits   (80.02%)
+        3778803528      cache-misses                                                  (79.91%)
+
+      60.414561385 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_6.gm -linear -strategy=3 -timeout=30':
+
+       84214738553      L1-dcache-loads                                               (79.98%)
+        4420833248      L1-dcache-load-misses     #    5.25% of all L1-dcache hits    (79.97%)
+       84205497576      dTLB-loads                                                    (80.00%)
+         329461196      dTLB-load-misses          #    0.39% of all dTLB cache hits   (80.02%)
+        2460217905      cache-misses                                                  (80.03%)
+
+      60.434519207 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_6.gm -linear -strategy=4 -timeout=30':
+
+      126688334294      L1-dcache-loads                                               (80.01%)
+        5990231948      L1-dcache-load-misses     #    4.73% of all L1-dcache hits    (79.92%)
+      126680839884      dTLB-loads                                                    (79.97%)
+         141405578      dTLB-load-misses          #    0.11% of all dTLB cache hits   (80.09%)
+        6511138852      cache-misses                                                  (80.01%)
+
+      60.417008717 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_6.gm -linear -strategy=6 -timeout=30':
+
+      235325712013      L1-dcache-loads                                               (79.97%)
+         447321904      L1-dcache-load-misses     #    0.19% of all L1-dcache hits    (79.91%)
+      235314035831      dTLB-loads                                                    (80.03%)
+           6861666      dTLB-load-misses          #    0.00% of all dTLB cache hits   (80.06%)
+         379080199      cache-misses                                                  (80.02%)
+
+      57.979351388 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_7.gm -linear -strategy=2 -timeout=30':
+
+      233495604189      L1-dcache-loads                                               (80.04%)
+        1604642702      L1-dcache-load-misses     #    0.69% of all L1-dcache hits    (79.95%)
+      233465638098      dTLB-loads                                                    (79.97%)
+          31503839      dTLB-load-misses          #    0.01% of all dTLB cache hits   (80.04%)
+        2155688096      cache-misses                                                  (80.00%)
+
+      61.874089037 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_7.gm -linear -strategy=3 -timeout=30':
+
+      233240943256      L1-dcache-loads                                               (79.98%)
+        1580350823      L1-dcache-load-misses     #    0.68% of all L1-dcache hits    (79.99%)
+      232993811378      dTLB-loads                                                    (80.07%)
+          30220805      dTLB-load-misses          #    0.01% of all dTLB cache hits   (79.98%)
+        2127275617      cache-misses                                                  (79.98%)
+
+      61.940033873 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_7.gm -linear -strategy=4 -timeout=30':
+
+       99026127196      L1-dcache-loads                                               (79.97%)
+        5424071392      L1-dcache-load-misses     #    5.48% of all L1-dcache hits    (79.94%)
+       99044838702      dTLB-loads                                                    (80.02%)
+         260860873      dTLB-load-misses          #    0.26% of all dTLB cache hits   (80.07%)
+        8838367306      cache-misses                                                  (80.01%)
+
+      61.935660994 seconds time elapsed
+
+
+ Performance counter stats for 'java -Xmx4g -cp . s2imf35.Main -game=./inputs/experiment3/elevator2_7.gm -linear -strategy=6 -timeout=30':
+
+      268943185529      L1-dcache-loads                                               (80.04%)
+        1400758606      L1-dcache-load-misses     #    0.52% of all L1-dcache hits    (79.93%)
+      269270786132      dTLB-loads                                                    (79.98%)
+          36437190      dTLB-load-misses          #    0.01% of all dTLB cache hits   (80.01%)
+        1558286709      cache-misses                                                  (80.04%)
+
+      62.010144619 seconds time elapsed
+
