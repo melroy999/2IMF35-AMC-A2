@@ -74,7 +74,7 @@ public abstract class AbstractExperiment {
         int strategyId = (int) argMap.getOrDefault("-strategy", 0);
         boolean verbose = (boolean) argMap.getOrDefault("-steps", false);
         boolean linear = (boolean) argMap.getOrDefault("-linear", false);
-        long seed = (long) argMap.getOrDefault("-seed", 0);
+        long seed = (long) argMap.getOrDefault("-seed", 0L);
         int timeout = (int) argMap.getOrDefault("-timeout", -1);
 
         System.out.println(">>> Strategy: [" + AbstractLiftingStrategy.getName(strategyId) + "]" +

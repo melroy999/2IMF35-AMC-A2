@@ -9,7 +9,9 @@ import s2imf35.solver.Solver;
 import s2imf35.strategies.AbstractLiftingStrategy;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.*;
 
@@ -35,11 +37,13 @@ public class Main {
         if(argMap.containsKey("-game")) {
             run(argMap);
         } else {
+            List<String> experiments = new ArrayList<>(argMap.keySet());
+
             if(argMap.containsKey("-n")) {
                 int n = (int) argMap.get("-n");
 
                 // Run the specified tests.
-                for(String arg : argMap.keySet()) {
+                for(String arg : experiments) {
                     switch (arg) {
                         case "-experiment1":
                             new Experiment1().runMulti(argMap, n);
@@ -57,7 +61,7 @@ public class Main {
                 }
             } else {
                 // Run the specified tests.
-                for(String arg : argMap.keySet()) {
+                for(String arg : experiments) {
                     switch (arg) {
                         case "-experiment1":
                             new Experiment1().run(argMap);
@@ -87,7 +91,7 @@ public class Main {
         // Get the path of the parity game.
         String gameFile = (String) args.getOrDefault("-game", null);
         int strategyId = (int) args.getOrDefault("-strategy", 0);
-        long seed = (long) args.getOrDefault("-seed", 0);
+        long seed = (long) args.getOrDefault("-seed", 0L);
         int timeout = (int) args.getOrDefault("-timeout", -1);
 
         // Check whether we have all the required parameters.

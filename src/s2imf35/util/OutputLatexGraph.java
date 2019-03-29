@@ -16,6 +16,8 @@ import java.util.stream.Collectors;
 public class OutputLatexGraph {
     private static final Map<String, String> legendMap = new HashMap<>();
     static {
+        legendMap.put("input_order", "input_order");
+        legendMap.put("random_order", "random_order");
         legendMap.put("input_order_rep", "input_order_rep");
         legendMap.put("random_order_rep", "random_order_rep");
         legendMap.put("predecessors", "predecessors");
@@ -27,7 +29,7 @@ public class OutputLatexGraph {
     public static void main(String[] args) throws IOException {
 
         // The strategies that we want in the graph.
-        int[] strategyIds = {2, 3, 4, 5, 6, 7};
+        int[] strategyIds = {0, 1, 2, 3, 4, 5, 6, 7};
 
         // Get the strategy slugs.
         List<String> strategies = Arrays.stream(strategyIds).mapToObj(AbstractLiftingStrategy::getSlug).collect(Collectors.toList());
