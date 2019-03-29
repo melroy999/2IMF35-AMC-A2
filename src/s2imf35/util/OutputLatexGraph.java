@@ -283,6 +283,7 @@ public class OutputLatexGraph {
         }
 
         builder.append("\\node[anchor=north west, below= 0.3cm of D] (V) {").append(System.lineSeparator());
+        builder.append("{\\def\\arraystretch{0.85}").append(System.lineSeparator());
         builder.append("\t\\begin{tabular}{>{\\small\\ttfamily}c||>{\\small\\ttfamily}l}").append(System.lineSeparator());
         builder.append("\t\tn & |V|\\\\").append(System.lineSeparator());
         builder.append("\t\t\\hline").append(System.lineSeparator());
@@ -296,6 +297,7 @@ public class OutputLatexGraph {
             builder.append("\t\t").append(i).append(" & ").append(noEdges.get(i)).append("\\\\").append(System.lineSeparator());
         }
         builder.append("\\end{tabular}").append(System.lineSeparator());
+        builder.append("}").append(System.lineSeparator());
         builder.append("};").append(System.lineSeparator());
 
         System.out.println(builder.toString());

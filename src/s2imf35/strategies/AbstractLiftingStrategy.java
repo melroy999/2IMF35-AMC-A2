@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
 
-    public static AbstractLiftingStrategy get(ParityGame G, int i, int seed) {
+    public static AbstractLiftingStrategy get(ParityGame G, int i, long seed) {
         switch (i) {
             case 1:
                 return new RandomLiftingStrategy(G, seed);

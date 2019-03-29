@@ -86,9 +86,9 @@ public class Main {
     private static void run(Map<String, Object> args) throws IOException {
         // Get the path of the parity game.
         String gameFile = (String) args.getOrDefault("-game", null);
-        int strategyId = (Integer) args.getOrDefault("-strategy", 0);
-        int seed = (Integer) args.getOrDefault("-seed", 0);
-        int timeout = (Integer) args.getOrDefault("-timeout", -1);
+        int strategyId = (int) args.getOrDefault("-strategy", 0);
+        long seed = (long) args.getOrDefault("-seed", 0);
+        int timeout = (int) args.getOrDefault("-timeout", -1);
 
         // Check whether we have all the required parameters.
         if(gameFile == null) {
@@ -180,7 +180,7 @@ public class Main {
             } else if(arg.startsWith("-strategy")) {
                 data.put("-strategy", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
             } else if(arg.startsWith("-seed")) {
-                data.put("-seed", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
+                data.put("-seed", Long.parseLong((arg.substring(arg.indexOf("=") + 1, arg.length()))));
             } else if(arg.startsWith("-n")) {
                 data.put("-n", Integer.parseInt((arg.substring(arg.indexOf("=") + 1, arg.length()))));
             } else if(arg.startsWith("-timeout")) {

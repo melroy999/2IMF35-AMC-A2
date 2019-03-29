@@ -79,7 +79,12 @@ public class Experiment2 extends AbstractExperiment {
         // Create a collection of metrics over all the turns.
         List<HashMap<String, PerformanceCounter>> metrics = new ArrayList<>();
 
+        // Given that we repeat the trial n times, we want different seeds on every iteration.
+        Random random = new Random(0);
+
         for(int i = 0; i < n; i++) {
+            argMap.put("-seed", random.nextLong());
+
             HashMap<String, PerformanceCounter> metric = new Experiment2().run(argMap);
             metrics.add(metric);
         }
