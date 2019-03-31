@@ -8,6 +8,11 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/**
+ * A lifting strategy that uses the predecessor list to avoid vertices that cannot be lifted under the current circumstances.
+ * The lifting strategy uses a priority queue, which ensures that vertices controlled by the diamond player are processed first.
+ * Additionally, vertices are repeated after successful lifts.
+ */
 public class PredecessorDiamondFirstRepeatLiftingStrategy extends AbstractLiftingStrategy {
     // Whether we have enqueued the given vertex.
     private final boolean[] enqueued;
@@ -18,6 +23,12 @@ public class PredecessorDiamondFirstRepeatLiftingStrategy extends AbstractLiftin
     // The last vertex we have lifted successfully. Null if it does not exist.
     private Integer lastLifted = null;
 
+    /**
+     * Create predecessor lifting strategy for the given parity game, that sorts the vertices in the queue such that
+     * vertices owned by the diamond player occur first.
+     *
+     * @param G The parity game to create the lifting strategy for.
+     */
     public PredecessorDiamondFirstRepeatLiftingStrategy(ParityGame G) {
         enqueued = new boolean[G.n];
         queue = new PriorityQueue<>(
@@ -31,6 +42,11 @@ public class PredecessorDiamondFirstRepeatLiftingStrategy extends AbstractLiftin
         }
     }
 
+    /**
+     * Check whether we have a next value to report.
+     *
+     * @return Returns true as long as the queue contains vertices to visit.
+     */
     @Override
     public boolean hasNext() {
         return !queue.isEmpty();
@@ -41,6 +57,7 @@ public class PredecessorDiamondFirstRepeatLiftingStrategy extends AbstractLiftin
      *
      * @return the next element in the iteration
      */
+    @SuppressWarnings("Duplicates")
     @Override
     public Integer next() {
         if(lastLifted != null) {

@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+/**
+ * A lifting strategy that repeatedly iterates over the vertices in a pre-determined random order.
+ */
 public class RandomLiftingStrategy extends AbstractLiftingStrategy {
     // The order we have determined.
     private final Integer[] indices;
@@ -20,6 +23,12 @@ public class RandomLiftingStrategy extends AbstractLiftingStrategy {
     // The number of unchanged iterations.
     private int unchangedIterations = 0;
 
+    /**
+     * Create an random order lifting strategy for the given parity game.
+     *
+     * @param G The parity game to create the lifting strategy for.
+     * @param seed A seed to control randomness with.
+     */
     public RandomLiftingStrategy(ParityGame G, long seed) {
         List<Integer> indices = Arrays.stream(G.originalOrder).boxed().collect(Collectors.toList());
 
@@ -33,6 +42,11 @@ public class RandomLiftingStrategy extends AbstractLiftingStrategy {
         this.indices = indices.toArray(new Integer[indices.size()]);
     }
 
+    /**
+     * Check whether we have a next value to report.
+     *
+     * @return False if we have had n consecutive iterations, in which no successful lifts have been achieved.
+     */
     @Override
     public boolean hasNext() {
         return unchangedIterations < indices.length;

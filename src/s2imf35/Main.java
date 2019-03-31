@@ -87,6 +87,7 @@ public class Main {
      * @param args The arguments of the run, which should always include at least a parity game path.
      * @throws IOException Thrown when an input file cannot be found or read.
      */
+    @SuppressWarnings("Duplicates")
     private static void run(Map<String, Object> args) throws IOException {
         // Get the path of the parity game.
         String gameFile = (String) args.getOrDefault("-game", null);
@@ -103,7 +104,7 @@ public class Main {
 
         // Find the optional parameters.
         boolean verbose = (boolean) args.getOrDefault("-steps", false);
-        boolean linear = (boolean) args.getOrDefault("-linear", false);
+        boolean linear = !(boolean) args.getOrDefault("-uncompressed", false);
 
         // Everything is filled in. Call the solver with the correct configuration.
         ParityGame G = Parser.parseParityGame(gameFile);
@@ -127,13 +128,6 @@ public class Main {
                 task = service.submit(() -> LinearSolver.solve(G, AbstractLiftingStrategy.get(G, strategyId, seed)));
             } else {
                 task = service.submit(() -> Solver.solve(G, verbose, AbstractLiftingStrategy.get(G, strategyId, seed)));
-            }
-
-            // Perform the check with a timeout.
-            try {
-                solution = task.get(timeout, TimeUnit.SECONDS);
-            } catch (InterruptedException | ExecutionException | TimeoutException e) {
-                solution = null;
             }
 
             // Perform the check with a timeout.
@@ -197,8 +191,8 @@ public class Main {
                 data.put("-experiment3", true);
             } else if(arg.equals("-unit")) {
                 data.put("-unit", true);
-            } else if(arg.equals("-linear")) {
-                data.put("-linear", true);
+            } else if(arg.equals("-uncompressed")) {
+                data.put("-uncompressed", true);
             } else if(arg.equals("-all")) {
                 data.put("-unit", true);
                 data.put("-experiment1", true);

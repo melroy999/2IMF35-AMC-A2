@@ -268,8 +268,12 @@ public class OutputLatexGraph {
         builder.append("\t\\small\\texttt{repetitions = 10}").append(System.lineSeparator());
         builder.append("};").append(System.lineSeparator());
 
+        builder.append("\\node[anchor=north west, below= 0cm of R] (K) {").append(System.lineSeparator());
+        builder.append("\t\\small\\texttt{time limit = 60s}").append(System.lineSeparator());
+        builder.append("};").append(System.lineSeparator());
+
         if(dSize.values().stream().distinct().count() == 1) {
-            builder.append("\\node[anchor=north west, below= 0cm of R] (D) {").append(System.lineSeparator());
+            builder.append("\\node[anchor=north west, below= 0cm of K] (D) {").append(System.lineSeparator());
             builder.append("\t\\small\\texttt{d = ").append(dSize.get(minx)).append("}").append(System.lineSeparator());
             builder.append("};").append(System.lineSeparator());
         } else {

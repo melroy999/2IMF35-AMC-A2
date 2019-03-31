@@ -64,16 +64,33 @@ public abstract class AbstractExperiment {
         return new String(new char[n]).replaceAll("\0", symbol);
     }
 
+    /**
+     * Get the names of all parity game files.
+     *
+     * @param files The files to extract the names from.
+     * @return The names of the files that end with the .gm extension.
+     */
     List<String> getParityGameNames(File[] files) {
         return Arrays.stream(files).filter(e -> e.getName().endsWith(".gm"))
                 .map(File::getName).collect(Collectors.toList());
     }
 
+    /**
+     * Run all the given games in the given root path.
+     *
+     * @param rootPath The root path which contains the games to run.
+     * @param gameNames The names of the games to run.
+     * @param argMap The map of arguments given to the program.
+     * @param metrics A collection to store performance statistics in.
+     * @param validator A validator, that validates the output for correctness.
+     * @throws IOException When a file cannot be found.
+     */
+    @SuppressWarnings("Duplicates")
     void runAll(String rootPath, List<String> gameNames, Map<String, Object> argMap, HashMap<String, PerformanceCounter> metrics, BiConsumer<ParityGame, Set<Integer>> validator) throws IOException {
 
         int strategyId = (int) argMap.getOrDefault("-strategy", 0);
         boolean verbose = (boolean) argMap.getOrDefault("-steps", false);
-        boolean linear = (boolean) argMap.getOrDefault("-linear", false);
+        boolean linear = !(boolean) argMap.getOrDefault("-uncompressed", false);
         long seed = (long) argMap.getOrDefault("-seed", 0L);
         int timeout = (int) argMap.getOrDefault("-timeout", -1);
 
@@ -138,7 +155,15 @@ public abstract class AbstractExperiment {
         }
     }
 
-    public <T> void outputToFile(String folder, String name, Map<Integer, T> data) {
+    /**
+     * Output the given mapping to a file.
+     *
+     * @param folder The folder to output to.
+     * @param name The name of the file to output to.
+     * @param data The data to output.
+     * @param <T> The type of the data to output.
+     */
+    <T> void outputToFile(String folder, String name, Map<Integer, T> data) {
         try (PrintWriter out = new PrintWriter(folder + "/" + name + ".txt")) {
             for(Map.Entry<Integer, T> entry : data.entrySet()) {
                 out.println(entry.getKey() + "\t" + entry.getValue());

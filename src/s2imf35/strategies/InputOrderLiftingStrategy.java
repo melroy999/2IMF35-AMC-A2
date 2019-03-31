@@ -4,6 +4,9 @@ import s2imf35.data.LinearProgressMeasure;
 import s2imf35.graph.NodeSpecification;
 import s2imf35.graph.ParityGame;
 
+/**
+ * A lifting strategy that iterates in the order of the vertices, as given in the file.
+ */
 public class InputOrderLiftingStrategy extends AbstractLiftingStrategy {
     // The order we have determined.
     private final int[] indices;
@@ -14,11 +17,20 @@ public class InputOrderLiftingStrategy extends AbstractLiftingStrategy {
     // The number of unchanged iterations.
     private int unchangedIterations = 0;
 
-
+    /**
+     * Create an input order lifting strategy for the given parity game.
+     *
+     * @param G The parity game to create the lifting strategy for.
+     */
     public InputOrderLiftingStrategy(ParityGame G) {
         this.indices = G.originalOrder;
     }
 
+    /**
+     * Check whether we have a next value to report.
+     *
+     * @return False if we have had n consecutive iterations, in which no successful lifts have been achieved.
+     */
     @Override
     public boolean hasNext() {
         return unchangedIterations < indices.length;

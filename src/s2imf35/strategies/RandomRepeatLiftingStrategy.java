@@ -20,6 +20,12 @@ public class RandomRepeatLiftingStrategy extends AbstractLiftingStrategy {
     // The number of unchanged iterations.
     private int unchangedIterations = 0;
 
+    /**
+     * Create an random order lifting strategy with repetition for the given parity game.
+     *
+     * @param G The parity game to create the lifting strategy for.
+     * @param seed A seed to control randomness with.
+     */
     public RandomRepeatLiftingStrategy(ParityGame G, long seed) {
         indices = G.originalOrder;
 
@@ -27,8 +33,13 @@ public class RandomRepeatLiftingStrategy extends AbstractLiftingStrategy {
         shuffleArray(indices, seed);
     }
 
-    // Implementing Fisher–Yates shuffle
-    //@https://stackoverflow.com/a/1520212
+    /**
+     * Implementation for the Fisher-Yates shuffle.
+     * Source: https://stackoverflow.com/a/1520212
+     *
+     * @param ar The array to shuffle.
+     * @param seed The seed to control randomness with.
+     */
     private static void shuffleArray(int[] ar, long seed)
     {
         // If running on Java 6 or older, use `new Random()` on RHS here
@@ -43,6 +54,11 @@ public class RandomRepeatLiftingStrategy extends AbstractLiftingStrategy {
         }
     }
 
+    /**
+     * Check whether we have a next value to report.
+     *
+     * @return False if we have had n consecutive iterations, in which no successful lifts have been achieved.
+     */
     @Override
     public boolean hasNext() {
         return unchangedIterations < indices.length;

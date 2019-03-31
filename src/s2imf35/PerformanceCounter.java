@@ -1,5 +1,8 @@
 package s2imf35;
 
+/**
+ * A class that tracks all the performance metrics of our program.
+ */
 public class PerformanceCounter {
     // The time the calculation took in milliseconds.
     public long duration = 0;

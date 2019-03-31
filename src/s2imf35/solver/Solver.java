@@ -15,7 +15,18 @@ import java.util.stream.Collectors;
 
 import static s2imf35.graph.NodeSpecification.Owner.Diamond;
 
+/**
+ * A small progress measure solver, that uses the naive array implementation of the progress measure table.
+ */
 public class Solver {
+
+    /**
+     * Solve the given parity game, using the given lifting strategy.
+     *
+     * @param G The parity game to solve.
+     * @param strategy The lifting strategy to apply.
+     * @return The solution of the parity game, which holds the set of winning vertices of Diamond, and performance metrics.
+     */
     public static Solution solve(ParityGame G, boolean verbose, AbstractLiftingStrategy strategy) {
         System.out.println("Solving: " + G.name);
 
@@ -62,7 +73,7 @@ public class Solver {
 
             // We only register a change when rho < lift_v(rho). I.e., the value must have become larger.
             if(ComparisonHelper.isGreater(liftValue, rho.get(v), G.d - 1)) {
-                rho.put(v, liftValue);
+                rho.set(v, liftValue);
                 counter.updated++;
                 strategy.lifted(node);
             }
@@ -86,9 +97,6 @@ public class Solver {
         // Measure the elapsed time.
         Instant finish = Instant.now();
         counter.duration = Math.max(1, Duration.between(start, finish).toMillis());
-
-        System.out.println("d = " + G.d);
-        rho.printStatistics();
 
         // We have found a solution. Find which states belong to the winning set of player diamond.
         return new Solution(rho.diamondWinningSet(), counter);

@@ -9,6 +9,10 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/**
+ * A lifting strategy that uses the predecessor list to avoid vertices that cannot be lifted under the current circumstances.
+ * The lifting strategy uses a priority queue, which ensures that vertices controlled by the diamond player are processed first.
+ */
 public class PredecessorDiamondFirstLiftingStrategy extends AbstractLiftingStrategy {
     // Whether we have enqueued the given vertex.
     private final boolean[] enqueued;
@@ -16,6 +20,12 @@ public class PredecessorDiamondFirstLiftingStrategy extends AbstractLiftingStrat
     // The priority queue that holds the vertices we are about to visit.
     private final Queue<Integer> queue;
 
+    /**
+     * Create predecessor lifting strategy for the given parity game, that sorts the vertices in the queue such that
+     * vertices owned by the diamond player occur first.
+     *
+     * @param G The parity game to create the lifting strategy for.
+     */
     public PredecessorDiamondFirstLiftingStrategy(ParityGame G) {
         enqueued = new boolean[G.n];
         queue = new PriorityQueue<>(
@@ -29,6 +39,11 @@ public class PredecessorDiamondFirstLiftingStrategy extends AbstractLiftingStrat
         }
     }
 
+    /**
+     * Check whether we have a next value to report.
+     *
+     * @return Returns true as long as the queue contains vertices to visit.
+     */
     @Override
     public boolean hasNext() {
         return !queue.isEmpty();

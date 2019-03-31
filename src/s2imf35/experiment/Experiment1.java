@@ -5,9 +5,7 @@ import s2imf35.graph.ParityGame;
 import s2imf35.strategies.AbstractLiftingStrategy;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.file.Files;
@@ -18,7 +16,7 @@ import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 
 /**
- * Solution for exercise one of part II.
+ * Solution for the dining philosophers exercise of part II.
  */
 public class Experiment1 extends AbstractExperiment {
     /**
@@ -71,6 +69,7 @@ public class Experiment1 extends AbstractExperiment {
      * @param n The number of times to repeat the experiment.
      * @throws IOException Thrown when the file cannot be found or read.
      */
+    @SuppressWarnings("Duplicates")
     @Override
     public void runMulti(Map<String, Object> argMap, int n) throws IOException {
 
@@ -143,6 +142,13 @@ public class Experiment1 extends AbstractExperiment {
         }
     }
 
+    /**
+     * Output and accumulate the performance metric data entries for batch runs.
+     *
+     * @param metric The found performance metrics.
+     * @param folder The folder to output the performance data to.
+     * @param results The accumulated results, which will be used to calculate averages.
+     */
     private void outputMetric(Map<String, PerformanceCounter> metric, String folder, Map<String, Map<String, Map<Integer, BigDecimal>>> results) {
         Set<String> files = metric.keySet();
 

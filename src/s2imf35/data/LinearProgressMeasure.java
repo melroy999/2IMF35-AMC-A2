@@ -5,6 +5,9 @@ import s2imf35.graph.ParityGame;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Implementation of the progress measure table, using the compressed long representations of vectors.
+ */
 public class LinearProgressMeasure {
     // The progress measure arrays are encoded as long values.
     private final long[] data;
@@ -16,6 +19,11 @@ public class LinearProgressMeasure {
     // The value of T, which is one larger as the largest storable number.
     public final long T;
 
+    /**
+     * Create a new linearized progress measure table for the given parity game.
+     *
+     * @param G The parity game to create a progress measure table for.
+     */
     public LinearProgressMeasure(ParityGame G) {
         data = new long[G.n];
         B = new long[G.d];
@@ -49,24 +57,31 @@ public class LinearProgressMeasure {
         T = Math.addExact(T, B[0]);
     }
 
-    public boolean greater(long a, long b, int p) {
-        long temp = a - b;
-        return temp > temp % B[p];
-    }
-
-    public boolean greaterOrEqual(long a, long b, int p) {
-        long temp = a - b;
-        return temp >= temp % B[p];
-    }
-
+    /**
+     * Get the row in the progress measure table associated to the given vertex.
+     *
+     * @param v The vertex that is queried.
+     * @return The compressed long representation of the row.
+     */
     public long get(int v) {
         return data[v];
     }
 
+    /**
+     * Set the row in the progress measure table associated to the given vertex.
+     *
+     * @param v The vertex that is selected.
+     * @param l The compressed row representation to store.
+     */
     public void set(int v, long l) {
         data[v] = l;
     }
 
+    /**
+     * Get all the vertices that are part of the winning set.
+     *
+     * @return Return all vertices that do not have the value T.
+     */
     public Set<Integer> diamondWinningSet() {
         Set<Integer> result = new HashSet<>();
         for(int i = 0; i < data.length; i++) {

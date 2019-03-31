@@ -12,7 +12,18 @@ import java.time.Instant;
 
 import static s2imf35.graph.NodeSpecification.Owner.Diamond;
 
+/**
+ * A small progress measure solver, that uses the linearized implementation of the progress measure table.
+ */
 public class LinearSolver {
+
+    /**
+     * Solve the given parity game, using the given lifting strategy.
+     *
+     * @param G The parity game to solve.
+     * @param strategy The lifting strategy to apply.
+     * @return The solution of the parity game, which holds the set of winning vertices of Diamond, and performance metrics.
+     */
     public static Solution solve(ParityGame G, AbstractLiftingStrategy strategy) {
         System.out.println("Solving: " + G.name + "(d = " + G.d + ", n = " + G.n + ")");
 

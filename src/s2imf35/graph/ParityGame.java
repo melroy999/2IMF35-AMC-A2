@@ -2,6 +2,9 @@ package s2imf35.graph;
 
 import java.util.*;
 
+/**
+ * Representation of a parity game graph.
+ */
 public class ParityGame {
     // The raw nodes read from the PGSolver format.
     private final NodeSpecification[] specifications;
@@ -24,6 +27,13 @@ public class ParityGame {
     // The number of edges in the parity game.
     private long noEdges = 0;
 
+    /**
+     * Create a parity game graph, given the contents of a file and the name of the graph.
+     *
+     * @param input The complete contents of the desired graph.
+     * @param name The name given to the graph, which more often than not is the graph file name.
+     * @throws NumberFormatException If the input is malformed.
+     */
     public ParityGame(String input, String name) throws NumberFormatException {
         // Set the name.
         this.name = name;
@@ -89,30 +99,51 @@ public class ParityGame {
         }
     }
 
-    public int[] getSuccessors(int v) {
-        return specifications[v].successors;
-    }
-
-    public int[] getPredecessors(int v) {
-        return specifications[v].predecessors;
-    }
-
+    /**
+     * Get the priority of the given node.
+     *
+     * @param v The node to get the priority of.
+     * @return The priority p(v) of node v.
+     */
     public int getPriority(int v) {
         return specifications[v].priority;
     }
 
+    /**
+     * Get the name of the given node.
+     *
+     * @param v The node to get the name of.
+     * @return The name of node v, which might be null, since it is optional.
+     */
     public String getName(int v) {
         return specifications[v].name;
     }
 
+    /**
+     * Get the node specification of the given node.
+     *
+     * @param v The node to get the specification of.
+     * @return The full node specification object of the given node.
+     */
     public NodeSpecification get(int v) {
         return specifications[v];
     }
 
+    /**
+     * Get the owner of the given node.
+     *
+     * @param v The node to get the owner of.
+     * @return The owner o(v) of node v.
+     */
     public NodeSpecification.Owner getOwner(int v) {
         return specifications[v].owner;
     }
 
+    /**
+     * Get the number of edges in the graph.
+     *
+     * @return The sum of all successor array lengths.
+     */
     public long getNoEdges() {
         return noEdges;
     }

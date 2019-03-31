@@ -4,6 +4,9 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * A class that explores the limitations of our compressed vector implementation.
+ */
 public class LinearLimitGraph {
     public static void main(String[] args) {
         long max = Long.MAX_VALUE;

@@ -1,7 +1,8 @@
 package s2imf35.util;
 
-import s2imf35.graph.ParityGame;
-
+/**
+ * A helper class that defines a couple of useful comparison methods for lexicographic orderings.
+ */
 public class ComparisonHelper {
     /**
      * Check whether a is lexicographically greater than b up to position r.

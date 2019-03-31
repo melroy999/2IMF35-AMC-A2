@@ -6,8 +6,19 @@ import s2imf35.graph.ParityGame;
 
 import java.util.Iterator;
 
+/**
+ * Abstract template for lifting strategies.
+ */
 public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
 
+    /**
+     * Get an instance of the desired lifting strategy, given its id.
+     *
+     * @param G The graph to create a lifting strategy for.
+     * @param i The id of the desired lifting strategy.
+     * @param seed Optional seed, to control randomness.
+     * @return The targeted lifting strategy.
+     */
     public static AbstractLiftingStrategy get(ParityGame G, int i, long seed) {
         switch (i) {
             case 1:
@@ -29,6 +40,12 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
         }
     }
 
+    /**
+     * Get the human readable name of the desired lifting strategy, given its id.
+     *
+     * @param i The id of the desired lifting strategy.
+     * @return The name associated to the lifting strategy's id.
+     */
     public static String getName(int i) {
         switch (i) {
             case 1: return "Random order";
@@ -42,6 +59,12 @@ public abstract class AbstractLiftingStrategy implements Iterator<Integer> {
         }
     }
 
+    /**
+     * Get the human readable slug of the desired lifting strategy, given its id.
+     *
+     * @param i The id of the desired lifting strategy.
+     * @return The slug associated to the lifting strategy's id.
+     */
     public static String getSlug(int i) {
         switch (i) {
             case 1: return "random_order";
