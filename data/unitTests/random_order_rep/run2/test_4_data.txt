@@ -1,0 +1,5 @@
+i	26
+tSkips	6
+lifted	20
+updated	8
+duration	1

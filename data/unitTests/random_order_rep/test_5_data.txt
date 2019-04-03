@@ -1,0 +1,6 @@
+i	27
+tSkips	5
+lifted	22
+updated	7
+duration	1
+ratio	0.3348

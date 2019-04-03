@@ -1,0 +1,5 @@
+i	1
+tSkips	0
+lifted	1
+updated	0
+duration	1

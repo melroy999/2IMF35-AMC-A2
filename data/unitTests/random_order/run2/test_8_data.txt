@@ -1,0 +1,5 @@
+i	91
+tSkips	20
+lifted	71
+updated	48
+duration	1

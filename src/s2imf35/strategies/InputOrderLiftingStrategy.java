@@ -46,10 +46,11 @@ public class InputOrderLiftingStrategy extends AbstractLiftingStrategy {
         int value = indices[i];
         if(i < indices.length - 1) {
             i++;
-            unchangedIterations++;
         } else {
             i = 0;
         }
+        unchangedIterations++;
+
         return value;
     }
 

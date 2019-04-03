@@ -1,0 +1,6 @@
+i	10
+tSkips	0
+lifted	10
+updated	4
+duration	1
+ratio	0.4

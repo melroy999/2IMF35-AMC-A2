@@ -162,10 +162,11 @@ public abstract class AbstractExperiment {
      * @param name The name of the file to output to.
      * @param data The data to output.
      * @param <T> The type of the data to output.
+     * @param <U> The type of the key.
      */
-    <T> void outputToFile(String folder, String name, Map<Integer, T> data) {
+    <U, T> void outputToFile(String folder, String name, Map<U, T> data) {
         try (PrintWriter out = new PrintWriter(folder + "/" + name + ".txt")) {
-            for(Map.Entry<Integer, T> entry : data.entrySet()) {
+            for(Map.Entry<U, T> entry : data.entrySet()) {
                 out.println(entry.getKey() + "\t" + entry.getValue());
             }
         } catch (FileNotFoundException e) {

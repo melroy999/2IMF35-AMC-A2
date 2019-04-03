@@ -74,7 +74,7 @@ public class PredecessorRepeatLiftingStrategy extends AbstractLiftingStrategy {
      */
     @Override
     public void lifted(NodeSpecification v, LinearProgressMeasure rho) {
-        lastLifted = v.priority;
+        lastLifted = v.identifier;
 
         for(int w : v.predecessors) {
             if(!enqueued[w] && rho.get(w) != rho.T) {

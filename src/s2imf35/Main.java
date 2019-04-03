@@ -3,6 +3,7 @@ package s2imf35;
 import s2imf35.experiment.Experiment1;
 import s2imf35.experiment.Experiment2;
 import s2imf35.experiment.Experiment3;
+import s2imf35.experiment.UnitTests;
 import s2imf35.graph.ParityGame;
 import s2imf35.solver.LinearSolver;
 import s2imf35.solver.Solver;
@@ -55,7 +56,7 @@ public class Main {
                             new Experiment3().runMulti(argMap, n);
                             break;
                         case "-unit":
-                            // TODO implement unit test.
+                            new UnitTests().runMulti(argMap, n);
                             break;
                     }
                 }
@@ -73,7 +74,7 @@ public class Main {
                             new Experiment3().run(argMap);
                             break;
                         case "-unit":
-                            // TODO implement unit test.
+                            new UnitTests().run(argMap);
                             break;
                     }
                 }
