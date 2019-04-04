@@ -30,7 +30,7 @@ public class Main {
 
         // We output the unit test as our default.
         if(argMap.isEmpty()) {
-            // TODO implement unit test.
+            new UnitTests().run(argMap);
             return;
         }
 
